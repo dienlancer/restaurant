@@ -29,6 +29,9 @@ global $customizerGlobal;
   <!-- begin font-awesome -->
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/font-awesome.css'; ?>" />
   <!-- end font-awesome -->
+  <!-- begin icofont -->
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/icofont/css/icofont.css'; ?>" />
+  <!-- end icofont -->
   <!-- begin youtube -->
   <script src="<?php echo get_template_directory_uri() . '/js/jquery.youtubepopup.min.js'; ?>"></script>  
   <!-- end youtube -->
@@ -136,7 +139,7 @@ if(count($arrCart) > 0){
           </div>
         </div>
       </div>
-      <hr class="gach-ngang" />
+      <hr class="gach-ngang">
       <div class="container">
         <div class="row flex-center-middle">
           <div class="col-lg-2 no-padding">

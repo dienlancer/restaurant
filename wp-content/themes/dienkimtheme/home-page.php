@@ -19,6 +19,16 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     <?php if(is_active_sidebar('search-food')):?>
         <?php dynamic_sidebar('search-food')?>
     <?php endif; ?>       
+    <div class="container kip">
+    	<hr class="search-food-hr margin-top-15" />
+    	<form name="frm-search" action="#" method="POST">
+    		<div class="search-food-form margin-top-15">
+    			<div><input type="text" name="q" placeholder="Tìm theo từ khoá"></div>
+    			<div><center><a href="javascript:void(0);"><i class="fa fa-search" aria-hidden="true"></i>Tìm</a></center></div>
+    		</div>
+    	</form>	
+    	<div></div>			
+    </div>
     <?php get_footer(); ?>
     <?php wp_footer();?>
 </body>

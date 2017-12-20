@@ -170,10 +170,16 @@ ul.list-style-none{
 }
 div.flex-center-middle{
     display: flex;
+    align-items: center;    
     justify-content: center;
-    align-items: center;
 }
 /* end standard */
+div.kip{
+        display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+}
 .canon{
     position: absolute;
     top: 0;
@@ -236,12 +242,7 @@ div.logo-banner{
     color: #ffffff;
 
 }
-div.kip{
-        display: flex;
-    flex-direction: column;
-    align-items: center;    
-    justify-content: center;
-}
+
 div.logo-banner-excerpt{
     padding: 0px 200px
 }
@@ -286,8 +287,33 @@ div.search-food-excerpt{
 }
 hr.search-food-hr{
     border-top: 2px solid #FFA41F;
-    
+    margin-bottom: 0;
     width: 100px;
+}
+div.search-food-form{
+    display: flex;
+    flex-direction: row;
+}
+div.search-food-form > div:nth-child(1) > input{
+        border: 1px solid #ccc;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+div.search-food-form > div:nth-child(2){
+    margin-left: 15px;
+}
+div.search-food-form > div:nth-child(2) a{
+        display: block;
+    background: #FFA41F;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: 1px solid #FFA41F;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+div.search-food-form > div:nth-child(2) a i{
+    margin-right: 10px;
 }
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{

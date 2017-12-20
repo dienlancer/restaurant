@@ -110,8 +110,7 @@ if(!empty($instance['item_id'])){
 							 	$featureImg=get_the_post_thumbnail_url($post_id, 'full');
 							 	?>
 							 	<div class="search-food-title"><?php echo $title; ?></div>
-							 	<div class="search-food-excerpt margin-top-15"><center><?php echo $excerpt ?></center></div>
-							 	<hr class="search-food-hr margin-top-15" />
+							 	<div class="search-food-excerpt margin-top-15"><center><?php echo $excerpt ?></center></div>							 				 
 							 	<?php
 							 }
 							?>
