@@ -36,7 +36,8 @@ if(is_admin()){
 }
 require_once PLUGIN_PATH . DS . 'metabox'. DS .'taxonomy.php';
 new CategoryTaxonomy();
-
+require_once "module.php";
+new Module();
 add_action('init','zendvn_sp_session_start',1);
 function zendvn_sp_session_start(){
 	if(!session_id()){

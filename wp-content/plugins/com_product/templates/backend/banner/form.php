@@ -14,8 +14,9 @@
 	$action = ($zController->getParams('action') != '')? $zController->getParams('action'):'add';		
 	$lbl 	= 'Banner';				
 	
-	$inputTitle 	='<input type="text" id="title" name="title" class="regular-text" value="'.sanitize_text_field(@$zController->_data['title']).'" />';	
-	$inputCaption 	='<textarea rows="5" cols="55" name="caption" id="caption">'.sanitize_text_field(@$zController->_data['caption']).'</textarea>'; ;
+	$inputTitle 	='<input type="text" id="title" name="title" class="regular-text" value="'.sanitize_text_field(@$zController->_data['title']).'" />';
+	$inputAlt 	='<textarea rows="5" cols="55" name="alt" id="alt">'.sanitize_text_field(@$zController->_data['alt']).'</textarea>'; ;	
+	$inputCaption 	='<textarea rows="5" cols="55" name="caption" id="caption">'.sanitize_text_field(@$zController->_data['caption']).'</textarea>'; 	
 	$inputImage 	='<input type="text" id="image" name="image" class="regular-text" value="'.sanitize_text_field(@$zController->_data['image']).'" />';
 	$inputLinkWeb 	='<input type="text" id="link_web" name="link_web" class="regular-text" value="'.sanitize_text_field(@$zController->_data['link_web']).'" />';
 	
@@ -30,7 +31,7 @@
 	$strImage               =   "";
 	if(count($zController->_data > 0)){
 	    if(!empty(@$zController->_data["image"])){
-	        $picture        =   '<center>&nbsp;<img src="'.site_url('wp-content/uploads/'.@$zController->_data["image"],null).'"  />&nbsp;</center>';                        
+	        $picture        =   '<center>&nbsp;<img src="'.site_url('wp-content/uploads/'.@$zController->_data["image"],null).'" style="width:100%"  />&nbsp;</center>';                        
 	        $strImage       =   @$zController->_data["image"];
 	    }        
 	}    
@@ -52,6 +53,10 @@
 				<tr>
 					<td scope="row"><b><i><label>Title</label></i></b></td>
 					<td><?php echo $inputTitle;?></td>
+				</tr>	
+				<tr>
+					<td scope="row"><b><i><label>Alt</label></i></b></td>
+					<td><?php echo $inputAlt;?></td>
 				</tr>	
 				<tr>
 					<td scope="row"><b><i><label>Caption</label></i></b></td>

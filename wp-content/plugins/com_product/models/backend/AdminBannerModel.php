@@ -189,7 +189,8 @@ class AdminBannerModel extends WP_List_Table{
 		if(!empty($_POST['id'])){
 			$id=(int)$_POST['id'];								
 		}		
-		$title=$_POST["title"];		
+		$title=$_POST["title"];	
+		$alt=$_POST["alt"];		
 		$caption=$_POST["caption"];		
 		$link_web=$_POST["link_web"];
 		$image_hidden=$_POST["image_hidden"];
@@ -216,21 +217,24 @@ class AdminBannerModel extends WP_List_Table{
 			case "edit":			
 				$query = "update `".$table."` set 
 							title 			= 	%s
+							, alt			=	%s	
 							, caption			=	%s	
 							, image			=   %s	
 							, link_web		=	%s						
 							where id 		=  	%d " ;
 				$info = $wpdb->prepare($query
-											,$title											
+											,$title	
+											,$alt										
 											,$caption
 											,$image	
 											,$link_web										
 											,$id);
 				break;	
 			case "add":
-				$query="insert into `".$table."` (`title`,`caption`,`image`,`link_web`) values (%s,%s,%s,%s) ";
+				$query="insert into `".$table."` (`title`,`alt`,`caption`,`image`,`link_web`) values (%s,%s,%s,%s,%s) ";
 				$info = $wpdb->prepare($query
 											,$title				
+											,$alt
 											,$caption		
 											,$image
 											,$link_web											

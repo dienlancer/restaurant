@@ -1,13 +1,12 @@
 .ddsmoothmenu{
-font: bold 12px Verdana;
-background: transparent; /*background of menu bar (default state)*/
+
+background: #414141; /*background of menu bar (default state)*/
 width: 100%;
 display: none;
-margin: 0px 0px 0px 0px
 }
 
 .ddsmoothmenu ul{
-z-index:999999;
+z-index:100;
 margin: 0;
 padding: 0;
 list-style-type: none;
@@ -18,35 +17,35 @@ list-style-type: none;
 position: relative;
 display: inline;
 float: left;
-margin-left: 0;
 }
 
 /*Top level menu link items style*/
 .ddsmoothmenu ul li a{
-    display: block;
-    background: transparent;
-    padding: 20px 15px;
-    border-right: solid 1px #ffffff;
-    color: #222;
-    text-decoration: none;
-    text-transform: capitalize;
-    font-family: 'baomoi';
-        font-size: 15px;
+display: block;
+background: #414141; /*background of menu items (default state)*/
+color: white;
+padding: 8px 10px;
+border-right: 1px solid #778;
+color: #2d2b2b;
+text-decoration: none;
 }
-.ddsmoothmenu ul > li{
-  background: transparent;
-}
+
 * html .ddsmoothmenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
 display: inline-block;
 }
 
 .ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{
-
+color: white;
 }
 
-.ddsmoothmenu ul ul li a:hover{
-background: transparent; /*background of menu items during onmouseover (hover state)*/
-color:#ffffff;
+.ddsmoothmenu ul li a.selected { /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+background: black !important; 
+color: white;
+}
+
+.ddsmoothmenu ul li a:hover{
+background: black; /*background of menu items during onmouseover (hover state)*/
+color: white;
 }
 	
 /* sub menus */
@@ -55,9 +54,6 @@ position: absolute;
 left: -3000px;
 display: none; /*collapse all sub menus to begin with*/
 visibility: hidden;
-background: #f97a3d;
-width: 200px !important;
-top:57px !important;
 }
 
 /*Sub level menu list items (alters style from Top level List Items)*/
@@ -70,37 +66,17 @@ float: none;
 .ddsmoothmenu ul li ul li ul{
 top: 0;
 }
-.ddsmoothmenu ul li ul li a:hover{
-  background: #ffa072
-}
+
 /* Sub level menu links style */
 .ddsmoothmenu ul li ul li a{
-        font-size: 12px;
-    width: 100%;
-    padding: 8px 0px 8px 10px;
-    margin: 0;
-    border-bottom:solid 1px #ff5300;
-    font-family: 'robotocondensed';
-    display: block;
-    border-left: solid 1px #ff5300;
-    border-right: solid 1px #ff5300;
-    text-transform: capitalize;
-    font-weight: normal;
-    color: #ffffff
+font: normal 13px Verdana;
+width: 160px; /*width of sub menus*/
+padding: 5px;
+margin: 0;
+border-top-width: 0;
+border-bottom: 1px solid gray;
 }
-.ddsmoothmenu > ul > li > ul li ul{
-top: 0px !important;
-}
-.ddsmoothmenu > ul > li.current-menu-item > a{
-  color:#222;
-  background: #ffffff
-}
-.ddsmoothmenu > ul > li > ul > li.current-menu-item > a{
-  color: #ffffff;
-}
-div.ddsmoothmenu ul ul ul > li > a{
-  border-left: 0;
-}
+
 /* Holly Hack for IE \*/
 * html .ddsmoothmenu{height: 1%;} /*Holly Hack for IE7 and below*/
 
@@ -210,7 +186,7 @@ font-weight: bold;
 div.ddsmoothmobile ul li.breadcrumb{ /* breadcrumb LI that's added to the top of every sub level UL */
 cursor: pointer;
 padding: 10px;
-background: transparent;
+background: black;
 }
 
 div.ddsmoothmobile ul li a{
@@ -219,7 +195,7 @@ padding: 6px;
 }
 
 div.ddsmoothmobile ul li a:hover{
-background: #3AB54A;
+background: black;
 }
 
 /* ############# Animated Drawer icon (mobile menu toggler) CSS ############# */
@@ -229,18 +205,12 @@ background: #3AB54A;
   width: 3em; 
   height: 2.8em; 
   outline: none;
-	
+	position: fixed; /* BY default, make toggler fixed on screen */
 	display: none;
 	top: 10px; /* Position at upper right corner */
-	
-	
+	right: 10px;
+	background: white;
 	z-index: 1000;
-
-  position: absolute;
-    margin: 0px 0px 0px 0px;
-    left: 10px;
-    right: 0;
-    top: 8px;
 }
 
 .animateddrawer:before, .animateddrawer:after{
@@ -249,7 +219,7 @@ background: #3AB54A;
   display: block;
   width: 100%;
   height: 0.6em; /* height of top and bottom drawer line */
-  background-image:url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC );
+  background: black;
   border-radius: 2px;
   top: 0;
   left: 0;
@@ -266,7 +236,7 @@ background: #3AB54A;
 .animateddrawer span{
   width: 100%;
   height: 0.6em; /* height of middle drawer line */
-  
+  background: black;
   position: absolute;
   top: 50%;
   margin-top: -0.3em; /* set this to - half of middle drawer line height */
@@ -283,7 +253,7 @@ background: #3AB54A;
   display: block;
   width: 100%;
   height: 0.6em; /* height of middle drawer line */
-  background-image:url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC );
+  background: black;
   border-radius: 2px;
   position: absolute;
   -ms-transform-origin: 50% 50%;
@@ -317,4 +287,7 @@ background: #3AB54A;
   -ms-transform: rotate(-90deg);
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
+}
+.ddsmoothmenu > ul > li > ul li ul{
+top: 0px !important;
 }
