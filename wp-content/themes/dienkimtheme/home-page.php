@@ -16,6 +16,9 @@ $instagram_url=$zendvn_sp_settings['instagram_url'];
 $pinterest_url=$zendvn_sp_settings['pinterest_url'];     
      ?>
     <?php get_header();     ?>
+    <?php if(is_active_sidebar('search-food')):?>
+        <?php dynamic_sidebar('search-food')?>
+    <?php endif; ?>       
     <?php get_footer(); ?>
     <?php wp_footer();?>
 </body>

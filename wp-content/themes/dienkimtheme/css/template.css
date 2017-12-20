@@ -272,6 +272,23 @@ ul.slick-dots > li:hover > button::before,
 ul.slick-dots > li:focus > button::before{
     opacity: 0
 }
+.slick-dotted.slick-slider{
+    margin-bottom: 0;
+}
+div.search-food-title{
+        font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #000000;
+}
+div.search-food-excerpt{
+    padding: 0px 150px;
+}
+hr.search-food-hr{
+    border-top: 2px solid #FFA41F;
+    
+    width: 100px;
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;

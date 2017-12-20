@@ -88,6 +88,39 @@ if(!empty($instance['item_id'])){
 				}				
 			}
 			break;
+			case "search-food":		
+			foreach ($arrItemID as $key => $value) {
+				if(!empty($value)){
+					$args = array(  		
+						'p' => 	(int)@$value,			
+						'post_type' => 'page'
+					);			
+					$the_query = new WP_Query($args);		
+					if($the_query->have_posts()){		
+						?>
+						<div class="container kip margin-top-45">
+							<?php
+							 while ($the_query->have_posts()){
+							 	$the_query->the_post();		
+							 	$post_id=$the_query->post->ID;							
+							 	$permalink=get_the_permalink($post_id);
+							 	$title=get_the_title($post_id);
+							 	$excerpt=get_post_meta($post_id,"intro",true);
+							 	$excerpt=substr($excerpt, 0,300).'...';			
+							 	$featureImg=get_the_post_thumbnail_url($post_id, 'full');
+							 	?>
+							 	<div class="search-food-title"><?php echo $title; ?></div>
+							 	<div class="search-food-excerpt margin-top-15"><center><?php echo $excerpt ?></center></div>
+							 	<hr class="search-food-hr margin-top-15" />
+							 	<?php
+							 }
+							?>
+						</div>	
+						<?php						
+					}
+				}				
+			}
+			break;
 		}
 	}	
 }

@@ -136,7 +136,7 @@ if(count($arrCart) > 0){
           </div>
         </div>
       </div>
-      <hr class="gach-ngang"></hr>
+      <hr class="gach-ngang" />
       <div class="container">
         <div class="row flex-center-middle">
           <div class="col-lg-2 no-padding">
