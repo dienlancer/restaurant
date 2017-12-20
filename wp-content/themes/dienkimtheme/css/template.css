@@ -332,6 +332,44 @@ ul.order > li p {
 div.line img{
     width: 70%;
 }
+div.about-us{
+    background: #F5F5F5;
+}
+h3.about-us-title{
+        margin-top: 55px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+div.about-us-excerpt{
+    margin-top: 30px;
+    text-align: justify;
+}
+div.about-us-content{
+    text-align: justify;
+}
+hr.about-us-hr{
+        border-top: 2px solid #FFA41F;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    width: 100px;
+}
+div.about-us-readmore a{
+    display: inline-block;
+    background: #FFA41F;
+    color: #ffffff;
+    border: 1px solid #FFA41F;
+    padding: 9px 24px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px
+}
+div.about-us-readmore {
+    margin-top: 45px;
+}
+div.about-us-readmore i{
+    margin-left: 5px
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;

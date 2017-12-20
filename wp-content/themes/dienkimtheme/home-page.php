@@ -47,6 +47,9 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     		<div class="line"><center><img src="<?php echo site_url('wp-content/uploads/line.png',null); ?>" /></center></div>
     	</div>			
     </div>
+    <?php if(is_active_sidebar('introduce')):?>
+        <?php dynamic_sidebar('introduce')?>
+    <?php endif; ?>   
     <?php get_footer(); ?>
     <?php wp_footer();?>
 </body>

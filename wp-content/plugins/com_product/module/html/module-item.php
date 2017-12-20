@@ -120,6 +120,46 @@ if(!empty($instance['item_id'])){
 				}				
 			}
 			break;
+			case "introduce":	
+			foreach ($arrItemID as $key => $value) {
+				if(!empty($value)){
+					$args = array(  		
+						'p' => 	(int)@$value,			
+						'post_type' => 'page'
+					);			
+					$the_query = new WP_Query($args);		
+					if($the_query->have_posts()){								
+						while ($the_query->have_posts()){
+							$the_query->the_post();		
+							$post_id=$the_query->post->ID;							
+							$permalink=get_the_permalink($post_id);
+							$title=get_the_title($post_id);
+							$excerpt=get_post_meta($post_id,"intro",true);
+							$excerpt=substr($excerpt, 0,300).'...';			
+							$content=get_the_content($post_id);
+							$featureImg=get_the_post_thumbnail_url($post_id, 'full');							
+							?>
+							<div class="about-us margin-top-45">
+								<div class="container">
+									<div class="col-lg-8">
+										<h3 class="about-us-title">
+											<?php echo $title; ?>
+										</h3>
+										<div class="about-us-excerpt"><?php echo $excerpt; ?></div>
+										<hr class="about-us-hr" />
+										<div class="about-us-content margin-top-45"><?php echo $content; ?></div>
+										<div class="about-us-readmore"><a href="<?php echo $permalink; ?>">Xem thêm<i class="icofont icofont-curved-double-right"></i></a></div>
+									</div>
+									<div class="col-lg-4"><img src="<?php echo $featureImg; ?>" /></div>
+									<div class="clr"></div>
+								</div>
+							</div>
+							<?php
+						}						
+					}
+				}				
+			}
+			break;
 		}
 	}	
 }

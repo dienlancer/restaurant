@@ -59,6 +59,15 @@ function zendvn_theme_widgets_init(){
 		'after_title'   => '',
 		'after_widget'  => ''				
 	));
+	register_sidebar(array(
+		'name'          => __( 'Introduce', $themeName ),
+		'id'            => 'introduce',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
 }
 add_action("wp_enqueue_scripts",function(){
 	wp_deregister_script("jquery");
