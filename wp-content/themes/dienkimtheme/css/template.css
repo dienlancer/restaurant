@@ -227,6 +227,13 @@ div.book-your-table a{
     font-weight: bold;
     border-radius: 10px;
 }
+div.logo-banner{
+    position: absolute;
+    left: 0;
+    top: 180px;
+    width: 100%;
+    z-index: 3;
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;

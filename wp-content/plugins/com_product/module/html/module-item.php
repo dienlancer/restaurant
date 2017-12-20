@@ -21,8 +21,9 @@ if(!empty($instance['item_id'])){
 	$arrItemID=explode(",",$instance["item_id"]);
 	$title=$instance["title"];
 	$description=$instance["description"];
+	$position=$instance["position"];
 	if(count($arrItemID) > 0){
-		switch ($instance["position"]) {
+		switch ($position) {
 			case "slideshow":			
 			?>
 			<script type="text/javascript" language="javascript">        
@@ -51,6 +52,29 @@ if(!empty($instance['item_id'])){
 			</div>
 			<?php
 			break;	
+			case "banner-page":		
+			foreach ($arrItemID as $key => $value) {
+				if(!empty($value)){
+					$args = array(  		
+						'p' => 	(int)@$value,			
+						'post_type' => 'page'
+					);			
+					$the_query = new WP_Query($args);		
+					if($the_query->have_posts()){		
+						while ($the_query->have_posts()) {
+							$the_query->the_post();		
+							$post_id=$the_query->post->ID;							
+							$permalink=get_the_permalink($post_id);
+							$title=get_the_title($post_id);
+							$excerpt=get_post_meta($post_id,"intro",true);
+							$excerpt=substr($excerpt, 0,100).'...';			
+							$featureImg=get_the_post_thumbnail_url($post_id, 'full');
+						}
+						wp_reset_postdata();  
+					}
+				}				
+			}
+			break;
 		}
 	}	
 }
