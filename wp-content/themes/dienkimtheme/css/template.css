@@ -296,7 +296,7 @@ div.search-food-form{
 }
 div.search-food-form > div:nth-child(1) > input{
         border: 1px solid #ccc;
-    padding: 10px 10px;
+    padding:5px 50px 5px 10px;
     border-radius: 5px;
 }
 div.search-food-form > div:nth-child(2){
@@ -305,7 +305,7 @@ div.search-food-form > div:nth-child(2){
 div.search-food-form > div:nth-child(2) a{
         display: block;
     background: #FFA41F;
-    padding: 10px 25px;
+    padding: 5px 25px;
     border-radius: 5px;
     border: 1px solid #FFA41F;
     color: #ffffff;
@@ -314,6 +314,23 @@ div.search-food-form > div:nth-child(2) a{
 }
 div.search-food-form > div:nth-child(2) a i{
     margin-right: 10px;
+}
+ul.order > li i {
+    font-size: 36px;
+    color: #686868;
+}
+ul.order > li {
+    margin-left: 45px;
+    text-align: center;
+}
+ul.order > li p {
+    font-size: 16px;
+    color: #686868;
+    margin: 15px 0 0 0;
+    font-style: italic;
+}
+div.line img{
+    width: 70%;
 }
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
