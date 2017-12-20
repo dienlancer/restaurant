@@ -181,7 +181,7 @@ div.flex-center-middle{
     width: 100%;
     background:rgba(0, 0, 0, 0.45);
     z-index: 2;
-    padding: 15px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 ul.top-email a{
     color: #ffffff
