@@ -29,8 +29,8 @@ if(!empty($instance['item_id'])){
 			<script type="text/javascript" language="javascript">        
 				jQuery(document).ready(function(){
 					jQuery(".slick-slideshow").slick({
-						dots: false,
-						autoplay:true,
+						dots: true,
+						autoplay:false,
 						arrows:false,
 						adaptiveHeight:true
 					});  
@@ -61,16 +61,29 @@ if(!empty($instance['item_id'])){
 					);			
 					$the_query = new WP_Query($args);		
 					if($the_query->have_posts()){		
-						while ($the_query->have_posts()) {
-							$the_query->the_post();		
-							$post_id=$the_query->post->ID;							
-							$permalink=get_the_permalink($post_id);
-							$title=get_the_title($post_id);
-							$excerpt=get_post_meta($post_id,"intro",true);
-							$excerpt=substr($excerpt, 0,100).'...';			
-							$featureImg=get_the_post_thumbnail_url($post_id, 'full');
-						}
-						wp_reset_postdata();  
+						?>
+						<div class="logo-banner">
+							<div class="container kip">
+								<?php 
+								while ($the_query->have_posts()) {
+									$the_query->the_post();		
+									$post_id=$the_query->post->ID;							
+									$permalink=get_the_permalink($post_id);
+									$title=get_the_title($post_id);
+									$excerpt=get_post_meta($post_id,"intro",true);
+									$excerpt=substr($excerpt, 0,300).'...';			
+									$featureImg=get_the_post_thumbnail_url($post_id, 'full');
+									?>
+									<div><img src="<?php echo site_url("wp-content/uploads/logo-banner.png"); ?>" /></div>
+									<div class="lobo-banner-title"><?php echo $title; ?></div>
+									<div class="logo-banner-excerpt"><center><?php echo $excerpt; ?></center></div>
+									<?php
+								}
+								wp_reset_postdata();  
+								?>      		
+							</div>										
+						</div>				
+						<?php						
 					}
 				}				
 			}
