@@ -116,6 +116,14 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
             <?php endif; ?>
         </div>   
     </div>
+    <div class="container"><hr class="runat" /></div>
+    <?php if(is_active_sidebar('popular-dishes')):?>
+        <?php dynamic_sidebar('popular-dishes')?>
+    <?php endif; ?>
+    <center><hr class="search-food-hr margin-top-15" /></center>    
+    <?php if(is_active_sidebar('popular-product')):?>
+        <?php dynamic_sidebar('popular-product')?>
+    <?php endif; ?>    
     <?php get_footer(); ?>
     <?php wp_footer();?>
 </body>

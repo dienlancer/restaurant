@@ -89,7 +89,8 @@ if(!empty($instance['item_id'])){
 			}
 			break;
 			case "search-food":
-			case "our-menu":		
+			case "our-menu":	
+			case "popular-dishes":	
 			foreach ($arrItemID as $key => $value) {
 				if(!empty($value)){
 					$args = array(  		

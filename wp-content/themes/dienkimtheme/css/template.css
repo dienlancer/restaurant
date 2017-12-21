@@ -487,6 +487,14 @@ span.price-regular {
 span.price-sale{
     color: #ff5d5d;
 }
+hr.runat{
+    border-top:1px solid #ddd;
+    margin-top: 45px;
+    margin-bottom: 0;    
+}
+div.tabcontent{
+    padding: 0
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;

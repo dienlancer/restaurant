@@ -72,7 +72,9 @@ switch ($position) {
 			$title=get_the_title($post_id);
 			$excerpt=get_post_meta($post_id,"intro",true);
 			$excerpt=substr($excerpt, 0,300).'...';			
-			$featureImg=get_the_post_thumbnail_url($post_id, 'full');			
+			$featureImg=get_the_post_thumbnail_url($post_id, 'full');	
+			$featureImg= $vHtml->getFileName($featureImg);
+			$featureImg=site_url("wp-content/uploads/".$width."x".$height."-".$featureImg);		
 			$term = wp_get_object_terms( $post_id,  'za_category' );     
 			$term_link_2=get_term_link($term[0],'za_category');		
 			$price=get_post_meta($post_id,$product_meta_key."price",true);
