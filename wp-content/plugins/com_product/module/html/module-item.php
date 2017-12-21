@@ -91,6 +91,7 @@ if(!empty($instance['item_id'])){
 			case "search-food":
 			case "our-menu":	
 			case "popular-dishes":	
+			case "reservation":	
 			foreach ($arrItemID as $key => $value) {
 				if(!empty($value)){
 					$args = array(  		
@@ -100,7 +101,7 @@ if(!empty($instance['item_id'])){
 					$the_query = new WP_Query($args);		
 					if($the_query->have_posts()){		
 						?>
-						<div class="container margin-top-45">
+						<div class="container padding-top-45">
 							<?php
 							 while ($the_query->have_posts()){
 							 	$the_query->the_post();		
@@ -239,7 +240,7 @@ if(!empty($instance['item_id'])){
 						}
 					}
 					?>								
-				</div>			
+				</div>						
 			</div>			
 			<?php	
 			break;

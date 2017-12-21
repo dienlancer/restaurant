@@ -20,7 +20,7 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
         <?php dynamic_sidebar('search-food')?>
     <?php endif; ?>       
     <div class="container kip">
-    	<hr class="search-food-hr margin-top-15" />
+    	<hr class="search-food-hr" />
     	<form name="frm-search" action="#" method="POST">
     		<div class="search-food-form margin-top-45">
     			<div><input type="text" name="q" placeholder="Tìm theo từ khoá"></div>
@@ -53,7 +53,7 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     <?php if(is_active_sidebar('our-menu')):?>
         <?php dynamic_sidebar('our-menu')?>
     <?php endif; ?>   
-    <center><hr class="search-food-hr margin-top-15" /></center>
+    <center><hr class="search-food-hr" /></center>
     <div class="container margin-top-30">
         <script type="text/javascript" language="javascript">
             function openMenu(evt, cityName) {    
@@ -120,10 +120,30 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     <?php if(is_active_sidebar('popular-dishes')):?>
         <?php dynamic_sidebar('popular-dishes')?>
     <?php endif; ?>
-    <center><hr class="search-food-hr margin-top-15" /></center>    
+    <center><hr class="search-food-hr" /></center>    
     <?php if(is_active_sidebar('popular-product')):?>
         <?php dynamic_sidebar('popular-product')?>
-    <?php endif; ?>    
+    <?php endif; ?>        
+    <div class="dalat margin-top-45">
+        <?php if(is_active_sidebar('reservation')):?>
+            <?php dynamic_sidebar('reservation')?>
+        <?php endif; ?>
+        <center><hr class="search-food-hr"></center>
+        <form name="frm-reservation" method="POST" action="">
+            <div class="container margin-top-15 reservation-runz">
+                <div class="row">
+                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-user"></i><input name="fullname" value="name"  class="form-control" type="text"></div></div>
+                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-message"></i><input name="email" value="email"  class="form-control" type="text"></div></div>
+                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-phone"></i><input name="mobile" value="mobile number"  class="form-control" type="text"></div></div>
+                </div>
+                <div class="row margin-top-15">
+                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-calendar"></i><input name="date" value="date"   class="form-control" type="text"></div></div>
+                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-clock-time"></i><input name="time" value="time"  class="form-control" type="text"></div></div>
+                    <div class="col-lg-4"><div class="relative"><input name="mobile" value="mobile number"  class="form-control" type="text"></div></div>
+                </div>            
+            </div>
+        </form>        
+    </div>
     <?php get_footer(); ?>
     <?php wp_footer();?>
 </body>

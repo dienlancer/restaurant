@@ -99,7 +99,7 @@ switch ($position) {
 							<h3 class="headhunter-title"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>							
 							<div class="headhunter-price">
 								<?php echo $html_price; ?>
-							</div>
+							</div>							
 							<div class="headhunter-cart"><center><a href="javascript:void(0);"><i class="icofont icofont-cart-alt"></i></a></center></div>
 						</div>
 					</div>

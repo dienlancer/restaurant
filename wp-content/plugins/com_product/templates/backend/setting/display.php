@@ -35,11 +35,54 @@ $inputName 			= $option_name . '[currency_unit]';
 $inputValue 		= !empty(@$data['currency_unit']) ? @$data['currency_unit'] : '';			
 $currency_unit		= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);	
 
+$inputID 			= $option_name . '_smtp_host';
+$inputName 			= $option_name . '[smtp_host]';
+$inputValue 		= !empty(@$data['smtp_host']) ? @$data['smtp_host'] : '';			
+$smtp_host			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);
+
+$inputID 			= $option_name . '_smtp_port';
+$inputName 			= $option_name . '[smtp_port]';
+$inputValue 		= !empty(@$data['smtp_port']) ? @$data['smtp_port'] : '';			
+$smtp_port			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);
+
+$inputID 			= $option_name . '_encription';
+$inputName 			= $option_name . '[encription]';
+$inputValue 		= !empty(@$data['encription']) ? @$data['encription'] : '';
+$encription			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);
+
+$inputID 			= $option_name . '_smtp_auth';
+$inputName 			= $option_name . '[smtp_auth]';
+$inputValue 		= !empty(@$data['smtp_auth']) ? @$data['smtp_auth'] : '';
+$options			= array('data' => array(false=> 'No',true=>'Yes'),
+	'separator' => ' ');			
+$smtp_auth			= $vHtml->cmsRadio($inputName,"regular-text", $inputValue,$attr,$options);
+
+$inputID 			= $option_name . '_smtp_username';
+$inputName 			= $option_name . '[smtp_username]';
+$inputValue 		= !empty(@$data['smtp_username']) ? @$data['smtp_username'] : '';			
+$smtp_username		= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);
+
+$inputID 			= $option_name . '_smtp_password';
+$inputName 			= $option_name . '[smtp_password]';
+$inputValue 		= !empty(@$data['smtp_password']) ? @$data['smtp_password'] : '';			
+$smtp_password		= $vHtml->cmsPassword($inputID,$inputName,"regular-text", $inputValue);			
+
+$inputID 			= $option_name . '_email_from';
+$inputName 			= $option_name . '[email_from]';
+$inputValue 		= !empty(@$data['email_from']) ? @$data['email_from'] : '';			
+$arr 				= array('size' =>'25','id' => $inputID);
+$email_from			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);			
+
 $inputID 			= $option_name . '_email_to';
 $inputName 			= $option_name . '[email_to]';
 $inputValue 		= !empty(@$data['email_to']) ? @$data['email_to'] : '';			
 $arr 				= array('size' =>'25','id' => $inputID);
 $email_to			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);
+
+$inputID 			= $option_name . '_from_name';
+$inputName 			= $option_name . '[from_name]';
+$inputValue 		= !empty(@$data['from_name']) ? @$data['from_name'] : '';			
+$from_name			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);	
 
 $inputID 			= $option_name . '_address';
 $inputName 			= $option_name . '[address]';
@@ -156,17 +199,78 @@ $ban_do			=$vHtml->cmsTextarea($inputID,$inputName,"widefat",$inputValue,8,120);
 					</tr>
 				</tbody>			
 			</table>
-		</div>						
-		<h2><i><font color="red">Contact</font></i></h2>
+		</div>	
+		<h2><i><font color="red">Email configs</font></i></h2>
 		<div class="zendvn-sp-form-table">
 			<table class="form-table">
 				<tbody>
+					<tr>
+						<th scope="row">
+							<b><i><label >SMTP Host</label></i></b>
+						</th>
+						<td><?php echo $smtp_host;?></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<b><i><label >SMTP Port</label></i></b>
+						</th>
+						<td><?php echo $smtp_port;?></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<b><i><label >Type of Encription</label></i></b>
+						</th>
+						<td><?php echo $encription;?></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<b><i><label >SMTP Authentication</label></i></b>
+						</th>
+						<td><?php echo $smtp_auth;?></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<b><i><label >SMTP username</label></i></b>
+						</th>
+						<td><?php echo $smtp_username;?></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<b><i><label >SMTP password</label></i></b>
+						</th>
+						<td><?php echo $smtp_password;?></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<b><i><label >Email from</label></i></b>
+						</th>
+						<td><?php echo $email_from;?></td>
+					</tr>	
 					<tr>
 						<th scope="row">
 							<b><i><label >Email to</label></i></b>
 						</th>
 						<td><?php echo $email_to;?></td>
 					</tr>	
+					<tr>
+						<th scope="row">
+							<b><i><label >From name</label></i></b>
+						</th>
+						<td><?php echo $from_name;?></td>
+					</tr>	
+					<tr>
+						<th scope="row">
+							<b><i><label >Contacted name</label></i></b>
+						</th>
+						<td><?php echo $contacted_name;?></td>
+					</tr>									
+				</tbody>			
+			</table>
+		</div>					
+		<h2><i><font color="red">Contact</font></i></h2>
+		<div class="zendvn-sp-form-table">
+			<table class="form-table">
+				<tbody>					
 					<tr>
 						<th scope="row">
 							<b><i><label >Address</label></i></b>
@@ -185,12 +289,7 @@ $ban_do			=$vHtml->cmsTextarea($inputID,$inputName,"widefat",$inputValue,8,120);
 						</th>
 						<td><?php echo $telephone;?></td>
 					</tr>
-					<tr>
-						<th scope="row">
-							<b><i><label >Contacted name</label></i></b>
-						</th>
-						<td><?php echo $contacted_name;?></td>
-					</tr>					
+									
 					<tr>
 						<th scope="row">
 							<b><i><label >Facebook</label></i></b>
