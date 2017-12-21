@@ -18,9 +18,9 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     <?php get_header();     ?>
     <?php if(is_active_sidebar('search-food')):?>
         <?php dynamic_sidebar('search-food')?>
-    <?php endif; ?>       
-    <div class="container kip">
-    	<hr class="search-food-hr" />
+    <?php endif; ?>    
+    <center><hr class="search-food-hr" />   </center>
+    <div class="container kip">    	
     	<form name="frm-search" action="#" method="POST">
     		<div class="search-food-form margin-top-45">
     			<div><input type="text" name="q" placeholder="Tìm theo từ khoá"></div>
@@ -129,7 +129,10 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
             <?php dynamic_sidebar('reservation')?>
         <?php endif; ?>
         <center><hr class="search-food-hr"></center>
-        <form name="frm-reservation" method="POST" action="">
+        <script type="text/javascript" language="javascript">
+            $( "#datepicker" ).datepicker();
+        </script>        
+        <form name="frm-reservation" method="POST" action="">            
             <div class="container margin-top-15 reservation-runz">
                 <div class="row">
                     <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-user"></i><input name="fullname" value="name"  class="form-control" type="text"></div></div>
@@ -137,13 +140,14 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
                     <div class="col-lg-4"><div class="relative"><i class="icofont icofont-phone"></i><input name="mobile" value="mobile number"  class="form-control" type="text"></div></div>
                 </div>
                 <div class="row margin-top-15">
-                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-calendar"></i><input name="date" value="date"   class="form-control" type="text"></div></div>
+                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-calendar"></i><input id="datepicker" name="date"    class="form-control" type="text"></div></div>
                     <div class="col-lg-4"><div class="relative"><i class="icofont icofont-clock-time"></i><input name="time" value="time"  class="form-control" type="text"></div></div>
                     <div class="col-lg-4"><div class="relative"><input name="mobile" value="mobile number"  class="form-control" type="text"></div></div>
                 </div>            
             </div>
         </form>        
     </div>
+    <div class="sss"></div>
     <?php get_footer(); ?>
     <?php wp_footer();?>
 </body>
