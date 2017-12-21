@@ -12,7 +12,7 @@ table{max-width:100%;}
 p{margin:1em 0;}
 img{max-width:100%;}
 .clr{clear:both;margin:0 !important;padding: 0 !important}
-a{color:#7d7d7d;transition: all 0.5s ease-in-out;-webkit-transition: all 0.5s ease-in-out;}
+a{color:#333;transition: all 0.5s ease-in-out;-webkit-transition: all 0.5s ease-in-out;}
 a:hover,a:focus{text-decoration:none;color:#f97a3d;}
 ul{margin:0;padding:0;}
 ul li{margin-left:15px;}
@@ -298,7 +298,7 @@ div.search-food-title{
         font-weight: bold;
     font-size: 24px;
     text-transform: uppercase;
-    color: #000000;
+    
 }
 div.search-food-excerpt{
     padding: 0px 150px;
@@ -385,7 +385,7 @@ div.about-us-readmore a{
 div.about-us-readmore-2 a{
         display: inline-block;
     background: #ffffff;
-    color: #333333;
+   
     border: 1px solid #E5E5E5;
     padding: 9px 24px;
     font-size: 16px;
@@ -449,7 +449,7 @@ h3.headhunter-title a{
     font-size: 18px;
     text-transform: capitalize;
     font-weight: bold;
-    color: #333;
+  
 }
 div.locot div{
     padding: 2px
@@ -479,7 +479,7 @@ div.headhunter-menu:hover div.headhunter-cart{
     display: block;
 }
 div.headhunter-cart a{
-    color: #333;
+  
 }
 span.price-regular {
     text-decoration: line-through;       
@@ -494,6 +494,49 @@ hr.runat{
 }
 div.tabcontent{
     padding: 0
+}
+div.popular-product div.owl-prev,div.popular-product div.owl-next{
+           background: #FFA41F;
+    color: #ffffff;
+    padding: 5px 11px;
+}
+div.popular-product div.owl-prev{
+      position: absolute;
+    right: 35px;
+    top: -39px;
+
+}
+div.popular-product div.owl-next{
+        position: absolute;
+    right: 0;
+    top: -39px;
+}
+div.popular-product-box-img{
+    
+    padding: 20px   
+}
+div.popular-product-box{
+    padding-bottom: 15px;
+    border: 1px solid #E5E5E5;
+}
+h3.sigma{
+    border-top: 1px solid #E5E5E5;
+}
+h3.sigma a{
+       
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+span.tutu{
+    color: #FFA41F;
+    font-weight: bold;
+    font-size: 16px;
+}
+span.price-sale-nanim{
+     color: #ff5d5d;
+            font-weight: bold;
+    font-size: 16px;
 }
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{

@@ -73,8 +73,7 @@ switch ($position) {
 			$excerpt=get_post_meta($post_id,"intro",true);
 			$excerpt=substr($excerpt, 0,300).'...';			
 			$featureImg=get_the_post_thumbnail_url($post_id, 'full');	
-			$featureImg= $vHtml->getFileName($featureImg);
-			$featureImg=site_url("wp-content/uploads/".$width."x".$height."-".$featureImg);		
+			$smallImg=$vHtml->getImage($featureImg);
 			$term = wp_get_object_terms( $post_id,  'za_category' );     
 			$term_link_2=get_term_link($term[0],'za_category');		
 			$price=get_post_meta($post_id,$product_meta_key."price",true);
@@ -92,7 +91,7 @@ switch ($position) {
 				<div class="headhunter-menu">
 					<div class="col-xs-4 no-padding locot">
 						<div>
-							<center><figure><a href="<?php echo $permalink; ?>"><img src="<?php echo $featureImg; ?>" /></a></figure></center>
+							<center><figure><a href="<?php echo $permalink; ?>"><img src="<?php echo $smallImg; ?>" /></a></figure></center>
 						</div>
 					</div>
 					<div class="col-xs-8 no-padding">

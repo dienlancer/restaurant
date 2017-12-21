@@ -162,72 +162,85 @@ if(!empty($instance['item_id'])){
 				}				
 			}
 			break;
-			case "all-menu":			
+			case "popular-product":					
 			?>
-			<div class="col-lg-4">
-				<div class="headhunter-menu">
-					<div class="col-xs-4 no-padding locot">
-						<div>
-							<img src="<?php echo site_url('wp-content/uploads/01.jpg',null); ?>" />
-						</div>
-					</div>
-					<div class="col-xs-8 no-padding">
-						<div class="headhunter-box">
-							<h3 class="headhunter-title">Food title here</h3>
-							<div class="headhunter-excerpt">
-								Cursus / Dictum / Risus
-							</div>
-							<div class="headhunter-price">
-								12.000.000
-							</div>
-						</div>
-					</div>
-					<div class="clr"></div>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="headhunter-menu">
-					<div class="col-xs-4 no-padding locot">
-						<div>
-							<img src="<?php echo site_url('wp-content/uploads/01.jpg',null); ?>" />
-						</div>
-					</div>
-					<div class="col-xs-8 no-padding">
-						<div class="headhunter-box">
-							<h3 class="headhunter-title">Food title here</h3>
-							<div class="headhunter-excerpt">
-								Cursus / Dictum / Risus
-							</div>
-							<div class="headhunter-price">
-								12.000.000
-							</div>
-						</div>
-					</div>
-					<div class="clr"></div>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="headhunter-menu">
-					<div class="col-xs-4 no-padding locot">
-						<div>
-							<img src="<?php echo site_url('wp-content/uploads/01.jpg',null); ?>" />
-						</div>
-					</div>
-					<div class="col-xs-8 no-padding">
-						<div class="headhunter-box">
-							<h3 class="headhunter-title">Food title here</h3>
-							<div class="headhunter-excerpt">
-								Cursus / Dictum / Risus
-							</div>
-							<div class="headhunter-price">
-								12.000.000
-							</div>
-						</div>
-					</div>
-					<div class="clr"></div>
-				</div>
-			</div>
-			<div class="clr"></div>			
+			<div class="container margin-top-45">
+				<script type="text/javascript" language="javascript">
+					jQuery(document).ready(function(){
+						jQuery(".popular-product").owlCarousel({
+							autoplay:false,                    
+							loop:true,
+							margin:25,                        
+							nav:true,            
+							mouseDrag: false,
+							touchDrag: false,                                
+							responsiveClass:true,
+							responsive:{
+								0:{
+									items:1
+								},
+								600:{
+									items:5
+								},
+								1000:{
+									items:5
+								}
+							}
+						});
+						var chevron_left='<i class="fa fa-chevron-left"></i>';
+						var chevron_right='<i class="fa fa-chevron-right"></i>';
+						jQuery("div.popular-product div.owl-prev").html(chevron_left);
+						jQuery("div.popular-product div.owl-next").html(chevron_right);
+					});                
+				</script>
+				<div class="owl-carousel popular-product owl-theme">		
+					<?php 
+					foreach ($arrItemID as $key => $value){
+						if(!empty($value)){
+							$args = array(  		
+								'p' => 	(int)@$value,			
+								'post_type' => 'zaproduct'
+							);			
+							$the_query = new WP_Query($args);	
+							if($the_query->have_posts()){
+								while ($the_query->have_posts()){
+									$the_query->the_post();		
+									$post_id=$the_query->post->ID;							
+									$permalink=get_the_permalink($post_id);
+									$title=get_the_title($post_id);
+									$excerpt=get_post_meta($post_id,"intro",true);
+									$excerpt=substr($excerpt, 0,300).'...';			
+									$featureImg=get_the_post_thumbnail_url($post_id, 'full');	
+									$smallImg=$vHtml->getImage($featureImg);
+									$term = wp_get_object_terms( $post_id,  'za_category' );     
+									$term_link_2=get_term_link($term[0],'za_category');		
+									$price=get_post_meta($post_id,$product_meta_key."price",true);
+									$sale_price=get_post_meta($post_id,$product_meta_key."sale_price",true);			
+									$html_price='';						
+									if((int)@$sale_price > 0){				
+										$price_html ='<span class="price-regular tutu">'.$vHtml->fnPrice($price).'</span>';
+										$sale_price_html='<span class="price-sale-nanim">'.$vHtml->fnPrice($sale_price).'</span>' ;					
+										$html_price='<div class="col-lg-6">'.$price_html.'</div><div class="col-lg-6">'.$sale_price_html.'</div><div class="clr"></div>' ;				
+									}else{
+										$html_price='<center><span class="tutu">'.$vHtml->fnPrice($price).'</span></center>' ;					
+									}	
+									?>
+									<div class="popular-product-box">
+										<div class="popular-product-box-img">
+											<center><figure><a href="<?php echo $permalink; ?>"><img src="<?php echo $smallImg; ?>" /></a></figure></center>
+										</div>
+										<h3 class="sigma padding-top-15"><center><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></center></h3>
+										<div class="popular-product-price padding-top-15"><?php echo $html_price; ?></div>
+									</div>
+									<?php					
+								}
+								wp_reset_postdata();  
+							}	
+						}
+					}
+					?>								
+				</div>			
+			</div>			
 			<?php	
 			break;
 		}

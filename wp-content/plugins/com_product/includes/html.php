@@ -137,4 +137,14 @@ function cmsSelectbox($id="",$name = "",$class="",$arrValue=array(), $keySelect 
 		$fileName = $currentName[0];     
 		return $fileName;
 	}
+	public function getImage($fileUrl)
+	{
+		global $zendvn_sp_settings;
+		$width=$zendvn_sp_settings["product_width"];    
+		$height=$zendvn_sp_settings["product_height"];   
+		preg_match("/[^\/|\\\]+$/", $fileUrl,$currentName);
+		$fileName = $currentName[0];  
+		$smallImg=site_url("wp-content/uploads/".$width."x".$height."-".$fileName);
+		return $smallImg;	
+	}
 }
