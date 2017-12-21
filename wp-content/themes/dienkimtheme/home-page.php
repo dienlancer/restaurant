@@ -20,7 +20,7 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
         <?php dynamic_sidebar('search-food')?>
     <?php endif; ?>       
     <div class="container kip">
-    	<hr class="search-food-hr margin-top-45" />
+    	<hr class="search-food-hr margin-top-15" />
     	<form name="frm-search" action="#" method="POST">
     		<div class="search-food-form margin-top-45">
     			<div><input type="text" name="q" placeholder="Tìm theo từ khoá"></div>
@@ -49,7 +49,73 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     </div>
     <?php if(is_active_sidebar('introduce')):?>
         <?php dynamic_sidebar('introduce')?>
+    <?php endif; ?>
+    <?php if(is_active_sidebar('our-menu')):?>
+        <?php dynamic_sidebar('our-menu')?>
     <?php endif; ?>   
+    <center><hr class="search-food-hr margin-top-15" /></center>
+    <div class="container margin-top-30">
+        <script type="text/javascript" language="javascript">
+            function openMenu(evt, cityName) {    
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }   
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }   
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            jQuery(document).ready(function(){
+                jQuery("#all-menu").show();
+                jQuery("div.tab > button.tablinks:first-child").addClass('active');
+            });
+        </script>      
+        <div class="flex-center-middle">
+            <div class="tab">
+                <button class="tablinks h-title" onclick="openMenu(event, 'all-menu')">All</button>
+                <button class="tablinks h-title" onclick="openMenu(event, 'breakfast-menu')">Breakfast</button>
+                <button class="tablinks h-title" onclick="openMenu(event, 'lunch-menu')">Lunch</button>
+                <button class="tablinks h-title" onclick="openMenu(event, 'dinner-menu')">Dinner</button>
+                <button class="tablinks h-title" onclick="openMenu(event, 'drink-menu')">Drinks</button> 
+                <button class="tablinks h-title" onclick="openMenu(event, 'others-menu')">Others</button>                 
+                <div class="clr"></div>           
+            </div>
+        </div>               
+        <div id="all-menu" class="tabcontent">
+            <?php if(is_active_sidebar('all-menu')):?>
+                <?php dynamic_sidebar('all-menu')?>
+            <?php endif; ?>
+        </div>
+        <div id="breakfast-menu" class="tabcontent">
+            <?php if(is_active_sidebar('breakfast-menu')):?>
+                <?php dynamic_sidebar('breakfast-menu')?>
+            <?php endif; ?>
+        </div>
+        <div id="lunch-menu" class="tabcontent">
+            <?php if(is_active_sidebar('lunch-menu')):?>
+                <?php dynamic_sidebar('lunch-menu')?>
+            <?php endif; ?>
+        </div>
+        <div id="dinner-menu" class="tabcontent">
+            <?php if(is_active_sidebar('dinner-menu')):?>
+                <?php dynamic_sidebar('dinner-menu')?>
+            <?php endif; ?>
+        </div>
+        <div id="drink-menu" class="tabcontent">
+            <?php if(is_active_sidebar('drink-menu')):?>
+                <?php dynamic_sidebar('drink-menu')?>
+            <?php endif; ?>
+        </div>       
+        <div id="others-menu" class="tabcontent">
+            <?php if(is_active_sidebar('others-menu')):?>
+                <?php dynamic_sidebar('others-menu')?>
+            <?php endif; ?>
+        </div>   
+    </div>
     <?php get_footer(); ?>
     <?php wp_footer();?>
 </body>

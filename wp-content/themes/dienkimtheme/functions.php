@@ -68,6 +68,69 @@ function zendvn_theme_widgets_init(){
 		'after_title'   => '',
 		'after_widget'  => ''				
 	));
+	register_sidebar(array(
+		'name'          => __( 'OurMenu', $themeName ),
+		'id'            => 'our-menu',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
+	register_sidebar(array(
+		'name'          => __( 'AllMenu', $themeName ),
+		'id'            => 'all-menu',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
+	register_sidebar(array(
+		'name'          => __( 'BreakfastMenu', $themeName ),
+		'id'            => 'breakfast-menu',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
+	register_sidebar(array(
+		'name'          => __( 'LunchMenu', $themeName ),
+		'id'            => 'lunch-menu',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
+	register_sidebar(array(
+		'name'          => __( 'DinnerMenu', $themeName ),
+		'id'            => 'dinner-menu',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
+	register_sidebar(array(
+		'name'          => __( 'DrinkMenu', $themeName ),
+		'id'            => 'drink-menu',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
+	register_sidebar(array(
+		'name'          => __( 'OthersMenu', $themeName ),
+		'id'            => 'others-menu',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
 }
 add_action("wp_enqueue_scripts",function(){
 	wp_deregister_script("jquery");

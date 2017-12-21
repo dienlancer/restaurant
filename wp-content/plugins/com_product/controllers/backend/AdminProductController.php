@@ -142,13 +142,11 @@ class AdminProductController{
 		
 		if(!current_user_can('edit_post')) return $post_id;
 		
-		$arrData =  array(
-			'product_code' 	=> ($arrParam[$this->create_id('product_code')]),					
+		$arrData =  array(			
 			'img-ordering' 	=> array_map('absint',$arrParam[$this->create_id('img-ordering')]),
 			'img-url' 		=> $arrParam[$this->create_id('img-url')],					
 			'price' 		=> filter_var($arrParam[$this->create_id('price')],FILTER_VALIDATE_FLOAT),
-			'sale_price' 	=> filter_var($arrParam[$this->create_id('sale_price')],FILTER_VALIDATE_FLOAT),
-			'intro' 		=> trim($arrParam[$this->create_id('intro')])	
+			'sale_price' 	=> filter_var($arrParam[$this->create_id('sale_price')],FILTER_VALIDATE_FLOAT),			
 			
 		);
 		if(!isset($arrParam['save'])){
@@ -162,15 +160,7 @@ class AdminProductController{
 		global $zController , $post ;
 		$vHtml=new HtmlControl(); 
 		wp_nonce_field($this->_metabox_id,$this->_metabox_id . "-nonce");	
-		// Tạo phần tử chứa mã
-		$inputID = $this->create_id("product_code");
-		$inputName = $this->create_id("product_code");
-		$inputValue = get_post_meta($post->ID,$this->create_key("product_code"),true);
-		$inputValue=filter_var($inputValue,FILTER_VALIDATE_FLOAT);
-		$label='<label><b>Code</b></label>';
-		$textbox=$vHtml->cmsTextbox($inputID,$inputName,"", $inputValue);
-		$html='<div class="form-field">'.$label.'<br/>'.$textbox.'</div>';
-		echo $html;			
+			
 		// Tạo phần tử chứa giá
 		$inputID = $this->create_id("price");
 		$inputName = $this->create_id("price");
@@ -189,12 +179,7 @@ class AdminProductController{
 		$textbox=$vHtml->cmsTextbox($inputID,$inputName,"", $inputValue);
 		$html='<div class="form-field">'.$label.'<br/>'.$textbox.'</div>';
 		echo $html;	
-		// Tạo phần tử chứa giới thiệu sơ bộ
-		$inputID = $this->create_id("intro");
-		$inputName = $this->create_id("intro");
-		$inputValue = get_post_meta($post->ID,$this->create_key("intro"),true);		
-		$html		='<div><b>Giới thiệu</b></div><div>'.$vHtml->cmsTextarea($inputID,$inputName,"widefat",$inputValue,8,120).'</div>' ;
-		echo $html;		
+		
 	}
 	public function thumbnail(){
 		global $zController;

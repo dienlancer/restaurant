@@ -88,7 +88,8 @@ if(!empty($instance['item_id'])){
 				}				
 			}
 			break;
-			case "search-food":		
+			case "search-food":
+			case "our-menu":		
 			foreach ($arrItemID as $key => $value) {
 				if(!empty($value)){
 					$args = array(  		
@@ -159,6 +160,74 @@ if(!empty($instance['item_id'])){
 					}
 				}				
 			}
+			break;
+			case "all-menu":			
+			?>
+			<div class="col-lg-4">
+				<div class="headhunter-menu">
+					<div class="col-xs-4 no-padding locot">
+						<div>
+							<img src="<?php echo site_url('wp-content/uploads/01.jpg',null); ?>" />
+						</div>
+					</div>
+					<div class="col-xs-8 no-padding">
+						<div class="headhunter-box">
+							<h3 class="headhunter-title">Food title here</h3>
+							<div class="headhunter-excerpt">
+								Cursus / Dictum / Risus
+							</div>
+							<div class="headhunter-price">
+								12.000.000
+							</div>
+						</div>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="headhunter-menu">
+					<div class="col-xs-4 no-padding locot">
+						<div>
+							<img src="<?php echo site_url('wp-content/uploads/01.jpg',null); ?>" />
+						</div>
+					</div>
+					<div class="col-xs-8 no-padding">
+						<div class="headhunter-box">
+							<h3 class="headhunter-title">Food title here</h3>
+							<div class="headhunter-excerpt">
+								Cursus / Dictum / Risus
+							</div>
+							<div class="headhunter-price">
+								12.000.000
+							</div>
+						</div>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="headhunter-menu">
+					<div class="col-xs-4 no-padding locot">
+						<div>
+							<img src="<?php echo site_url('wp-content/uploads/01.jpg',null); ?>" />
+						</div>
+					</div>
+					<div class="col-xs-8 no-padding">
+						<div class="headhunter-box">
+							<h3 class="headhunter-title">Food title here</h3>
+							<div class="headhunter-excerpt">
+								Cursus / Dictum / Risus
+							</div>
+							<div class="headhunter-price">
+								12.000.000
+							</div>
+						</div>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+			<div class="clr"></div>			
+			<?php	
 			break;
 		}
 	}	
