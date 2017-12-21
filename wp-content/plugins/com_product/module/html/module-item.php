@@ -30,9 +30,10 @@ if(!empty($instance['item_id'])){
 				jQuery(document).ready(function(){
 					jQuery(".slick-slideshow").slick({
 						dots: true,
-						autoplay:false,
+						autoplay:true,
 						arrows:false,
-						adaptiveHeight:true
+						adaptiveHeight:true,
+						loop:true
 					});  
 				});     
 			</script>
