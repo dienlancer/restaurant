@@ -131,17 +131,19 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
         <center><hr class="search-food-hr"></center>
         <script type="text/javascript" language="javascript">
             jQuery(document).ready(function(){
-                jQuery( "input[name='date']" ).datepicker({
+                jQuery( "input[name='datebooking']" ).datepicker({
                     dateFormat: "dd/mm/yy",
                     defaultDate: "+3d",
                     changeYear: true,
                     changeMonth: true,
                     yearRange: "2000:2015"
                 });
-                jQuery("input[name='time']").timepicker();
+                jQuery("input[name='timebooking']").timepicker();
             });            
         </script>        
-        <form name="frm-reservation" method="POST" action="">            
+        <form name="frm-reservation" method="POST" >
+            <input type="hidden" name="action" value="booking" />                      
+            <?php wp_nonce_field("booking",'security_code',true);?>                                  
             <div class="container margin-top-15 reservation-runz padding-bottom-45">
                 <div class="row">
                     <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-user"></i><input name="fullname" value="Họ và tên"  class="form-control" type="text"></div></div>
@@ -152,13 +154,13 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
                 <div class="row margin-top-15">
                     <div class="col-lg-4">
                         <div class="relative">
-                            <i class="icofont icofont-ui-calendar"></i><input  name="date"    class="form-control" type="text">
+                            <i class="icofont icofont-ui-calendar"></i><input  name="datebooking"    class="form-control" type="text">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="relative">
                             <i class="icofont icofont-clock-time"></i>
-                            <input name="time"  class="form-control" type="text">
+                            <input name="timebooking"  class="form-control" type="text">
                         </div>
                     </div>
                     <div class="col-lg-4">

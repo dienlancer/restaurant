@@ -383,6 +383,9 @@ div.about-us-readmore a{
     font-weight: bold;
     border-radius: 5px
 }
+div.about-us-readmore i{
+    margin-left: 5px
+}
 div.about-us-readmore-2 a{
         display: inline-block;
     background: #ffffff;
@@ -394,22 +397,13 @@ div.about-us-readmore-2 a{
     font-weight: bold;
     border-radius: 5px;
 }
-div.about-us-readmore {
-    margin-top: 45px;
-}
-div.about-us-readmore i{
-    margin-left: 5px
-}
-div.about-us-readmore-2 {
-    margin-top: 45px;
-}
-div.about-us-readmore-2 i{
-    margin-left: 5px
-}
 div.about-us-readmore-2 a:hover{
     background: #FFA41F;
     color: #ffffff;
     border: 1px solid #FFA41F;
+}
+div.about-us-readmore-2 i{
+    margin-left: 5px
 }
 div.ruby-readmore a{
     display: inline-block;

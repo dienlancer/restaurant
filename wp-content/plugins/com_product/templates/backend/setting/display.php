@@ -65,24 +65,13 @@ $smtp_username		= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputV
 $inputID 			= $option_name . '_smtp_password';
 $inputName 			= $option_name . '[smtp_password]';
 $inputValue 		= !empty(@$data['smtp_password']) ? @$data['smtp_password'] : '';			
-$smtp_password		= $vHtml->cmsPassword($inputID,$inputName,"regular-text", $inputValue);			
-
-$inputID 			= $option_name . '_email_from';
-$inputName 			= $option_name . '[email_from]';
-$inputValue 		= !empty(@$data['email_from']) ? @$data['email_from'] : '';			
-$arr 				= array('size' =>'25','id' => $inputID);
-$email_from			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);			
+$smtp_password		= $vHtml->cmsPassword($inputID,$inputName,"regular-text", $inputValue);				
 
 $inputID 			= $option_name . '_email_to';
 $inputName 			= $option_name . '[email_to]';
 $inputValue 		= !empty(@$data['email_to']) ? @$data['email_to'] : '';			
 $arr 				= array('size' =>'25','id' => $inputID);
 $email_to			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);
-
-$inputID 			= $option_name . '_from_name';
-$inputName 			= $option_name . '[from_name]';
-$inputValue 		= !empty(@$data['from_name']) ? @$data['from_name'] : '';			
-$from_name			= $vHtml->cmsTextbox($inputID,$inputName,"regular-text", $inputValue);	
 
 $inputID 			= $option_name . '_address';
 $inputName 			= $option_name . '[address]';
@@ -239,25 +228,13 @@ $ban_do			=$vHtml->cmsTextarea($inputID,$inputName,"widefat",$inputValue,8,120);
 							<b><i><label >SMTP password</label></i></b>
 						</th>
 						<td><?php echo $smtp_password;?></td>
-					</tr>
-					<tr>
-						<th scope="row">
-							<b><i><label >Email from</label></i></b>
-						</th>
-						<td><?php echo $email_from;?></td>
-					</tr>	
+					</tr>					
 					<tr>
 						<th scope="row">
 							<b><i><label >Email to</label></i></b>
 						</th>
 						<td><?php echo $email_to;?></td>
-					</tr>	
-					<tr>
-						<th scope="row">
-							<b><i><label >From name</label></i></b>
-						</th>
-						<td><?php echo $from_name;?></td>
-					</tr>	
+					</tr>						
 					<tr>
 						<th scope="row">
 							<b><i><label >Contacted name</label></i></b>

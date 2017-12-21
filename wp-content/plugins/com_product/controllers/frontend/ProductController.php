@@ -23,6 +23,7 @@ class ProductController{
 			case "register-checkout"	:	$this->registerCheckout();break;
 			case "login-checkout"		:	$this->loginCheckout();break;
 			case "change-password"		:	$this->changePassword();break;
+			case "booking"				:	$this->booking();break;
 		}		
 	}	
 	public function addCart(){		
@@ -566,4 +567,31 @@ class ProductController{
         $contact_link = get_permalink($page_id_contact);
         wp_redirect($contact_link);
 	}	
+	public function booking(){
+		global $zController;	
+		$data=array();
+		$option_name = 'zendvn_sp_setting';
+		$data = get_option('zendvn_sp_setting',array());
+		$fullname 			=	trim(@$_POST["fullname"]);
+		$email 				=	trim(@$_POST['email']);		
+		$mobile 			=	trim(@$_POST['mobile']);
+		$datebooking 		=	trim(@$_POST['datebooking']);
+		$timebooking 		=	trim(@$_POST['timebooking']);
+		$number_person 		=	trim(@$_POST["number_person"]);
+		/*echo "<pre>".print_r($fullname,true)."</pre>";
+		echo "<pre>".print_r($email,true)."</pre>";
+		echo "<pre>".print_r($mobile,true)."</pre>";
+		echo "<pre>".print_r($datebooking,true)."</pre>";
+		echo "<pre>".print_r($timebooking,true)."</pre>";
+		echo "<pre>".print_r($number_person,true)."</pre>";*/
+		$smtp_host		= 	@$data['smtp_host'];
+		$smtp_port		=	@$data['smtp_port'];
+		$smtp_auth		=	@$data['smtp_auth'];
+		$encription		=	@$data['encription'];
+		$smtp_username	=	@$data['smtp_username'];
+		$smtp_password	=	@$data['smtp_password'];
+		$email_from		=	@$data['email_from'];
+		$email_to		=	@$data['email_to'];
+		$contacted_name	=	@$data['contacted_name'];	
+	}
 }

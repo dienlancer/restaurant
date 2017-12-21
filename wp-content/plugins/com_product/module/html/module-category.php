@@ -119,7 +119,7 @@ switch ($position) {
 			$term_link=$term_link_2;
 		}
 		?>
-		<div class="about-us-readmore-2"><center><a href="<?php echo $term_link; ?>">Xem thêm<i class="icofont icofont-curved-double-right"></i></a></center></div>
+		<div class="about-us-readmore-2 margin-top-45"><center><a href="<?php echo $term_link; ?>">Xem thêm<i class="icofont icofont-curved-double-right"></i></a></center></div>
 		<?php
 	}
 	break;				
