@@ -35,7 +35,7 @@ class CreatePage{
 					'login.php' => 'Đăng nhập',
 					'security.php' => 'Bảo mật',
 					'history.php' => 'Lịch sử giao dịch',
-					'zshopping.php' => 'Hiển thị sản phẩm',
+					'zshopping.php' => 'Hiển thị tất cả sản phẩm',
 					'contact.php' => 'Liên hệ',
 					'search.php' => 'Tìm kiếm',
 					'page-list-category.php' => 'Danh sách chủ đề bài viết'
