@@ -411,6 +411,20 @@ div.about-us-readmore-2 a:hover{
     color: #ffffff;
     border: 1px solid #FFA41F;
 }
+div.ruby-readmore a{
+    display: inline-block;
+    background: #FFA41F;
+    color: #ffffff;
+    border: 1px solid #FFA41F;
+    padding: 9px 24px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px
+}
+div.ruby-readmore i{
+    margin-left: 5px
+}
 div.tab button{
     background: transparent;
     transform: skew(0deg); 
@@ -543,19 +557,19 @@ div.dalat{
     background: url('../images/reservation-bg.jpg');
     color: #ffffff;
 }
-div.reservation-runz input.form-control{
+div.reservation-runz .form-control{
         background: transparent;
         color: #ffffff;
         text-transform: uppercase;
+}
+div.reservation-runz select[name='number_person'] option{
+    color: #333;
 }
 div.reservation-runz i{
     position: absolute;
     right: 15px;
     top: 0px;
     padding: 10px 0px;
-}
-div.sss{
-    height: 300px;
 }
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{

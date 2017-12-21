@@ -26,6 +26,10 @@ global $customizerGlobal;
   <script src="<?php echo get_template_directory_uri() . '/jquery-ui/jquery-ui.min.js'; ?>"></script>
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/jquery-ui/jquery-ui.css'; ?>" />
   <!-- end jquery-ui -->
+  <!-- begin timepicker -->
+  <script src="<?php echo get_template_directory_uri() . '/timepicker/jquery.timepicker.min.js'; ?>"></script>
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/timepicker/jquery.timepicker.min.css'; ?>" />
+  <!-- end timepicker -->
   <!-- begin font-awesome -->
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/font-awesome.css'; ?>" />
   <!-- end font-awesome -->

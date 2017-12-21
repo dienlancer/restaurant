@@ -130,24 +130,58 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
         <?php endif; ?>
         <center><hr class="search-food-hr"></center>
         <script type="text/javascript" language="javascript">
-            $( "#datepicker" ).datepicker();
+            jQuery(document).ready(function(){
+                jQuery( "input[name='date']" ).datepicker({
+                    dateFormat: "dd/mm/yy",
+                    defaultDate: "+3d",
+                    changeYear: true,
+                    changeMonth: true,
+                    yearRange: "2000:2015"
+                });
+                jQuery("input[name='time']").timepicker();
+            });            
         </script>        
         <form name="frm-reservation" method="POST" action="">            
-            <div class="container margin-top-15 reservation-runz">
+            <div class="container margin-top-15 reservation-runz padding-bottom-45">
                 <div class="row">
-                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-user"></i><input name="fullname" value="name"  class="form-control" type="text"></div></div>
-                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-message"></i><input name="email" value="email"  class="form-control" type="text"></div></div>
-                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-phone"></i><input name="mobile" value="mobile number"  class="form-control" type="text"></div></div>
+                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-user"></i><input name="fullname" value="Họ và tên"  class="form-control" type="text"></div></div>
+                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-message"></i><input name="email" value="Email"  class="form-control" type="text"></div></div>
+                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-phone"></i><input name="mobile" value="Số điện thoại"  class="form-control" type="text"></div></div>
+                    <div class="clr"></div>
                 </div>
                 <div class="row margin-top-15">
-                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-calendar"></i><input id="datepicker" name="date"    class="form-control" type="text"></div></div>
-                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-clock-time"></i><input name="time" value="time"  class="form-control" type="text"></div></div>
-                    <div class="col-lg-4"><div class="relative"><input name="mobile" value="mobile number"  class="form-control" type="text"></div></div>
-                </div>            
-            </div>
+                    <div class="col-lg-4">
+                        <div class="relative">
+                            <i class="icofont icofont-ui-calendar"></i><input  name="date"    class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="relative">
+                            <i class="icofont icofont-clock-time"></i>
+                            <input name="time"  class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="relative">
+                            <select name="number_person" class="form-control">
+                                <option value="0">Số người</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                </div>  
+                <div class="row ruby-readmore margin-top-45">
+                    <center><a href="javascript:void(0);" onclick="document.forms['frm-reservation'].submit();">Đặt bàn<i class="icofont icofont-curved-double-right"></i></a></center>                    
+                </div>                          
+            </div>                    
         </form>        
-    </div>
-    <div class="sss"></div>
+    </div>   
     <?php get_footer(); ?>
     <?php wp_footer();?>
 </body>
