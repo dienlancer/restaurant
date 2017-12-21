@@ -63,7 +63,7 @@ if(!empty($instance['item_id'])){
 					if($the_query->have_posts()){		
 						?>
 						<div class="logo-banner">
-							<div class="container kip">
+							<div class="container">
 								<?php 
 								while ($the_query->have_posts()) {
 									$the_query->the_post();		
@@ -74,8 +74,8 @@ if(!empty($instance['item_id'])){
 									$excerpt=substr($excerpt, 0,300).'...';			
 									$featureImg=get_the_post_thumbnail_url($post_id, 'full');
 									?>
-									<div><img src="<?php echo site_url("wp-content/uploads/logo-banner.png"); ?>" /></div>
-									<div class="lobo-banner-title"><?php echo $title; ?></div>
+									<div><center><img src="<?php echo site_url("wp-content/uploads/logo-banner.png"); ?>" /></center></div>
+									<div class="lobo-banner-title"><center><?php echo $title; ?></center></div>
 									<div class="logo-banner-excerpt"><center><?php echo $excerpt; ?></center></div>
 									<?php
 								}
@@ -100,7 +100,7 @@ if(!empty($instance['item_id'])){
 					$the_query = new WP_Query($args);		
 					if($the_query->have_posts()){		
 						?>
-						<div class="container kip margin-top-45">
+						<div class="container margin-top-45">
 							<?php
 							 while ($the_query->have_posts()){
 							 	$the_query->the_post();		
@@ -111,7 +111,7 @@ if(!empty($instance['item_id'])){
 							 	$excerpt=substr($excerpt, 0,300).'...';			
 							 	$featureImg=get_the_post_thumbnail_url($post_id, 'full');
 							 	?>
-							 	<div class="search-food-title"><?php echo $title; ?></div>
+							 	<div class="search-food-title"><center><?php echo $title; ?></center></div>
 							 	<div class="search-food-excerpt margin-top-15"><center><?php echo $excerpt ?></center></div>							 				 
 							 	<?php
 							 }
