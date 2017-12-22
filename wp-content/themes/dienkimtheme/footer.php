@@ -1,5 +1,5 @@
 <?php 
-     global $zendvn_sp_settings;
+     global $zendvn_sp_settings,$customizerGlobal;
 $email_to=$zendvn_sp_settings['email_to'];
 $address=$zendvn_sp_settings['address'];
 $website=$zendvn_sp_settings['website'];
@@ -100,10 +100,36 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
 <div class="clr"></div>
 </div>   
 <hr class="ximaxa" />
-<div class="row">
-  <div class="col-lg-3 no-padding-left"></div>
-  <div class="col-lg-3 no-padding-left"></div>
-  <div class="col-lg-3 no-padding-left"></div>
+<div class="row flex-center-middle padding-top-45">
+  <div class="col-lg-3 no-padding-left">
+
+      <a href="<?php echo home_url(); ?>">                
+        <img src="<?php echo $customizerGlobal->general_section('site-logo');?>" />
+      </a>
+    
+  </div>
+  <div class="col-lg-6 no-padding-left">
+    <div class="alex">
+      <?php if(is_active_sidebar('copyright')):?>
+      <?php dynamic_sidebar('copyright')?>
+    <?php endif; ?>  
+    </div>    
+  </div>
+  <div class="col-lg-3 no-padding-left">
+    <div>
+      <center>
+        <ul class="inline-block list-style-none top-email">                
+                <li><a href="<?php echo $facebook_url; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="<?php echo $twitter_url; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="<?php echo $google_plus; ?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                <li><a href="<?php echo $instagram_url; ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="<?php echo $pinterest_url; ?>"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                <li><a href="<?php echo $youtube_url; ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+              </ul>
+      </center>
+      
+    </div>
+  </div>
 </div>
 </div>
 </footer>

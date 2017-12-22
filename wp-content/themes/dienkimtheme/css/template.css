@@ -723,6 +723,10 @@ hr.ximaxa{
     margin-top: 45px;
     margin-bottom: 0;
 }
+div.alex{
+    color: #ffffff;
+    text-align: center;
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;

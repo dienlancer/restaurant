@@ -414,6 +414,7 @@ if(!empty($instance['item_id'])){
 			}
 			break;
 			case "working-time":
+			case "copyright":
 			foreach ($arrItemID as $key => $value) {
 				if(!empty($value)){
 					$args = array(  		
