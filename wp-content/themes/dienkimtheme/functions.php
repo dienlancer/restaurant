@@ -217,10 +217,10 @@ function zendvn_theme_widgets_init(){
 		'name'          => __( 'WorkingTime', $themeName ),
 		'id'            => 'working-time',		
 		'class'         => '',
-		'before_widget' => '',
-		'before_title'  => '',
-		'after_title'   => '',
-		'after_widget'  => ''				
+		'before_widget' => '<div class="jimbabue">',
+		'before_title'  => '<h3 class="diva">',
+		'after_title'   => '</h3>',
+		'after_widget'  => '</div>'				
 	));
 	register_sidebar(array(
 		'name'          => __( 'Copyright', $themeName ),
