@@ -3,6 +3,13 @@
 </div>
 <div class="container margin-top-15">  
     <?php
+    if(have_posts()){
+        while (have_posts()) {
+            the_post();
+            echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
+        }
+        wp_reset_postdata();
+    }
     $vHtml=new HtmlControl();
     $pageIDLogin = $zController->getHelper('GetPageId')->get('_wp_page_template','login.php');   
     $permarlinkLogin = get_permalink($pageIDLogin);  
@@ -14,13 +21,7 @@
     if(count($arrUser) == 0){
         wp_redirect($permarlinkLogin);
     }
-    if(have_posts()){
-        while (have_posts()) {
-            the_post();
-            echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
-        }
-        wp_reset_postdata();
-    }
+    
     $msg = "";
         $data=$zController->_data["data"];
         $error=$zController->_data["error"];  

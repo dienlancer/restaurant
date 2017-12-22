@@ -3,8 +3,6 @@
 </div>
 <div class="container margin-top-15">  
 <?php    
-    $meta_key="_zendvn_sp_zaproduct_";
-    $vHtml=new HtmlControl();
     if(have_posts()){
         while (have_posts()) {
             the_post();
@@ -12,6 +10,8 @@
         }
         wp_reset_postdata();
     }
+    $meta_key="_zendvn_sp_zaproduct_";
+    $vHtml=new HtmlControl();    
     $msg = "";
     $data=array();        
     if(count($zController->_data["data"]) > 0){

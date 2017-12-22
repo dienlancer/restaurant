@@ -3,6 +3,13 @@
 </div>
 <div class="container margin-top-15">  
     <?php 
+    if(have_posts()){
+    while (have_posts()) {
+        the_post();
+        echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
+    }
+    wp_reset_postdata();
+}
     global $zController,$zendvn_sp_settings;
     $vHtml=new HtmlControl();    
     $pageIDLoginCheckout = $zController->getHelper('GetPageId')->get('_wp_page_template','login-checkout.php'); 
@@ -27,13 +34,7 @@ $paymentMethodModel=$zController->getModel("/frontend","PaymentMethodModel");
 $info=$userModel->getUserById($id);
 $lstPaymentMethod=$paymentMethodModel->getDDLPaymentMethod();
 $detail=$info[0];   
-if(have_posts()){
-    while (have_posts()) {
-        the_post();
-        echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
-    }
-    wp_reset_postdata();
-}
+
 $msg = "";
 $data=array();        
 $error=$zController->_data["error"];  

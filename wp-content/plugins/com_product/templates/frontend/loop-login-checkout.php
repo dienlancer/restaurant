@@ -2,7 +2,14 @@
     <div class="opacity-absolute"></div>    
 </div>
 <div class="container margin-top-15">    
-    <?php 
+    <?php
+    if(have_posts()){
+        while (have_posts()) {
+            the_post();
+            echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
+        }
+        wp_reset_postdata();
+    } 
     global $zController,$zendvn_sp_settings;    
     $vHtml=new HtmlControl();        
     $pageIDLoginCheckout = $zController->getHelper('GetPageId')->get('_wp_page_template','login-checkout.php'); 
@@ -17,13 +24,7 @@
         wp_redirect($permarlinkZcart);
     }
 
-    if(have_posts()){
-        while (have_posts()) {
-            the_post();
-            echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
-        }
-        wp_reset_postdata();
-    }
+    
     $msg = "";
     $data=array();        
     $error=$zController->_data["error"];  

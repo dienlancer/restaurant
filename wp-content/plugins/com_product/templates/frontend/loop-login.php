@@ -3,7 +3,6 @@
 </div>
 <div class="container margin-top-15">  
     <?php  
-    $vHtml=new HtmlControl(); 
     if(have_posts()){
         while (have_posts()) {
             the_post();
@@ -11,6 +10,7 @@
         }
         wp_reset_postdata();
     }
+    $vHtml=new HtmlControl();     
     $msg = "";
     $data=$zController->_data["data"];
     $error=$zController->_data["error"];  
