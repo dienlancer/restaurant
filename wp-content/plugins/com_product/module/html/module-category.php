@@ -70,7 +70,7 @@ switch ($position) {
 			$post_id=$the_query->post->ID;							
 			$permalink=get_the_permalink($post_id);
 			$title=get_the_title($post_id);
-			$excerpt=get_post_meta($post_id,"intro",true);
+			$excerpt=get_post_meta($post_id,"product_intro",true);
 			$excerpt=substr($excerpt, 0,300).'...';			
 			$featureImg=get_the_post_thumbnail_url($post_id, 'full');	
 			$smallImg=$vHtml->getImage($featureImg);

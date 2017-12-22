@@ -13,7 +13,7 @@ class Backend{
 			$this->_page == 'zendvn-sp-manager-payment-method' 	|| 
 			$this->_page == 'zendvn-sp-manager-invoice'			|| 
 			$this->_page == 'zendvn-sp-manager-setting' 		|| 
-			$this->_page == 'zendvn-sp-manager-banner'			||
+			
 			$this->_page == 'zendvn-sp-manager-user'
 		){
 			add_action('admin_init', array($this,'do_output_buffer'));
@@ -65,8 +65,7 @@ class Backend{
 		add_submenu_page($this->_menuSlug, 'Payment method', 'Payment method', 'manage_options',
 						$this->_menuSlug . '-payment-method',array($this,'dispatch_function'));	
 
-		add_submenu_page($this->_menuSlug, 'Banner', 'Banner', 'manage_options',
-						$this->_menuSlug . '-banner',array($this,'dispatch_function'));	
+		
 
 		add_submenu_page($this->_menuSlug, 'User', 'User', 'manage_options',
 						$this->_menuSlug . '-user',array($this,'dispatch_function'));	
@@ -84,9 +83,7 @@ class Backend{
 			case 'zendvn-sp-manager-payment-method':
 				$zController->getController('/backend','AdminPaymentMethodController');
 			break;		
-			case 'zendvn-sp-manager-banner':
-				$zController->getController('/backend','AdminBannerController');
-			break;
+			
 			case 'zendvn-sp-manager-user':
 				$zController->getController('/backend','AdminUserController');
 			break;

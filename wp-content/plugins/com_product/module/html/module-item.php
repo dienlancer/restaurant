@@ -39,16 +39,28 @@ if(!empty($instance['item_id'])){
 			</script>
 			<div class="slick-slideshow">
 				<?php 
-				for($i=0;$i<count($arrItemID);$i++) {
-					$table = $wpdb->prefix . 'shk_banner';	
-					$sql = 'SELECT 	* FROM 	'.$table.' AS p  WHERE 	p.id = '.(int)@$arrItemID[$i] ;
-					$result = $wpdb->get_results($sql,ARRAY_A);
-					$banner=site_url('/wp-content/uploads/'.$result[0]['image']);
-					$link_web=$result[0]['link_web'];
-					?>			
-					<div><a href="<?php echo $link_web; ?>" target="_blank"><img src="<?php echo $banner; ?>" /></a></div>  
-					<?php						
-				}
+				foreach ($arrItemID as $key => $value){
+					if(!empty($value)){
+						$args = array(  		
+							'p' => 	(int)@$value,			
+							'post_type' => 'banner'
+						);	
+						$the_query = new WP_Query($args);	
+						if($the_query->have_posts()){
+							while ($the_query->have_posts()) {
+								$the_query->the_post();		
+								$post_id=$the_query->post->ID;
+								$alt=get_post_meta($post_id,"banner_alt",true);
+								$link_web=get_post_meta($post_id,"banner_url",true);
+								$featureImg=get_the_post_thumbnail_url($post_id, 'full');
+								?>
+								<div><a href="<?php echo $link_web; ?>" target="_blank"><img alt="<?php echo $alt; ?>" src="<?php echo $featureImg; ?>" /></a></div>  
+								<?php
+							}
+							wp_reset_postdata();  
+						}	
+					}					
+				}				
 				?>				
 			</div>
 			<?php
@@ -71,7 +83,7 @@ if(!empty($instance['item_id'])){
 									$post_id=$the_query->post->ID;							
 									$permalink=get_the_permalink($post_id);
 									$title=get_the_title($post_id);
-									$excerpt=get_post_meta($post_id,"intro",true);
+									$excerpt=get_post_meta($post_id,"page_intro",true);
 									$excerpt=substr($excerpt, 0,300).'...';			
 									$featureImg=get_the_post_thumbnail_url($post_id, 'full');
 									?>
@@ -110,7 +122,7 @@ if(!empty($instance['item_id'])){
 							 	$post_id=$the_query->post->ID;							
 							 	$permalink=get_the_permalink($post_id);
 							 	$title=get_the_title($post_id);
-							 	$excerpt=get_post_meta($post_id,"intro",true);
+							 	$excerpt=get_post_meta($post_id,"page_intro",true);
 							 	$excerpt=substr($excerpt, 0,300).'...';			
 							 	$featureImg=get_the_post_thumbnail_url($post_id, 'full');
 							 	?>
@@ -139,7 +151,7 @@ if(!empty($instance['item_id'])){
 							$post_id=$the_query->post->ID;							
 							$permalink=get_the_permalink($post_id);
 							$title=get_the_title($post_id);
-							$excerpt=get_post_meta($post_id,"intro",true);
+							$excerpt=get_post_meta($post_id,"page_intro",true);
 							$excerpt=substr($excerpt, 0,300).'...';			
 							$content=get_the_content($post_id);
 							$featureImg=get_the_post_thumbnail_url($post_id, 'full');							
@@ -211,7 +223,7 @@ if(!empty($instance['item_id'])){
 									$post_id=$the_query->post->ID;							
 									$permalink=get_the_permalink($post_id);
 									$title=get_the_title($post_id);
-									$excerpt=get_post_meta($post_id,"intro",true);
+									$excerpt=get_post_meta($post_id,"product_intro",true);
 									$excerpt=substr($excerpt, 0,300).'...';			
 									$featureImg=get_the_post_thumbnail_url($post_id, 'full');	
 									$smallImg=$vHtml->getImage($featureImg);
@@ -245,6 +257,46 @@ if(!empty($instance['item_id'])){
 				</div>						
 			</div>			
 			<?php	
+			break;
+			case "gallery-image":						
+			?>
+			<div class="container margin-top-15">
+				<?php 
+				$k=1;
+				foreach ($arrItemID as $key => $value){
+					if(!empty($value)){
+						$args = array(  		
+							'p' => 	(int)@$value,			
+							'post_type' => 'banner'
+						);	
+						$the_query = new WP_Query($args);	
+						if($the_query->have_posts()){
+							while ($the_query->have_posts()) {
+								$the_query->the_post();		
+								$post_id=$the_query->post->ID;
+								$alt=get_post_meta($post_id,"banner_alt",true);
+								$link_web=get_post_meta($post_id,"banner_url",true);
+								$featureImg=get_the_post_thumbnail_url($post_id, 'full');
+								?>
+								<div class="col-lg-4">
+									<div class="margin-top-30 relative diva">
+										<div><a data-fancybox="gallery" href="<?php echo $featureImg; ?>" target="_blank"><img alt="<?php echo $alt; ?>" src="<?php echo $featureImg; ?>" /></a></div>
+										<div class="minhy"></div>
+									</div>									
+								</div>  
+								<?php
+							}
+							wp_reset_postdata();  
+						}	
+					}
+					if($k%3==0 || $k==count($arrItemID)){
+						echo '<div class="clr"></div>';
+					}	
+					$k++;				
+				}				
+				?>	
+			</div>
+			<?php
 			break;
 		}
 	}	

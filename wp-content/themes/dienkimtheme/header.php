@@ -55,15 +55,19 @@ global $customizerGlobal;
   <!-- begin elevatezoom -->
   <script src="<?php echo get_template_directory_uri() . '/js/jquery.elevatezoom-3.0.8.min.js'; ?>"></script>  
   <!-- end elevatezoom -->
+  <!-- begin fancybox -->
+  <script language="javascript" type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/jquery.fancybox.min.js';?>"                 ></script>
+  <link href="<?php echo get_template_directory_uri() . '/css/jquery.fancybox.min.css';?>" rel="stylesheet" type="text/css" />
+  <!-- end fancybox -->
   <!-- begin tab -->
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/tab.css'; ?>" />  
   <!-- end tab-->
   <!-- begin accounting -->
   <script src="<?php echo get_template_directory_uri() . '/js/accounting.min.js'; ?>"></script>  
   <!-- end accounting -->
-  <!-- begin tab -->
+  <!-- begin product -->
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/product.css'; ?>" />  
-  <!-- end tab-->
+  <!-- end product-->
   <!-- begin custom -->
   <script src="<?php echo get_template_directory_uri() . '/js/custom.js'; ?>"></script>    
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/template.css'; ?>" />

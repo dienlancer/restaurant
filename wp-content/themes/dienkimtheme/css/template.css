@@ -573,6 +573,20 @@ div.logo-banner div.custom-html-widget{
 h3.bitcoin{
     text-align: center;
 }
+div.minhy{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #333;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+div.diva:hover div.minhy{
+    opacity: 0.7;
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;
