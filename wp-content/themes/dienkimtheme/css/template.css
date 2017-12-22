@@ -646,6 +646,22 @@ div.blog-box-img img{
 div.blog-title a{
     color: #333;
 }
+div.email-subscribe{
+    background: #FFA41F
+}
+div.email-subscribe div.es_lablebox{
+    display: none;
+}
+div.email-intro{
+    text-align: justify;
+    color: #ffffff;
+}
+div.newsletter{
+        color: #ffffff;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;

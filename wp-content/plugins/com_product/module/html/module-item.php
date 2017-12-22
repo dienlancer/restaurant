@@ -131,6 +131,7 @@ if(!empty($instance['item_id'])){
 							 	<div class="search-food-excerpt margin-top-15"><center><?php echo $excerpt ?></center></div>							 				 
 							 	<?php
 							 }
+							 wp_reset_postdata();  
 							?>
 						</div>	
 						<?php						
@@ -173,7 +174,8 @@ if(!empty($instance['item_id'])){
 								</div>
 							</div>
 							<?php
-						}						
+						}	
+						wp_reset_postdata();  					
 					}
 				}				
 			}
@@ -375,7 +377,8 @@ if(!empty($instance['item_id'])){
 										</div>										
 									</div>
 									<?php
-								}						
+								}
+								wp_reset_postdata();  						
 							}
 						}				
 					}
@@ -383,6 +386,32 @@ if(!empty($instance['item_id'])){
 				</div>
 			</div>
 			<?php
+			break;
+			case 'email-subscribe-introduce':
+			foreach ($arrItemID as $key => $value) {
+				if(!empty($value)){
+					$args = array(  		
+						'p' => 	(int)@$value,			
+						'post_type' => 'page'
+					);			
+					$the_query = new WP_Query($args);		
+					if($the_query->have_posts()){								
+						while ($the_query->have_posts()){
+							$the_query->the_post();		
+							$post_id=$the_query->post->ID;							
+							$permalink=get_the_permalink($post_id);
+							$title=get_the_title($post_id);
+							$excerpt=get_post_meta($post_id,"page_intro",true);
+							$excerpt=substr($excerpt, 0,100).'...';			
+							$featureImg=get_the_post_thumbnail_url($post_id, 'full');
+							?>
+							<div class="email-intro"><?php echo $excerpt; ?></div>
+							<?php
+						}
+						wp_reset_postdata();  									
+					}
+				}				
+			}
 			break;
 		}
 	}	
