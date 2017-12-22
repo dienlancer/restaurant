@@ -4,77 +4,77 @@ global $customizerGlobal;
 ?>
 <html <?php language_attributes();?>>
 <head>
-    <meta charset="<?php bloginfo('charset')?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        <?php 
-        wp_title('|', true,'right');
-        bloginfo('name');
-        ?>
-    </title>    
+  <meta charset="<?php bloginfo('charset')?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <?php 
+    wp_title('|', true,'right');
+    bloginfo('name');
+    ?>
+  </title>    
     <!--[if lt IE 9]>
         <script src="<?php echo get_template_directory_uri() . '/';?>js/html5.js" type="text/javascript"></script>
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <script src="<?php echo get_template_directory_uri() . '/js/jquery-3.2.1.js'; ?>"></script>
-  <!--begin bootstrap-->
-  <script src="<?php echo get_template_directory_uri() . '/js/bootstrap.js'; ?>"></script>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/bootstrap.css'; ?>" />
-  <!--end bootstrap-->
-  <!-- begin jquery-ui -->
-  <script src="<?php echo get_template_directory_uri() . '/jquery-ui/jquery-ui.min.js'; ?>"></script>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/jquery-ui/jquery-ui.css'; ?>" />
-  <!-- end jquery-ui -->
-  <!-- begin timepicker -->
-  <script src="<?php echo get_template_directory_uri() . '/timepicker/jquery.timepicker.min.js'; ?>"></script>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/timepicker/jquery.timepicker.min.css'; ?>" />
-  <!-- end timepicker -->
-  <!-- begin font-awesome -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/font-awesome.css'; ?>" />
-  <!-- end font-awesome -->
-  <!-- begin icofont -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/icofont/css/icofont.css'; ?>" />
-  <!-- end icofont -->
-  <!-- begin youtube -->
-  <script src="<?php echo get_template_directory_uri() . '/js/jquery.youtubepopup.min.js'; ?>"></script>  
-  <!-- end youtube -->
-  <!-- begin ddsmoothmenu -->
-  <script src="<?php echo get_template_directory_uri() . '/js/ddsmoothmenu.js'; ?>"></script>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/ddsmoothmenu.css'; ?>" />
-  <!-- end ddsmoothmenu -->
-  <!-- begin slick slider -->
-  <script src="<?php echo get_template_directory_uri() . '/slick/slick.min.js'; ?>"></script>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/slick/slick.css'; ?>" />
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/slick/slick-theme.css'; ?>" />
-  <!-- end slick slider -->
-  <!-- begin owl_carousel -->
-  <script src="<?php echo get_template_directory_uri() . '/owl-carousel/owl.carousel.js'; ?>"></script>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/owl-carousel/assets/owl.carousel.css'; ?>" />  
-  <!-- end owl_carousel -->
-  <!-- begin elevatezoom -->
-  <script src="<?php echo get_template_directory_uri() . '/js/jquery.elevatezoom-3.0.8.min.js'; ?>"></script>  
-  <!-- end elevatezoom -->
-  <!-- begin fancybox -->
-  <script language="javascript" type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/jquery.fancybox.min.js';?>"                 ></script>
-  <link href="<?php echo get_template_directory_uri() . '/css/jquery.fancybox.min.css';?>" rel="stylesheet" type="text/css" />
-  <!-- end fancybox -->
-  <!-- begin tab -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/tab.css'; ?>" />  
-  <!-- end tab-->
-  <!-- begin accounting -->
-  <script src="<?php echo get_template_directory_uri() . '/js/accounting.min.js'; ?>"></script>  
-  <!-- end accounting -->
-  <!-- begin product -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/product.css'; ?>" />  
-  <!-- end product-->
-  <!-- begin custom -->
-  <script src="<?php echo get_template_directory_uri() . '/js/custom.js'; ?>"></script>    
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/template.css'; ?>" />
-  <!-- end custom -->
-    <?php wp_head();?>    
-    
-</head>
+      <![endif]-->
+      <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+      <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+      <script src="<?php echo get_template_directory_uri() . '/js/jquery-3.2.1.js'; ?>"></script>
+      <!--begin bootstrap-->
+      <script src="<?php echo get_template_directory_uri() . '/js/bootstrap.js'; ?>"></script>
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/bootstrap.css'; ?>" />
+      <!--end bootstrap-->
+      <!-- begin jquery-ui -->
+      <script src="<?php echo get_template_directory_uri() . '/jquery-ui/jquery-ui.min.js'; ?>"></script>
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/jquery-ui/jquery-ui.css'; ?>" />
+      <!-- end jquery-ui -->
+      <!-- begin timepicker -->
+      <script src="<?php echo get_template_directory_uri() . '/timepicker/jquery.timepicker.min.js'; ?>"></script>
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/timepicker/jquery.timepicker.min.css'; ?>" />
+      <!-- end timepicker -->
+      <!-- begin font-awesome -->
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/font-awesome.css'; ?>" />
+      <!-- end font-awesome -->
+      <!-- begin icofont -->
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/icofont/css/icofont.css'; ?>" />
+      <!-- end icofont -->
+      <!-- begin youtube -->
+      <script src="<?php echo get_template_directory_uri() . '/js/jquery.youtubepopup.min.js'; ?>"></script>  
+      <!-- end youtube -->
+      <!-- begin ddsmoothmenu -->
+      <script src="<?php echo get_template_directory_uri() . '/js/ddsmoothmenu.js'; ?>"></script>
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/ddsmoothmenu.css'; ?>" />
+      <!-- end ddsmoothmenu -->
+      <!-- begin slick slider -->
+      <script src="<?php echo get_template_directory_uri() . '/slick/slick.min.js'; ?>"></script>
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/slick/slick.css'; ?>" />
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/slick/slick-theme.css'; ?>" />
+      <!-- end slick slider -->
+      <!-- begin owl_carousel -->
+      <script src="<?php echo get_template_directory_uri() . '/owl-carousel/owl.carousel.js'; ?>"></script>
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/owl-carousel/assets/owl.carousel.css'; ?>" />  
+      <!-- end owl_carousel -->
+      <!-- begin elevatezoom -->
+      <script src="<?php echo get_template_directory_uri() . '/js/jquery.elevatezoom-3.0.8.min.js'; ?>"></script>  
+      <!-- end elevatezoom -->
+      <!-- begin fancybox -->
+      <script language="javascript" type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/jquery.fancybox.min.js';?>"                 ></script>
+      <link href="<?php echo get_template_directory_uri() . '/css/jquery.fancybox.min.css';?>" rel="stylesheet" type="text/css" />
+      <!-- end fancybox -->
+      <!-- begin tab -->
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/tab.css'; ?>" />  
+      <!-- end tab-->
+      <!-- begin accounting -->
+      <script src="<?php echo get_template_directory_uri() . '/js/accounting.min.js'; ?>"></script>  
+      <!-- end accounting -->
+      <!-- begin product -->
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/product.css'; ?>" />  
+      <!-- end product-->
+      <!-- begin custom -->
+      <script src="<?php echo get_template_directory_uri() . '/js/custom.js'; ?>"></script>    
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/template.css'; ?>" />
+      <!-- end custom -->
+      <?php wp_head();?>    
+
+    </head>
 <body>
     <?php
 /*require_once get_template_directory()."/check-page.php";
@@ -194,12 +194,36 @@ if(count($arrCart) > 0){
         </div>
       </div>
     </div>
-    <?php if(is_active_sidebar('banner-page')):?>
-      <?php dynamic_sidebar('banner-page')?>
-    <?php endif; ?>          
-    <?php if(is_active_sidebar('slideshow')):?>
-      <?php dynamic_sidebar('slideshow')?>
-    <?php endif; ?>    
+    <?php
+    if(is_front_page()){
+      if(is_active_sidebar('banner-page')){
+        dynamic_sidebar('banner-page');
+      }
+      if(is_active_sidebar('slideshow')){
+        dynamic_sidebar('slideshow');
+      }  
+    }     
+    else{
+      ?>
+      <div>
+        <script type="text/javascript" language="javascript">        
+        jQuery(document).ready(function(){
+          jQuery(".top").slick({
+            dots: true,
+            autoplay:true,
+            arrows:false,
+            adaptiveHeight:false,
+            loop:true
+          });  
+        });     
+      </script>
+      <div class="top">
+        <div class="lumberjack"><img src="<?php echo site_url('wp-content/uploads/banner-top.jpg'); ?>" /></div>
+      </div>
+      </div>      
+      <?php
+    }
+    ?>        
   </div>
 </header>
 

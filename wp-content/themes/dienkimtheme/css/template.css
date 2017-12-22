@@ -728,6 +728,12 @@ div.alex{
     color: #ffffff;
     text-align: center;
 }
+div.top ul.slick-dots{
+    display: none;
+}
+div.lumberjack img{
+    height: 100%;    
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;
