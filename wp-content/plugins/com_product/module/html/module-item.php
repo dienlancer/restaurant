@@ -279,10 +279,13 @@ if(!empty($instance['item_id'])){
 								$featureImg=get_the_post_thumbnail_url($post_id, 'full');
 								?>
 								<div class="col-lg-4">
-									<div class="margin-top-30 relative diva">
-										<div><a data-fancybox="gallery" href="<?php echo $featureImg; ?>" target="_blank"><img alt="<?php echo $alt; ?>" src="<?php echo $featureImg; ?>" /></a></div>
-										<div class="minhy"></div>
-									</div>									
+									<div class="relative liverpool margin-top-30">
+										<div><center><img src="<?php echo $featureImg; ?>"></center></div>			
+										<div class="youtube"></div>		
+										<div class="youtube-img">
+											<div><a data-fancybox="gallery"  href="<?php echo $featureImg; ?>"><i class="icofont icofont-plus-circle"></i></a></div>		
+										</div>									
+									</div>								
 								</div>  
 								<?php
 							}

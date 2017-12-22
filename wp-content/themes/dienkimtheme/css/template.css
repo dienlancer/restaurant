@@ -573,19 +573,43 @@ div.logo-banner div.custom-html-widget{
 h3.bitcoin{
     text-align: center;
 }
-div.minhy{
+div.liverpool div.youtube{    
     position: absolute;
-    left: 0;
-    top: 0;
     width: 100%;
-    background: #333;
     height: 100%;
+    background: #000000;        
+    left:0;
+    top: 0;        
+    opacity: 0;
     transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
-    opacity: 0;
 }
-div.diva:hover div.minhy{
-    opacity: 0.7;
+div.liverpool div.youtube-img{    
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+}
+div.liverpool:hover div.youtube{
+    opacity: 0.7;    
+}
+div.liverpool:hover div.youtube-img{
+    opacity: 1;    
+}
+div.youtube-img i{
+    color: #FFA41F;
+    font-size: 60px;
+    cursor: pointer;
+    transition: transform 0.35s ease 0s;
 }
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
