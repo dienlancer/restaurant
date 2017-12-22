@@ -17,7 +17,8 @@ function zendvn_theme_register_menus(){
 		array(						
 			'main-menu' 			=> __('MainMenu'),
 			'mobile-menu' 			=> __('MobileMenu'),					
-			'footer-menu' 			=> __('FooterMenu'),			
+			'myaccount-menu' 			=> __('MyAccountMenu'),			
+			'information-menu' 			=> __('InformationMenu'),			
 		)
 	);
 }
@@ -206,6 +207,15 @@ function zendvn_theme_widgets_init(){
 	register_sidebar(array(
 		'name'          => __( 'EmailSubscribe', $themeName ),
 		'id'            => 'email-subscribe',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
+	register_sidebar(array(
+		'name'          => __( 'WorkingTime', $themeName ),
+		'id'            => 'working-time',		
 		'class'         => '',
 		'before_widget' => '',
 		'before_title'  => '',

@@ -413,6 +413,33 @@ if(!empty($instance['item_id'])){
 				}				
 			}
 			break;
+			case "working-time":
+			foreach ($arrItemID as $key => $value) {
+				if(!empty($value)){
+					$args = array(  		
+						'p' => 	(int)@$value,			
+						'post_type' => 'page'
+					);			
+					$the_query = new WP_Query($args);		
+					if($the_query->have_posts()){		
+						
+							 while ($the_query->have_posts()){
+							 	$the_query->the_post();		
+							 	$post_id=$the_query->post->ID;							
+							 	$permalink=get_the_permalink($post_id);
+							 	$title=get_the_title($post_id);
+							 	$excerpt=get_post_meta($post_id,"page_intro",true);
+							 	$excerpt=substr($excerpt, 0,99999).'...';			
+							 	$content=get_the_content($post_id);        
+							 	$featureImg=get_the_post_thumbnail_url($post_id, 'full');
+							 	echo $content;
+							 }
+							 wp_reset_postdata();  
+								
+					}
+				}				
+			}
+			break;
 		}
 	}	
 }
