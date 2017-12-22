@@ -573,25 +573,49 @@ class ProductController{
 		$option_name = 'zendvn_sp_setting';
 		$data = get_option('zendvn_sp_setting',array());
 		$fullname 			=	trim(@$_POST["fullname"]);
-		$email 				=	trim(@$_POST['email']);		
+		$email 				=	trim(mb_strtolower(@$_POST['email']));		
 		$mobile 			=	trim(@$_POST['mobile']);
 		$datebooking 		=	trim(@$_POST['datebooking']);
 		$timebooking 		=	trim(@$_POST['timebooking']);
 		$number_person 		=	trim(@$_POST["number_person"]);
-		/*echo "<pre>".print_r($fullname,true)."</pre>";
-		echo "<pre>".print_r($email,true)."</pre>";
-		echo "<pre>".print_r($mobile,true)."</pre>";
-		echo "<pre>".print_r($datebooking,true)."</pre>";
-		echo "<pre>".print_r($timebooking,true)."</pre>";
-		echo "<pre>".print_r($number_person,true)."</pre>";*/
 		$smtp_host		= 	@$data['smtp_host'];
 		$smtp_port		=	@$data['smtp_port'];
 		$smtp_auth		=	@$data['smtp_auth'];
 		$encription		=	@$data['encription'];
 		$smtp_username	=	@$data['smtp_username'];
-		$smtp_password	=	@$data['smtp_password'];
-		$email_from		=	@$data['email_from'];
+		$smtp_password	=	@$data['smtp_password'];		
 		$email_to		=	@$data['email_to'];
 		$contacted_name	=	@$data['contacted_name'];	
+		$filePhpMailer=PLUGIN_PATH . "scripts" . DS . "phpmailer" . DS . "PHPMailerAutoload.php"	;
+		require_once $filePhpMailer;		        
+		$mail = new PHPMailer;      
+		$mail->CharSet = "UTF-8";   
+		$mail->isSMTP();             
+		$mail->SMTPDebug = 2;
+		$mail->Debugoutput = 'html';
+		$mail->Host = @$smtp_host;
+		$mail->Port = @$smtp_port;
+		$mail->SMTPSecure = @$encription;
+		$mail->SMTPAuth = (int)@$smtp_auth;
+		$mail->Username = @$smtp_username;
+		$mail->Password = @$smtp_password;
+		$mail->setFrom(@$email, $fullname);
+		$mail->addAddress(@$email_to, @$contacted_name);
+		$mail->Subject = 'Thông tin đặt bàn từ khách hàng '.$fullname.' - '.$mobile ;       
+		$html_content='<h3>Thông tin đặt bàn từ khách hàng '.$fullname.'</h3>';
+		$html_content .='<p>Họ và tên : <b>'.$fullname.'</b></p>'; 
+		$html_content .='<p>Email : <b>'.$email.'</b></p>'; 
+		$html_content .='<p>Mobile : <b>'.$mobile.'</b></p>'; 
+		$html_content .='<p>Ngày đặt : <b>'.$datebooking.'</b></p>'; 
+		$html_content .='<p>Vào lúc : <b>'.$timebooking.'</b></p>'; 
+		$html_content .='<p>Số lượng : <b>'.$number_person.'</b></p>'; 
+		$mail->Body=$html_content;
+		if ($mail->send()) {               	
+            echo '<script language="javascript" type="text/javascript">alert("Đặt bàn hoàn tất");</script>'; 
+        }
+        else{
+        	echo '<script language="javascript" type="text/javascript">alert("Có sự cố trong quá trình gửi dữ liệu");</script>'; 
+        }
+        wp_redirect(home_url());
 	}
 }
