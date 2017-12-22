@@ -698,16 +698,30 @@ div.myaccountbox h3{
     color: #ffffff;
     text-transform: uppercase;
 }
-ul.myaccountmenu{
+ul.myaccountmenu,ul.address{
     list-style: none;
 }
-ul.myaccountmenu > li{
+ul.myaccountmenu > li,ul.address > li{
     margin-left: 0;
 }
-ul.myaccountmenu > li  a{
+ul.myaccountmenu > li  a,ul.address > li  a{
         color: #ffffff;
     padding: 15px 0px 0px 0px;
     display: block;
+}
+ul.address > li  a i{
+    color: #FFA41F;
+    margin-right: 15px;
+}
+ul.address > li:first-child a i{
+    margin-bottom: 20px;
+    float: left;
+    margin-top: 5px;
+}
+hr.ximaxa{
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    margin-top: 45px;
+    margin-bottom: 0;
 }
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{

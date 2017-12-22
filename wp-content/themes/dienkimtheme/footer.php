@@ -14,10 +14,11 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
 ?>
 <footer class="padding-top-45 padding-bottom-45">
 	<div class="container">
-   <div class="col-lg-3 no-padding-left">
-     <div class="myaccountbox">
-      <h3>My account</h3>
-       <div class="margin-top-15">
+    <div class="row">
+      <div class="col-lg-3 no-padding-left">
+       <div class="myaccountbox">
+        <h3>My account</h3>
+        <div class="margin-top-15">
          <?php     
          $args = array( 
           'menu'              => '', 
@@ -46,46 +47,65 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
    <div class="col-lg-3 no-padding-left">
      <div class="myaccountbox">
       <h3>Information</h3>
-       <div class="margin-top-15">
-         <?php     
-         $args = array( 
-          'menu'              => '', 
-          'container'         => '', 
-          'container_class'   => '', 
-          'container_id'      => '', 
-          'menu_class'        => 'myaccountmenu', 
-          'menu_id'           => 'information-menu', 
-          'echo'              => true, 
-          'fallback_cb'       => 'wp_page_menu', 
-          'before'            => '', 
-          'after'             => '', 
-          'link_before'       => '', 
-          'link_after'        => '', 
-          'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s</ul>',  
-          'depth'             => 3, 
-          'walker'            => '', 
-          'theme_location'    => 'information-menu' 
-        );
-         wp_nav_menu($args);
-         ?>   
-         <div class="clr"></div> 
-       </div>
+      <div class="margin-top-15">
+       <?php     
+       $args = array( 
+        'menu'              => '', 
+        'container'         => '', 
+        'container_class'   => '', 
+        'container_id'      => '', 
+        'menu_class'        => 'myaccountmenu', 
+        'menu_id'           => 'information-menu', 
+        'echo'              => true, 
+        'fallback_cb'       => 'wp_page_menu', 
+        'before'            => '', 
+        'after'             => '', 
+        'link_before'       => '', 
+        'link_after'        => '', 
+        'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s</ul>',  
+        'depth'             => 3, 
+        'walker'            => '', 
+        'theme_location'    => 'information-menu' 
+      );
+       wp_nav_menu($args);
+       ?>   
+       <div class="clr"></div> 
      </div>
-   </div> 
-   <div class="col-lg-3 no-padding-left">
-     <div class="myaccountbox">
-      <h3>Working time</h3>
-       <div class="margin-top-30">
-        <font color="#ffffff">
-          <?php if(is_active_sidebar('working-time')):?>
-            <?php dynamic_sidebar('working-time')?>
-          <?php endif; ?>  
-        </font>         
-       </div>
-     </div>
-   </div> 
-   <div class="col-lg-3 no-padding-left"></div> 
- </div>
+   </div>
+ </div> 
+ <div class="col-lg-3 no-padding-left">
+   <div class="myaccountbox">
+    <h3>Working time</h3>
+    <div class="margin-top-30">
+      <font color="#ffffff">
+        <?php if(is_active_sidebar('working-time')):?>
+          <?php dynamic_sidebar('working-time')?>
+        <?php endif; ?>  
+      </font>         
+    </div>
+  </div>
+</div> 
+<div class="col-lg-3 no-padding-left">
+ <div class="myaccountbox">
+  <h3>Address</h3>
+  <div class="margin-top-15">
+    <ul class="address">
+      <li><a href="javascript:void(0);"><i class="icofont icofont-social-google-map"></i><?php echo $address; ?></a></li>
+      <li><a href="javascript:void(0);"><i class="icofont icofont-phone"></i><?php echo $telephone; ?></a></li>
+      <li><a href="javascript:void(0);"><i class="icofont icofont-ui-message"></i><?php echo $email_to; ?></a></li>
+    </ul>   
+  </div>
+</div>
+</div> 
+<div class="clr"></div>
+</div>   
+<hr class="ximaxa" />
+<div class="row">
+  <div class="col-lg-3 no-padding-left"></div>
+  <div class="col-lg-3 no-padding-left"></div>
+  <div class="col-lg-3 no-padding-left"></div>
+</div>
+</div>
 </footer>
 <div class="modal fade modal-add-cart" id="modal-alert-add-cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
