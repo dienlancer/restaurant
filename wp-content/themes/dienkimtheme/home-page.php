@@ -202,15 +202,15 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     </div>
     <div class="email-subscribe">
         <div class="container notredam flex-center-middle">
-            <div class="col-lg-4">
+            <div class="col-lg-4 no-padding-left">
                 <div class="newsletter">Newsletter</div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 no-padding-left">
                 <?php if(is_active_sidebar('email-subscribe-introduce')):?>
                     <?php dynamic_sidebar('email-subscribe-introduce')?>
                 <?php endif; ?>                
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 no-padding-left">
                 <?php if(is_active_sidebar('email-subscribe')):?>
                     <?php dynamic_sidebar('email-subscribe')?>
                 <?php endif; ?>            
