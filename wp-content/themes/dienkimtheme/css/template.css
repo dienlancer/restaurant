@@ -600,7 +600,7 @@ div.liverpool div.youtube-img{
     -webkit-transition: all 0.5s ease-in-out;
 }
 div.liverpool:hover div.youtube{
-    opacity: 0.7;    
+    opacity: 0.5;    
 }
 div.liverpool:hover div.youtube-img{
     opacity: 1;    
@@ -610,6 +610,41 @@ div.youtube-img i{
     font-size: 60px;
     cursor: pointer;
     transition: transform 0.35s ease 0s;
+}
+div.blog div.owl-prev,div.blog div.owl-next{
+           background: #FFA41F;
+    color: #ffffff;
+    padding: 5px 11px;
+}
+div.blog div.owl-prev{
+      position: absolute;
+    right: 35px;
+    top: -39px;
+
+}
+div.blog div.owl-next{
+        position: absolute;
+    right: 0;
+    top: -39px;
+}
+div.blog-excerpt{
+    text-align: justify;
+}
+div.main-blog-box{
+    
+    background: #ffffff;
+    
+}
+div.blog-box{
+    border-left: 1px solid #ddd;
+    border-right:  1px solid #ddd;
+    border-bottom:   1px solid #ddd;
+}
+div.blog-box-img img{
+ border-radius: 5px 5px 0px 0px;   
+}
+div.blog-title a{
+    color: #333;
 }
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{

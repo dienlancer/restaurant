@@ -106,6 +106,7 @@ if(!empty($instance['item_id'])){
 			case "popular-dishes":	
 			case "reservation":	
 			case "our-gallery":
+			case "our-blog":
 			foreach ($arrItemID as $key => $value) {
 				if(!empty($value)){
 					$args = array(  		
@@ -297,7 +298,89 @@ if(!empty($instance['item_id'])){
 					}	
 					$k++;				
 				}				
-				?>	
+				?>
+				<div class="about-us-readmore-2 margin-top-45">
+					<center>
+						<a href="javascript:void(0);">Xem thêm<i class="icofont icofont-curved-double-right"></i></a>
+					</center>
+				</div>	
+			</div>
+			<?php
+			break;
+			case "blog":
+			?>
+			<div class="container margin-top-45">
+				<script type="text/javascript" language="javascript">
+					jQuery(document).ready(function(){
+						jQuery(".blog").owlCarousel({
+							autoplay:false,                    
+							loop:true,
+							margin:25,                        
+							nav:true,            
+							mouseDrag: false,
+							touchDrag: false,                                
+							responsiveClass:true,
+							responsive:{
+								0:{
+									items:1
+								},
+								600:{
+									items:3
+								},
+								1000:{
+									items:3
+								}
+							}
+						});
+						var chevron_left='<i class="fa fa-chevron-left"></i>';
+						var chevron_right='<i class="fa fa-chevron-right"></i>';
+						jQuery("div.blog div.owl-prev").html(chevron_left);
+						jQuery("div.blog div.owl-next").html(chevron_right);
+					});                
+				</script>
+				<div class="owl-carousel blog owl-theme">	
+					<?php 
+					foreach ($arrItemID as $key => $value) {
+						if(!empty($value)){
+							$args = array(  		
+								'p' => 	(int)@$value,			
+								'post_type' => 'post'
+							);			
+							$the_query = new WP_Query($args);		
+							if($the_query->have_posts()){								
+								while ($the_query->have_posts()){
+									$the_query->the_post();		
+									$post_id=$the_query->post->ID;							
+									$permalink=get_the_permalink($post_id);
+									$title=get_the_title($post_id);
+									$excerpt=get_post_meta($post_id,"article_intro",true);
+									$excerpt=substr($excerpt, 0,300).'...';			
+									$content=get_the_content($post_id);
+									$featureImg=get_the_post_thumbnail_url($post_id, 'full');							
+									?>
+									<div class="main-blog-box">
+										<div class="blog-box-img">
+											<center>
+												<figure>
+													<a href="<?php echo $permalink; ?>"><img src="<?php echo $featureImg; ?>" /></a>
+												</figure>
+											</center>
+										</div>
+										<div class="blog-box padding-left-15 padding-right-15 padding-top-15 padding-bottom-15">
+											<h3 class="blog-title"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+											<div class="margin-top-15 blog-excerpt"><?php echo $excerpt; ?></div>
+											<div class="about-us-readmore-2 margin-top-15">											
+												<a href="<?php echo $permalink; ?>">Xem thêm<i class="icofont icofont-curved-double-right"></i></a>
+											</div>
+										</div>										
+									</div>
+									<?php
+								}						
+							}
+						}				
+					}
+					?>
+				</div>
 			</div>
 			<?php
 			break;

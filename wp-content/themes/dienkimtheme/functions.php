@@ -176,6 +176,24 @@ function zendvn_theme_widgets_init(){
 		'after_title'   => '',
 		'after_widget'  => ''				
 	));
+	register_sidebar(array(
+		'name'          => __( 'OurBlog', $themeName ),
+		'id'            => 'our-blog',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
+	register_sidebar(array(
+		'name'          => __( 'Blog', $themeName ),
+		'id'            => 'blog',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
 }
 add_action("wp_enqueue_scripts",function(){
 	wp_deregister_script("jquery");
