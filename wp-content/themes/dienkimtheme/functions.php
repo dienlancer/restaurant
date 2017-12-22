@@ -158,6 +158,15 @@ function zendvn_theme_widgets_init(){
 		'after_title'   => '',
 		'after_widget'  => ''				
 	));
+	register_sidebar(array(
+		'name'          => __( 'OurGallery', $themeName ),
+		'id'            => 'our-gallery',		
+		'class'         => '',
+		'before_widget' => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => ''				
+	));
 }
 add_action("wp_enqueue_scripts",function(){
 	wp_deregister_script("jquery");

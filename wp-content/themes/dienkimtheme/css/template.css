@@ -565,6 +565,14 @@ div.reservation-runz i{
     top: 0px;
     padding: 10px 0px;
 }
+div.logo-banner div.custom-html-widget{
+    padding: 0px 100px;
+    text-align: center;
+    margin-top: 30px;
+}
+h3.bitcoin{
+    text-align: center;
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;

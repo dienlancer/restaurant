@@ -93,6 +93,7 @@ if(!empty($instance['item_id'])){
 			case "our-menu":	
 			case "popular-dishes":	
 			case "reservation":	
+			case "our-gallery":
 			foreach ($arrItemID as $key => $value) {
 				if(!empty($value)){
 					$args = array(  		

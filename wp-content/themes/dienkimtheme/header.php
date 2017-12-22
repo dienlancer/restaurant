@@ -191,10 +191,10 @@ if(count($arrCart) > 0){
       </div>
     </div>
     <?php if(is_active_sidebar('banner-page')):?>
-        <?php dynamic_sidebar('banner-page')?>
-    <?php endif; ?>    
+      <?php dynamic_sidebar('banner-page')?>
+    <?php endif; ?>          
     <?php if(is_active_sidebar('slideshow')):?>
-        <?php dynamic_sidebar('slideshow')?>
+      <?php dynamic_sidebar('slideshow')?>
     <?php endif; ?>    
   </div>
 </header>

@@ -30,7 +30,7 @@ switch ($position) {
 	case "lunch-menu":	
 	case "dinner-menu":	
 	case "drink-menu":	
-	case "others-menu":	
+	case "others-menu":		
 	$arrID=array(); 
 	$term=array();
 	$term_link="";

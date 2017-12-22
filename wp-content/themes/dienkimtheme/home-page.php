@@ -184,6 +184,10 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
             </div>                    
         </form>        
     </div>   
+    <?php if(is_active_sidebar('our-gallery')):?>
+        <?php dynamic_sidebar('our-gallery')?>
+    <?php endif; ?>
+    <center><hr class="search-food-hr" />   </center>
     <?php get_footer(); ?>
     <?php wp_footer();?>
 </body>
