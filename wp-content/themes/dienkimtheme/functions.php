@@ -43,8 +43,8 @@ function zendvn_theme_widgets_init(){
 		'after_widget'  => ''				
 	));
 	register_sidebar(array(
-		'name'          => __( 'BannerPage', $themeName ),
-		'id'            => 'banner-page',		
+		'name'          => __( 'MainLogo', $themeName ),
+		'id'            => 'main-logo',		
 		'class'         => '',
 		'before_widget' => '',
 		'before_title'  => '',
@@ -52,13 +52,22 @@ function zendvn_theme_widgets_init(){
 		'after_widget'  => ''				
 	));
 	register_sidebar(array(
-		'name'          => __( 'SearchFood', $themeName ),
-		'id'            => 'search-food',		
+		'name'          => __( 'BannerPage', $themeName ),
+		'id'            => 'banner-page',		
 		'class'         => '',
-		'before_widget' => '',
-		'before_title'  => '',
-		'after_title'   => '',
-		'after_widget'  => ''				
+		'before_widget' => '<div class="serif">',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+		'after_widget'  => '</div>'				
+	));
+	register_sidebar(array(
+		'name'          => __( 'Order delivery and take out', $themeName ),
+		'id'            => 'order-delivery-and-take-out',		
+		'class'         => '',
+		'before_widget' => '<div class="remotherer">',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+		'after_widget'  => '</div>'				
 	));
 	register_sidebar(array(
 		'name'          => __( 'Introduce', $themeName ),
@@ -73,10 +82,10 @@ function zendvn_theme_widgets_init(){
 		'name'          => __( 'OurMenu', $themeName ),
 		'id'            => 'our-menu',		
 		'class'         => '',
-		'before_widget' => '',
-		'before_title'  => '',
-		'after_title'   => '',
-		'after_widget'  => ''				
+		'before_widget' => '<div class="remotherer">',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+		'after_widget'  => '</div>'				
 	));
 	register_sidebar(array(
 		'name'          => __( 'AllMenu', $themeName ),
@@ -136,10 +145,10 @@ function zendvn_theme_widgets_init(){
 		'name'          => __( 'OurPopularDishes', $themeName ),
 		'id'            => 'popular-dishes',		
 		'class'         => '',
-		'before_widget' => '',
-		'before_title'  => '',
-		'after_title'   => '',
-		'after_widget'  => ''				
+		'before_widget' => '<div class="remotherer">',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+		'after_widget'  => '</div>'						
 	));
 	register_sidebar(array(
 		'name'          => __( 'PopularProduct', $themeName ),
@@ -154,19 +163,19 @@ function zendvn_theme_widgets_init(){
 		'name'          => __( 'Reservation', $themeName ),
 		'id'            => 'reservation',		
 		'class'         => '',
-		'before_widget' => '',
-		'before_title'  => '',
-		'after_title'   => '',
-		'after_widget'  => ''				
+		'before_widget' => '<div class="remotherer">',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+		'after_widget'  => '</div>'						
 	));
 	register_sidebar(array(
 		'name'          => __( 'OurGallery', $themeName ),
 		'id'            => 'our-gallery',		
 		'class'         => '',
-		'before_widget' => '',
-		'before_title'  => '',
-		'after_title'   => '',
-		'after_widget'  => ''				
+		'before_widget' => '<div class="remotherer">',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+		'after_widget'  => '</div>'					
 	));
 	register_sidebar(array(
 		'name'          => __( 'GalleryImage', $themeName ),
@@ -181,10 +190,10 @@ function zendvn_theme_widgets_init(){
 		'name'          => __( 'OurBlog', $themeName ),
 		'id'            => 'our-blog',		
 		'class'         => '',
-		'before_widget' => '',
-		'before_title'  => '',
-		'after_title'   => '',
-		'after_widget'  => ''				
+		'before_widget' => '<div class="remotherer">',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+		'after_widget'  => '</div>'					
 	));
 	register_sidebar(array(
 		'name'          => __( 'Blog', $themeName ),
@@ -199,10 +208,10 @@ function zendvn_theme_widgets_init(){
 		'name'          => __( 'EmailSubscribeIntroduce', $themeName ),
 		'id'            => 'email-subscribe-introduce',		
 		'class'         => '',
-		'before_widget' => '',
+		'before_widget' => '<div class="tiato">',
 		'before_title'  => '',
 		'after_title'   => '',
-		'after_widget'  => ''				
+		'after_widget'  => '</div>'				
 	));
 	register_sidebar(array(
 		'name'          => __( 'EmailSubscribe', $themeName ),

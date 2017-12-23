@@ -197,7 +197,14 @@ if(count($arrCart) > 0){
     <?php
     if(is_front_page()){
       if(is_active_sidebar('banner-page')){
-        dynamic_sidebar('banner-page');
+        ?>
+        <div class="logo-banner">
+          <div class="container">
+            <div><center><?php dynamic_sidebar('main-logo'); ?></center></div>
+            <?php dynamic_sidebar('banner-page'); ?>
+          </div>          
+        </div>
+        <?php        
       }
       if(is_active_sidebar('slideshow')){
         dynamic_sidebar('slideshow');

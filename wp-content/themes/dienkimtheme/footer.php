@@ -75,14 +75,9 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
  </div> 
  <div class="col-lg-3 no-padding-left">
    <div class="myaccountbox">
-    <h3>Working time</h3>
-    <div class="margin-top-30">
-      <font color="#ffffff">
-        <?php if(is_active_sidebar('working-time')):?>
+    <?php if(is_active_sidebar('working-time')):?>
           <?php dynamic_sidebar('working-time')?>
         <?php endif; ?>  
-      </font>         
-    </div>
   </div>
 </div> 
 <div class="col-lg-3 no-padding-left">

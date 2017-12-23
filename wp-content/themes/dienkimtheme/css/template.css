@@ -261,15 +261,17 @@ div.logo-banner{
     color: #ffffff;
 
 }
-
-div.logo-banner-excerpt{
-    padding: 0px 200px
+div.serif div.textwidget{
+    padding: 0px 200px;
+    text-align: center;
 }
-div.lobo-banner-title{
+div.serif h3{
         font-size: 44px;
     text-transform: uppercase;
     font-weight: bold;
+    text-align: center;
 }
+
 ul.slick-dots{
         bottom: 10px;
 }
@@ -295,14 +297,26 @@ ul.slick-dots > li:focus > button::before{
 .slick-dotted.slick-slider{
     margin-bottom: 0;
 }
-div.search-food-title{
+div.remotherer{
+    margin-top: 45px;
+}
+div.remotherer h3{
         font-weight: bold;
     font-size: 24px;
     text-transform: uppercase;
-    
+    text-align: center;
 }
-div.search-food-excerpt{
-    padding: 0px 150px;
+div.remotherer div:nth-child(2){
+    padding: 0px 100px;
+    text-align: center;
+}
+div.tiato div{
+    text-align: justify;
+    color: #ffffff;
+}
+div.jimbabue div:nth-child(2){
+   color: #ffffff;
+    margin-top: 25px;
 }
 hr.search-food-hr{
     border-top: 2px solid #FFA41F;

@@ -16,9 +16,11 @@ $instagram_url=$zendvn_sp_settings['instagram_url'];
 $pinterest_url=$zendvn_sp_settings['pinterest_url'];     
      ?>
     <?php get_header();     ?>
-    <?php if(is_active_sidebar('search-food')):?>
-        <?php dynamic_sidebar('search-food')?>
+    <div class="container">
+        <?php if(is_active_sidebar('order-delivery-and-take-out')):?>
+        <?php dynamic_sidebar('order-delivery-and-take-out')?>
     <?php endif; ?>    
+    </div>    
     <center><hr class="search-food-hr" />   </center>
     <div class="container kip">    	
     	<form name="frm-search" action="#" method="POST">
@@ -50,9 +52,11 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     <?php if(is_active_sidebar('introduce')):?>
         <?php dynamic_sidebar('introduce')?>
     <?php endif; ?>
+    <div class="container">
     <?php if(is_active_sidebar('our-menu')):?>
         <?php dynamic_sidebar('our-menu')?>
     <?php endif; ?>   
+    </div>
     <center><hr class="search-food-hr" /></center>
     <div class="container margin-top-30">
         <script type="text/javascript" language="javascript">
@@ -117,17 +121,21 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
         </div>   
     </div>
     <div class="container"><hr class="runat" /></div>
-    <?php if(is_active_sidebar('popular-dishes')):?>
+    <div class="container">
+        <?php if(is_active_sidebar('popular-dishes')):?>
         <?php dynamic_sidebar('popular-dishes')?>
     <?php endif; ?>
+    </div>    
     <center><hr class="search-food-hr" /></center>    
     <?php if(is_active_sidebar('popular-product')):?>
         <?php dynamic_sidebar('popular-product')?>
     <?php endif; ?>        
     <div class="dalat margin-top-45">
-        <?php if(is_active_sidebar('reservation')):?>
+        <div class="container">
+            <?php if(is_active_sidebar('reservation')):?>
             <?php dynamic_sidebar('reservation')?>
         <?php endif; ?>
+        </div>        
         <center><hr class="search-food-hr"></center>
         <script type="text/javascript" language="javascript">
             jQuery(document).ready(function(){
@@ -183,18 +191,24 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
                 </div>                          
             </div>                    
         </form>        
-    </div>   
-    <?php if(is_active_sidebar('our-gallery')):?>
+    </div> 
+    <div class="container">
+        <?php if(is_active_sidebar('our-gallery')):?>
         <?php dynamic_sidebar('our-gallery')?>
     <?php endif; ?>
+    </div>  
+    
     <center><hr class="search-food-hr" />   </center>
     <?php if(is_active_sidebar('gallery-image')):?>
         <?php dynamic_sidebar('gallery-image')?>
     <?php endif; ?>
     <div class="about-us margin-top-45 padding-bottom-45">
-        <?php if(is_active_sidebar('our-blog')):?>
+        <div class="container">
+            <?php if(is_active_sidebar('our-blog')):?>
             <?php dynamic_sidebar('our-blog')?>
         <?php endif; ?>
+        </div>
+        
         <center><hr class="search-food-hr"></center>
         <?php if(is_active_sidebar('blog')):?>
             <?php dynamic_sidebar('blog')?>
