@@ -140,7 +140,51 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     <center><hr class="search-food-hr" /></center>    
     <?php if(is_active_sidebar('popular-product')):?>
         <?php dynamic_sidebar('popular-product')?>
-    <?php endif; ?>        
+    <?php endif; ?>   
+    <?php 
+    $data=array();   
+    $error=$zController->_data["error"];
+    $success=$zController->_data["success"];                           
+    if(count($zController->_data["data"]) > 0){
+        $data=$zController->_data["data"];                  
+    }
+    if(count($error) > 0 || count($success) > 0){
+        ?>
+        <div class="container margin-top-45">
+            <div>
+                <?php                                           
+                if(count($error) > 0){
+                    ?>
+                    <ul class="comproduct33">
+                        <?php 
+                        foreach ($error as $key => $value) {
+                            ?>
+                            <li><?php echo $value; ?></li>
+                            <?php
+                        }
+                        ?>                              
+                    </ul>
+                    <?php
+                }
+                if(count($success) > 0){
+                    ?>
+                    <ul class="comproduct50">
+                        <?php 
+                        foreach ($success as $key => $value) {
+                            ?>
+                            <li><?php echo $value; ?></li>
+                            <?php
+                        }
+                        ?>                              
+                    </ul>
+                    <?php
+                }
+                ?>                                              
+            </div>              
+        </div>                        
+        <?php
+    }
+    ?>
     <div class="dalat margin-top-45">
         <div class="container">
             <?php if(is_active_sidebar('reservation')):?>

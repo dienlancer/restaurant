@@ -569,62 +569,112 @@ class ProductController{
         wp_redirect($contact_link);
 	}	
 	public function booking(){
-		global $zController;	
-		$data=array();
-		$option_name = 'zendvn_sp_setting';
-		$data = get_option('zendvn_sp_setting',array());
-		$fullname 			=	trim(@$_POST["fullname"]);
-		$email 				=	trim(mb_strtolower(@$_POST['email']));		
-		$mobile 			=	trim(@$_POST['mobile']);
-		$datebooking 		=	trim(@$_POST['datebooking']);
-		$timebooking 		=	trim(@$_POST['timebooking']);
-		$number_person 		=	trim(@$_POST["number_person"]);
-		$smtp_host		= 	@$data['smtp_host'];
-		$smtp_port		=	@$data['smtp_port'];
-		$smtp_auth		=	@$data['smtp_auth'];
-		$encription		=	@$data['encription'];
-		$smtp_username	=	@$data['smtp_username'];
-		$smtp_password	=	@$data['smtp_password'];		
-		$email_to		=	@$data['email_to'];
-		$contacted_name	=	@$data['contacted_name'];	
-		$filePhpMailer=PLUGIN_PATH . "scripts" . DS . "phpmailer" . DS . "PHPMailerAutoload.php"	;
-		require_once $filePhpMailer;		        
-		$mail = new PHPMailer;      
-		$mail->CharSet = "UTF-8";   
-		$mail->isSMTP();             
-		$mail->SMTPDebug = 2;
-		$mail->Debugoutput = 'html';
-		$mail->Host = @$smtp_host;
-		$mail->Port = @$smtp_port;
-		$mail->SMTPSecure = @$encription;
-		$mail->SMTPAuth = (int)@$smtp_auth;
-		$mail->Username = @$smtp_username;
-		$mail->Password = @$smtp_password;
-		$mail->setFrom(@$email, $fullname);
-		$mail->addAddress(@$email_to, @$contacted_name);
-		$mail->Subject = 'Thông tin đặt bàn từ khách hàng '.$fullname.' - '.$mobile ;       
-		$html_content='<h3>Thông tin đặt bàn từ khách hàng '.$fullname.'</h3>';
-		$html_content .='<p>Họ và tên : <b>'.$fullname.'</b></p>'; 
-		$html_content .='<p>Email : <b>'.$email.'</b></p>'; 
-		$html_content .='<p>Mobile : <b>'.$mobile.'</b></p>'; 
-		$html_content .='<p>Ngày đặt : <b>'.$datebooking.'</b></p>'; 
-		$html_content .='<p>Vào lúc : <b>'.$timebooking.'</b></p>'; 
-		$html_content .='<p>Số lượng : <b>'.$number_person.'</b></p>'; 
-		$mail->Body=$html_content;
-		if ($mail->send()) {               	
-            echo '<script language="javascript" type="text/javascript">alert("Đặt bàn hoàn tất");</script>'; 
-        }
-        else{
-        	echo '<script language="javascript" type="text/javascript">alert("Có sự cố trong quá trình gửi dữ liệu");</script>'; 
-        }
-        wp_redirect(home_url());
+		global $zController,$wpdb;		
+		$flag=1;
+		$arrError=array();
+		$arrData=array();
+		$arrSuccess=array();	
+		if($zController->isPost()){
+			$action = $zController->getParams('action');			
+			if(check_admin_referer($action,'security_code')){				
+				$arrData=$_POST;
+				
+				$fullname 			=	trim(@$_POST["fullname"]);
+				$email 				=	trim(@$_POST['email']);		
+				$mobile 			=	trim(@$_POST['mobile']);
+				$datebooking 		=	trim(@$_POST['datebooking']);
+				$timebooking 		=	trim(@$_POST['timebooking']);
+				$number_person 		=	trim(@$_POST["number_person"]);				
+
+				if(mb_strlen($fullname) < 6){
+					$arrError["fullname"] = 'Họ tên phải chứa từ 6 ký tự trở lên';
+					$arrData["fullname"] = "";					
+					$flag=0;
+				}
+				if(!preg_match("#^[a-z][a-z0-9_\.]{4,31}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$#",$email )){
+					$arrError["email"] = 'Email không hợp lệ';
+					$arrData["email"] = '';
+					$flag=0;
+				}
+				if(mb_strlen($mobile) < 10){
+					$arrError["mobile"] = 'Số điện thoại không hợp lệ';
+					$arrData["mobile"] = "";					
+					$flag=0;
+				}
+				if(empty($datebooking)){
+					$arrError["datebooking"] = 'Ngày đặt bàn không hợp lệ';
+					$arrData["datebooking"] = "";					
+					$flag=0;
+				}
+				if(empty($timebooking)){
+					$arrError["timebooking"] = 'Thời gian đặt bàn không hợp lệ';
+					$arrData["timebooking"] = "";					
+					$flag=0;
+				}
+				if((int)@$number_person == 0){
+					$arrError["number_person"] = 'Vui lòng chọn số lượng người tham dự';
+					$arrData["number_person"] = "";					
+					$flag=0;
+				}				
+				if((int)@$flag==1){
+					$data=array();
+					$option_name = 'zendvn_sp_setting';
+					$data = get_option('zendvn_sp_setting',array());				
+					$smtp_host		= 	@$data['smtp_host'];
+					$smtp_port		=	@$data['smtp_port'];
+					$smtp_auth		=	@$data['smtp_auth'];
+					$encription		=	@$data['encription'];
+					$smtp_username	=	@$data['smtp_username'];
+					$smtp_password	=	@$data['smtp_password'];		
+					$email_to		=	@$data['email_to'];
+					$contacted_name	=	@$data['contacted_name'];	
+					$filePhpMailer=PLUGIN_PATH . "scripts" . DS . "phpmailer" . DS . "PHPMailerAutoload.php"	;
+					require_once $filePhpMailer;		        
+					$mail = new PHPMailer;      
+					$mail->CharSet = "UTF-8";   
+					$mail->isSMTP();             
+					$mail->SMTPDebug = 2;
+					$mail->Debugoutput = 'html';
+					$mail->Host = @$smtp_host;
+					$mail->Port = @$smtp_port;
+					$mail->SMTPSecure = @$encription;
+					$mail->SMTPAuth = (int)@$smtp_auth;
+					$mail->Username = @$smtp_username;
+					$mail->Password = @$smtp_password;
+					$mail->setFrom(@$email, $fullname);
+					$mail->addAddress(@$email_to, @$contacted_name);
+					$mail->Subject = 'Thông tin đặt bàn từ khách hàng '.$fullname.' - '.$mobile ;       
+					$html_content='<h3>Thông tin đặt bàn từ khách hàng '.$fullname.'</h3>';
+					$html_content .='<p>Họ và tên : <b>'.$fullname.'</b></p>'; 
+					$html_content .='<p>Email : <b>'.$email.'</b></p>'; 
+					$html_content .='<p>Mobile : <b>'.$mobile.'</b></p>'; 
+					$html_content .='<p>Ngày đặt : <b>'.$datebooking.'</b></p>'; 
+					$html_content .='<p>Vào lúc : <b>'.$timebooking.'</b></p>'; 
+					$html_content .='<p>Số lượng : <b>'.$number_person.'</b></p>'; 					
+					$mail->Body=$html_content;
+					if ($mail->send()) {               	
+						$arrSuccess['success']='Đặt bàn hoàn tất'; 
+						echo '<script language="javascript" type="text/javascript">alert("Đặt bàn hoàn tất");</script>'; 
+					}
+					else{
+						$arrError["contact_error"]='Quá trình gửi dữ liệu gặp sự cố'; 
+						echo '<script language="javascript" type="text/javascript">alert("Có sự cố trong quá trình gửi dữ liệu");</script>'; 
+					}	
+				}else{
+					echo '<script language="javascript" type="text/javascript">alert("Vui lòng nhập đúng dữ liệu");</script>'; 
+				}										
+			}
+		}			
+		$zController->_data["data"] = $arrData;
+		$zController->_data["error"] = $arrError;			
+		$zController->_data["success"] = $arrSuccess;			
 	}
 	public function reservation(){
 		global $zController,$wpdb;		
 		$flag=1;
 		$arrError=array();
 		$arrData=array();
-		$success="";	
+		$arrSuccess=array();	
 		if($zController->isPost()){
 			$action = $zController->getParams('action');			
 			if(check_admin_referer($action,'security_code')){				
@@ -667,7 +717,7 @@ class ProductController{
 					$arrError["number_person"] = 'Vui lòng chọn số lượng người tham dự';
 					$arrData["number_person"] = "";					
 					$flag=0;
-				}
+				}				
 				if((int)@$flag==1){
 					$data=array();
 					$option_name = 'zendvn_sp_setting';
@@ -705,17 +755,17 @@ class ProductController{
 					$html_content .='<p>Số lượng : <b>'.$number_person.'</b></p>'; 
 					$html_content .='<p>Message : '.$message.'</p>'; 
 					$mail->Body=$html_content;
-				}				
-				if ($mail->send()) {               	
-					$success='Đặt bàn hoàn tất'; 
-				}
-				else{
-					$arrError["contact_error"]='Quá trình gửi dữ liệu gặp sự cố'; 
-				}				
+					if ($mail->send()) {               	
+						$arrSuccess['success']='Đặt bàn hoàn tất'; 
+					}
+					else{
+						$arrError["contact_error"]='Quá trình gửi dữ liệu gặp sự cố'; 
+					}	
+				}										
 			}
-		}	
+		}			
 		$zController->_data["data"] = $arrData;
 		$zController->_data["error"] = $arrError;			
-		$zController->_data["success"] = $success;			
+		$zController->_data["success"] = $arrSuccess;			
 	}
 }

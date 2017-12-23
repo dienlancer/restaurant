@@ -47,7 +47,7 @@ $vHtml=new HtmlControl();
 </div>
 <div class="container padding-bottom-45 padding-top-15">
 	<div class="row">
-		<div class="col-lg-5">
+		<div class="col-lg-5 no-padding-left">
 			<?php 
 				if(have_posts()){                                   
 					while (have_posts()) {
@@ -62,7 +62,7 @@ $vHtml=new HtmlControl();
 				}
 				?>    
 		</div>
-		<div class="col-lg-7">
+		<div class="col-lg-7 no-padding-left">
 			<script type="text/javascript" language="javascript">
 				jQuery(document).ready(function(){
 					jQuery( "input[name='datebooking']" ).datepicker({
@@ -79,12 +79,50 @@ $vHtml=new HtmlControl();
 				<input type="hidden" name="action" value="reservation" />                      
 				<?php wp_nonce_field("reservation",'security_code',true);?>     
 				<?php 
-				$data=array();        
+				$data=array();   
+				$error=$zController->_data["error"];
+            	$success=$zController->_data["success"]; 				           
 				if(count($zController->_data["data"]) > 0){
-					$data=$zController->_data["data"];
+					$data=$zController->_data["data"];					
 				}
 				?>
-            	<div class="cybertang">            		
+            	<div class="cybertang">
+            		<?php 
+            		if(count($error) > 0 || count($success) > 0){
+            			?>
+            			<div class="form-group">
+            				<?php             			            		
+            				if(count($error) > 0){
+            					?>
+            					<ul class="comproduct33">
+            						<?php 
+            						foreach ($error as $key => $value) {
+            							?>
+            							<li><?php echo $value; ?></li>
+            							<?php
+            						}
+            						?>            					
+            					</ul>
+            					<?php
+            				}
+            				if(count($success) > 0){
+            					?>
+            					<ul class="comproduct50">
+            						<?php 
+            						foreach ($success as $key => $value) {
+            							?>
+            							<li><?php echo $value; ?></li>
+            							<?php
+            						}
+            						?>            					
+            					</ul>
+            					<?php
+            				}
+            				?>            			            			
+            			</div>            	
+            			<?php
+            		}
+            		?>            			
             		<div class="form-group relative">
 						<i class="icofont icofont-ui-user"></i><input name="fullname" value="<?php echo @$data['fullname']; ?>"  placeholder="Họ và tên" class="form-control" type="text">
 					</div>
@@ -113,7 +151,7 @@ $vHtml=new HtmlControl();
 						</select>
 					</div>
 					<div class="form-group relative">
-						<i class="icofont icofont-ui-message"></i><textarea class="form-control" name="message" value="<?php echo @$data['message']; ?>" placeholder="Message"></textarea>
+						<i class="icofont icofont-ui-message"></i><textarea class="form-control" name="message"  placeholder="Message"><?php echo @$data['message']; ?></textarea>
 					</div>
 					<div class="form-group">
 						<div class="about-us-readmore margin-top-15"><a href="javascript:void(0);" onclick="document.forms['frm-reservation'].submit();">Đặt bàn</a></div>
