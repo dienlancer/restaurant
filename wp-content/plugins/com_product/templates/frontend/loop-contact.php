@@ -77,7 +77,7 @@ $map_url=$zendvn_sp_settings['ban_do'];
             <div class="clr"></div>        
         </div>  
         <div class="row margin-top-15">
-                    <iframe src="<?php echo $map_url; ?>" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>                
+            <iframe src="<?php echo $map_url; ?>" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>                
     </div>
 </div>
