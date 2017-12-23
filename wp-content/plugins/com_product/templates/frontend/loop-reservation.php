@@ -90,7 +90,7 @@ $vHtml=new HtmlControl();
             		<?php 
             		if(count($error) > 0 || count($success) > 0){
             			?>
-            			<div class="form-group">
+            			<div class="form-group alert">
             				<?php             			            		
             				if(count($error) > 0){
             					?>

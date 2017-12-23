@@ -187,7 +187,11 @@ if(count($arrCart) > 0){
               </div>             
             </div>
               <div class="col-lg-3 no-padding ">
-                <div class="book-your-table"><a href="javascript:void(0);">Book your table</a></div>
+                <?php 
+                $page_id_reservation = $zController->getHelper('GetPageId')->get('_wp_page_template','reservation.php');  
+                $reservation_link = get_permalink($page_id_reservation);
+                ?>
+                <div class="book-your-table"><a href="<?php echo $reservation_link; ?>">Book your table</a></div>
               </div>                    
             </div>        
           </div>

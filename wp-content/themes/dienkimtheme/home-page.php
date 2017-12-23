@@ -150,7 +150,7 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     }
     if(count($error) > 0 || count($success) > 0){
         ?>
-        <div class="container margin-top-45">
+        <div class="container margin-top-45 alert">
             <div>
                 <?php                                           
                 if(count($error) > 0){

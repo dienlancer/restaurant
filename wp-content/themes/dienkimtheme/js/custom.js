@@ -99,3 +99,9 @@ function addToCart(product_id,quantity){
 		}
 	});
 }
+function hideMsg() {
+	jQuery('.alert').fadeOut();
+} 
+jQuery(document).ready(function(){	
+	timeout = setTimeout(hideMsg, 10000);			
+});
