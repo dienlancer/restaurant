@@ -2,7 +2,7 @@
 global $zController,$zendvn_sp_settings;    
 $vHtml=new HtmlControl();
 $productModel=$zController->getModel("/frontend","ProductModel"); 
-$query=$wp_query;
+$the_query=$wp_query;
 $totalItemsPerPage=0;
 $pageRange=10;
 $currentPage=1; 
@@ -12,7 +12,7 @@ if(!empty($zendvn_sp_settings["article_number"])){
 if(!empty(@$_POST["filter_page"]))          {
     $currentPage=@$_POST["filter_page"];  
 }
-$productModel->setWpQuery($query);   
+$productModel->setWpQuery($the_query);   
 $productModel->setPerpage($totalItemsPerPage);        
 $productModel->prepare_items();               
 $totalItems= $productModel->getTotalItems();               
@@ -57,11 +57,11 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
             <div class="row">                
                 <div>
                     <?php 
-                    if($query->have_posts()){    
+                    if($the_query->have_posts()){    
                         $k=1  ;                            
-                        while ($query->have_posts()){
-                            $query->the_post();     
-                            $post_id=$query->post->ID;                          
+                        while ($the_query->have_posts()){
+                            $the_query->the_post();     
+                            $post_id=$the_query->post->ID;                          
                             $permalink=get_the_permalink($post_id);
                             $title=get_the_title($post_id);
                             $excerpt=get_post_meta($post_id,"article_intro",true);
@@ -88,7 +88,7 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
                                 </div>
                             </div>                            
                             <?php
-                            if($k%3 ==0 || $k==$query->post_count){
+                            if($k%3 ==0 || $k==$the_query->post_count){
                                 echo '<div class="clr"></div>';
                             }
                             $k++;

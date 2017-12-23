@@ -7,16 +7,17 @@ $productModel=$zController->getModel("/frontend","ProductModel");
 /* begin load config contact */
 $width=$zendvn_sp_settings["product_width"];    
 $height=$zendvn_sp_settings["product_height"];      
-$contacted_phone=$zendvn_sp_settings['contacted_phone'];
 $email_to=$zendvn_sp_settings['email_to'];
 $address=$zendvn_sp_settings['address'];
-$to_name=$zendvn_sp_settings['to_name'];
-$telephone=$zendvn_sp_settings['telephone'];
 $website=$zendvn_sp_settings['website'];
-$opened_time=$zendvn_sp_settings['opened_time'];
-$opened_date=$zendvn_sp_settings['opened_date'];
+$telephone=$zendvn_sp_settings['telephone'];
 $contaced_name=$zendvn_sp_settings['contacted_name'];
-$product_number=$zendvn_sp_settings["product_number"];
+$facebook_url=$zendvn_sp_settings['facebook_url'];
+$twitter_url=$zendvn_sp_settings['twitter_url'];
+$google_plus=$zendvn_sp_settings['google_plus'];
+$youtube_url=$zendvn_sp_settings['youtube_url'];
+$instagram_url=$zendvn_sp_settings['instagram_url'];
+$pinterest_url=$zendvn_sp_settings['pinterest_url'];     
 /* end load config contact */
         
 $the_query=$wp_query;

@@ -38,7 +38,8 @@ class CreatePage{
 					'zshopping.php' => 'Hiển thị tất cả sản phẩm',
 					'contact.php' => 'Liên hệ',
 					'search.php' => 'Tìm kiếm',
-					'page-list-category.php' => 'Danh sách chủ đề bài viết'
+					'page-list-category.php' => 'Danh sách chủ đề bài viết',
+					'reservation.php' => 'Đặt bàn',
 				);	
 	}
 	
