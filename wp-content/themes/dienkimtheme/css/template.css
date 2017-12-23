@@ -742,7 +742,7 @@ div.alex{
     color: #ffffff;
     text-align: center;
 }
-div.top ul.slick-dots{
+div.linda ul.slick-dots{
     display: none;
 }
 div.lumberjack img{
@@ -758,7 +758,63 @@ h3.hexa-title{
         text-transform: uppercase;
     font-weight: bold;
 }
-
+h3.bellesa-title{
+        font-family: 'Parisienne-Regular';
+    color:#FFA41F;
+    font-size: 45px;
+    position: relative;
+    padding-bottom: 15px;
+    text-transform: capitalize;
+}
+h3.bellesa-title::before{
+        position: absolute;
+    left: 0;
+    height: 1px;
+    width: 100px;
+    background: #FFA41F;
+    content: "";
+    bottom: 0;
+}
+h3.bellesa-title::after{
+        position: absolute;
+        left: 15px;
+    bottom: -2px;
+    height: 1px;
+    width: 100px;
+    background: #FFA41F;
+    content: "";
+    
+}
+div.oppo{
+        position: absolute;
+    bottom: 19px;
+    left: 0;
+    color: #ffffff;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+div.nina{
+        font-size: 35px;
+    text-transform: uppercase;
+    font-family: 'Parisienne-Regular';
+    position: absolute;
+    color: #ffffff;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+div.tma{
+        background: #000000;
+    opacity: 0.5;
+    padding: 35px 110px;
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;

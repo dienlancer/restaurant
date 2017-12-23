@@ -2,7 +2,7 @@
     <div>
         <script type="text/javascript" language="javascript">        
             jQuery(document).ready(function(){
-                jQuery(".top").slick({
+                jQuery(".linda").slick({
                     dots: true,
                     autoplay:true,
                     arrows:false,
@@ -11,7 +11,7 @@
                 });  
             });     
         </script>
-        <div class="top">
+        <div class="linda">
             <div class="lumberjack"><img src="<?php echo site_url('wp-content/uploads/banner-top.jpg'); ?>" /></div>
         </div>
     </div>       
