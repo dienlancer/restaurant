@@ -24,6 +24,7 @@ class ProductController{
 			case "login-checkout"		:	$this->loginCheckout();break;
 			case "change-password"		:	$this->changePassword();break;
 			case "booking"				:	$this->booking();break;
+			case "reservation"			:	$this->reservation();break;
 		}		
 	}	
 	public function addCart(){		
@@ -146,23 +147,23 @@ class ProductController{
 				if(!preg_match("#^[a-z][a-z0-9_\.]{4,31}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$#",$email )){
 					$arrError["email"] = 'Email is invalid';
 					$arrData["email"] = '';
-					$flag=false;
+					$flag=0;
 				}
 				if(!preg_match("#^[a-z_][a-z0-9_\.\s]{4,31}$#", $username)){
 					$arrError["username"] = 'Username is invalid';
 					$arrData["username"] = "";	
-					$flag=false;
+					$flag=0;
 				}
 				if(mb_strlen($password) < 6){
 					$arrError["password"] = 'Password is invalid';
 					$arrData["password"] = "";
 					$arrData["password_confirm"] = "";	
-					$flag=false;
+					$flag=0;
 				}
 				if(strcmp($password, $password_confirm)!=0){
 					$arrError["password_confirm"] = 'PasswordConfirm is not matched Password';
 					$arrData["password_confirm"] = "";		
-					$flag=false;
+					$flag=0;
 				}			
 				$tbuser = $wpdb->prefix . 'shk_user';			
 				$query ="SELECT u.id
@@ -174,7 +175,7 @@ class ProductController{
 				if(!empty($lst)){
 					$arrError["email"] = 'Email đã tồn tại';
 					$arrData["email"] = '';
-					$flag=false;
+					$flag=0;
 				}
 				$query =" 
 						SELECT u.id
@@ -186,7 +187,7 @@ class ProductController{
 				if(!empty($lst)){
 					$arrError["username"] = 'Username đã tồn tại';
 					$arrData["username"] = '';
-					$flag=false;
+					$flag=0;
 				}				
 
 				if($flag==true){
@@ -224,7 +225,7 @@ class ProductController{
 				if(!preg_match("#^[a-z][a-z0-9_\.]{4,31}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$#",$email )){
 					$arrError["email"] = 'Email is invalid';
 					$arrData["email"] = '';
-					$flag=false;
+					$flag=0;
 				}								
 				$id=(int)($_POST["id"]);
 				$tbuser = $wpdb->prefix . 'shk_user';			
@@ -237,7 +238,7 @@ class ProductController{
 				if(!empty($lst)){
 					$arrError["email"] = 'Email đã tồn tại';
 					$arrData["email"] = '';
-					$flag=false;
+					$flag=0;
 				}					
 				if($flag==true){
 					$model = $zController->getModel("/frontend","UserModel");
@@ -276,12 +277,12 @@ class ProductController{
                   $arrError["password"] = 'Password is invalid';
                   $arrData["password"] = "";
                   $arrData["password_confirm"] = ""; 
-                  $flag=false;
+                  $flag=0;
                 }
                 if(strcmp($password, $password_confirm)!=0){
                   $arrError["password_confirm"] = 'PasswordConfirm is not matched Password';
                   $arrData["password_confirm"] = "";   
-                  $flag=false;
+                  $flag=0;
                 }    
                 if($flag){
                    	$model = $zController->getModel("/frontend","UserModel");
@@ -364,18 +365,18 @@ class ProductController{
 				if(empty($email)){
                   $arrError["email"] = 'Xin vui lòng nhập email';
                   $arrData["email"] = "";                  
-                  $flag=false;
+                  $flag=0;
                 }
                 if((int)$payment_method==0){
                   $arrError["payment_method"] = 'Xin vui lòng nhập phương thức thanh toán';
                   $arrData["payment_method"] = "";                  
-                  $flag=false;
+                  $flag=0;
                 }
 				// kiểm tra email hợp lệ			
 				if(!preg_match("#^[a-z][a-z0-9_\.]{4,31}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$#",$email )){
 					$arrError["email"] = 'Email is invalid';
 					$arrData["email"] = '';
-					$flag=false;
+					$flag=0;
 				}								
 				$id=(int)($_POST["user_id"]);
 				$tbuser = $wpdb->prefix . 'shk_user';			
@@ -388,7 +389,7 @@ class ProductController{
 				if(!empty($lst)){
 					$arrError["email"] = 'Email đã tồn tại';
 					$arrData["email"] = '';
-					$flag=false;
+					$flag=0;
 				}					
 				if($flag==true){
 					$invoiceModel = $zController->getModel("/frontend","InvoiceModel");		 
@@ -421,23 +422,23 @@ class ProductController{
 				if(!preg_match("#^[a-z][a-z0-9_\.]{4,31}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$#",$email )){
 					$arrError["email"] = 'Email is invalid';
 					$arrData["email"] = '';
-					$flag=false;
+					$flag=0;
 				}
 				if(!preg_match("#^[a-z_][a-z0-9_\.\s]{4,31}$#", $username)){
 					$arrError["username"] = 'Username is invalid';
 					$arrData["username"] = "";	
-					$flag=false;
+					$flag=0;
 				}
 				if(mb_strlen($password) < 6){
 					$arrError["password"] = 'Password is invalid';
 					$arrData["password"] = "";
 					$arrData["password_confirm"] = "";	
-					$flag=false;
+					$flag=0;
 				}
 				if(strcmp($password, $password_confirm)!=0){
 					$arrError["password_confirm"] = 'PasswordConfirm is not matched Password';
 					$arrData["password_confirm"] = "";		
-					$flag=false;
+					$flag=0;
 				}			
 				$tbuser = $wpdb->prefix . 'shk_user';			
 				$query ="SELECT u.id
@@ -449,7 +450,7 @@ class ProductController{
 				if(!empty($lst)){
 					$arrError["email"] = 'Email đã tồn tại';
 					$arrData["email"] = '';
-					$flag=false;
+					$flag=0;
 				}
 				$query =" 
 						SELECT u.id
@@ -461,7 +462,7 @@ class ProductController{
 				if(!empty($lst)){
 					$arrError["username"] = 'Username đã tồn tại';
 					$arrData["username"] = '';
-					$flag=false;
+					$flag=0;
 				}				
 				if($flag==true){					
 					$model = $zController->getModel("/frontend","UserModel");
@@ -617,5 +618,104 @@ class ProductController{
         	echo '<script language="javascript" type="text/javascript">alert("Có sự cố trong quá trình gửi dữ liệu");</script>'; 
         }
         wp_redirect(home_url());
+	}
+	public function reservation(){
+		global $zController,$wpdb;		
+		$flag=1;
+		$arrError=array();
+		$arrData=array();
+		$success="";	
+		if($zController->isPost()){
+			$action = $zController->getParams('action');			
+			if(check_admin_referer($action,'security_code')){				
+				$arrData=$_POST;
+				
+				$fullname 			=	trim(@$_POST["fullname"]);
+				$email 				=	trim(@$_POST['email']);		
+				$mobile 			=	trim(@$_POST['mobile']);
+				$datebooking 		=	trim(@$_POST['datebooking']);
+				$timebooking 		=	trim(@$_POST['timebooking']);
+				$number_person 		=	trim(@$_POST["number_person"]);
+				$message 			=	trim(@$_POST["message"]);
+
+				if(mb_strlen($fullname) < 6){
+					$arrError["fullname"] = 'Họ tên phải chứa từ 6 ký tự trở lên';
+					$arrData["fullname"] = "";					
+					$flag=0;
+				}
+				if(!preg_match("#^[a-z][a-z0-9_\.]{4,31}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$#",$email )){
+					$arrError["email"] = 'Email không hợp lệ';
+					$arrData["email"] = '';
+					$flag=0;
+				}
+				if(mb_strlen($mobile) < 10){
+					$arrError["mobile"] = 'Số điện thoại không hợp lệ';
+					$arrData["mobile"] = "";					
+					$flag=0;
+				}
+				if(empty($datebooking)){
+					$arrError["datebooking"] = 'Ngày đặt bàn không hợp lệ';
+					$arrData["datebooking"] = "";					
+					$flag=0;
+				}
+				if(empty($timebooking)){
+					$arrError["timebooking"] = 'Thời gian đặt bàn không hợp lệ';
+					$arrData["timebooking"] = "";					
+					$flag=0;
+				}
+				if((int)@$number_person == 0){
+					$arrError["number_person"] = 'Vui lòng chọn số lượng người tham dự';
+					$arrData["number_person"] = "";					
+					$flag=0;
+				}
+				if((int)@$flag==1){
+					$data=array();
+					$option_name = 'zendvn_sp_setting';
+					$data = get_option('zendvn_sp_setting',array());				
+					$smtp_host		= 	@$data['smtp_host'];
+					$smtp_port		=	@$data['smtp_port'];
+					$smtp_auth		=	@$data['smtp_auth'];
+					$encription		=	@$data['encription'];
+					$smtp_username	=	@$data['smtp_username'];
+					$smtp_password	=	@$data['smtp_password'];		
+					$email_to		=	@$data['email_to'];
+					$contacted_name	=	@$data['contacted_name'];	
+					$filePhpMailer=PLUGIN_PATH . "scripts" . DS . "phpmailer" . DS . "PHPMailerAutoload.php"	;
+					require_once $filePhpMailer;		        
+					$mail = new PHPMailer;      
+					$mail->CharSet = "UTF-8";   
+					$mail->isSMTP();             
+					$mail->SMTPDebug = 2;
+					$mail->Debugoutput = 'html';
+					$mail->Host = @$smtp_host;
+					$mail->Port = @$smtp_port;
+					$mail->SMTPSecure = @$encription;
+					$mail->SMTPAuth = (int)@$smtp_auth;
+					$mail->Username = @$smtp_username;
+					$mail->Password = @$smtp_password;
+					$mail->setFrom(@$email, $fullname);
+					$mail->addAddress(@$email_to, @$contacted_name);
+					$mail->Subject = 'Thông tin đặt bàn từ khách hàng '.$fullname.' - '.$mobile ;       
+					$html_content='<h3>Thông tin đặt bàn từ khách hàng '.$fullname.'</h3>';
+					$html_content .='<p>Họ và tên : <b>'.$fullname.'</b></p>'; 
+					$html_content .='<p>Email : <b>'.$email.'</b></p>'; 
+					$html_content .='<p>Mobile : <b>'.$mobile.'</b></p>'; 
+					$html_content .='<p>Ngày đặt : <b>'.$datebooking.'</b></p>'; 
+					$html_content .='<p>Vào lúc : <b>'.$timebooking.'</b></p>'; 
+					$html_content .='<p>Số lượng : <b>'.$number_person.'</b></p>'; 
+					$html_content .='<p>Message : '.$message.'</p>'; 
+					$mail->Body=$html_content;
+				}				
+				if ($mail->send()) {               	
+					$success='Đặt bàn hoàn tất'; 
+				}
+				else{
+					$arrError["contact_error"]='Quá trình gửi dữ liệu gặp sự cố'; 
+				}				
+			}
+		}	
+		$zController->_data["data"] = $arrData;
+		$zController->_data["error"] = $arrError;			
+		$zController->_data["success"] = $success;			
 	}
 }

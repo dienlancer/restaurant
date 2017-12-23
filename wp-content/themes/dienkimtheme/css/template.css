@@ -4,7 +4,7 @@
 @font-face{font-family:"arial";src:url("../fonts/arial.ttf") format('truetype');}
 @font-face{font-family:"notoserif";src:url("../fonts/noto-serif.ttf") format('truetype');}
 @font-face{font-family:"baomoi";src:url("../fonts/baomoi_gdi.ttf") format('truetype');}
-@font-face{font-family:"Parisienne-Regular";src:url("../fonts/Parisienne-Regular.ttf") format('truetype');}
+@font-face{font-family:"Parisienne";src:url("../fonts/Parisienne.ttf") format('truetype');}
 @font-face{font-family:"Ovo";src:url("../fonts/Ovo-Regular.ttf") format('truetype');}
 @font-face{font-family:"segoeui";src:url("../fonts/segoeui.woff");}
 body{font-size:14px;color:#333;background:#ffffff;font-family: 'segoeui'}
@@ -759,7 +759,7 @@ h3.hexa-title{
     font-weight: bold;
 }
 h3.bellesa-title{
-        font-family: 'Parisienne-Regular';
+        font-family: "Parisienne";
     color:#FFA41F;
     font-size: 45px;
     position: relative;
@@ -796,9 +796,10 @@ div.oppo{
     justify-content: center;
 }
 div.nina{
-        font-size: 35px;
+        font-size: 25px;
     text-transform: uppercase;
-    font-family: 'Parisienne-Regular';
+    font-family:"notoserif";
+    font-style: italic;
     position: absolute;
     color: #ffffff;
     top: 0px;
@@ -833,6 +834,16 @@ div.tma{
 .send:hover{
     background: #D85D22;
     color: #ffffff
+}
+div.cybertang i{
+       position: absolute;
+    right: 0px;
+    top: 0;
+    padding: 10px 5px;
+    color: #FFA41F;
+}
+div.cybertang div.form-group{
+    margin-bottom:30px;
 }
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
