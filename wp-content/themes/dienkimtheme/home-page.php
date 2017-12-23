@@ -16,6 +16,17 @@ $instagram_url=$zendvn_sp_settings['instagram_url'];
 $pinterest_url=$zendvn_sp_settings['pinterest_url'];     
      ?>
     <?php get_header();     ?>
+    <div class="tina relative">
+        <div class="logo-banner">
+            <div class="container">
+                <div><center><?php dynamic_sidebar('main-logo'); ?></center></div>
+                <?php dynamic_sidebar('banner-page'); ?>
+            </div>          
+        </div>
+        <?php if(is_active_sidebar('slideshow')):?>
+            <?php dynamic_sidebar('slideshow')?>
+        <?php endif; ?>   
+    </div>    
     <div class="container">
         <?php if(is_active_sidebar('order-delivery-and-take-out')):?>
         <?php dynamic_sidebar('order-delivery-and-take-out')?>

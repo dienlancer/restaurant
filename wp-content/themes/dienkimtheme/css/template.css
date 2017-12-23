@@ -748,6 +748,17 @@ div.top ul.slick-dots{
 div.lumberjack img{
     height: 100%;    
 }
+div.hexa{
+    background: #F5F5F5
+}
+div.vnpt{
+    text-align: justify;
+}
+h3.hexa-title{
+        text-transform: uppercase;
+    font-weight: bold;
+}
+
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;

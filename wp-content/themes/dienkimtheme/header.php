@@ -193,44 +193,7 @@ if(count($arrCart) > 0){
           </div>
         </div>
       </div>
-    </div>
-    <?php
-    if(is_front_page()){
-      if(is_active_sidebar('banner-page')){
-        ?>
-        <div class="logo-banner">
-          <div class="container">
-            <div><center><?php dynamic_sidebar('main-logo'); ?></center></div>
-            <?php dynamic_sidebar('banner-page'); ?>
-          </div>          
-        </div>
-        <?php        
-      }
-      if(is_active_sidebar('slideshow')){
-        dynamic_sidebar('slideshow');
-      }  
-    }     
-    else{
-      ?>
-      <div>
-        <script type="text/javascript" language="javascript">        
-        jQuery(document).ready(function(){
-          jQuery(".top").slick({
-            dots: true,
-            autoplay:true,
-            arrows:false,
-            adaptiveHeight:false,
-            loop:true
-          });  
-        });     
-      </script>
-      <div class="top">
-        <div class="lumberjack"><img src="<?php echo site_url('wp-content/uploads/banner-top.jpg'); ?>" /></div>
-      </div>
-      </div>      
-      <?php
-    }
-    ?>        
+    </div>        
   </div>
 </header>
 
