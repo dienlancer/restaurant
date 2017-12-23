@@ -58,11 +58,11 @@ $map_url=$zendvn_sp_settings['ban_do'];
                     'name' => 'thong-tin-lien-he',
                     'post_type'=>'page'
                 );
-                $query = new WP_Query($args);       
-                if($query->have_posts()){                                   
-                    while ($query->have_posts()) {
-                        $query->the_post();     
-                        $post_id=$query->post->ID;                          
+                $the_query = new WP_Query($args);       
+                if($the_query->have_posts()){                                   
+                    while ($the_query->have_posts()) {
+                        $the_query->the_post();     
+                        $post_id=$the_query->post->ID;                          
                         $permalink=get_the_permalink($post_id);
                         $title=get_the_title($post_id);
                         $content=get_the_content( $post_id );

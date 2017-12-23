@@ -26,12 +26,12 @@ $linkedin_url=$zendvn_sp_settings['linkedin_url'];
 
     /* end load config contact */
     $term_slug='';
-    $query=$wp_query;
+    $the_query=$wp_query;
     $post_id=0;
-    if($query->have_posts()){
-        while ($query->have_posts()){
-            $query->the_post();                            
-            $post_id=$query->post->ID;                                             
+    if($the_query->have_posts()){
+        while ($the_query->have_posts()){
+            $the_query->the_post();                            
+            $post_id=$the_query->post->ID;                                             
             $permalink=get_the_permalink($post_id);                    
             $title=get_the_title($post_id);                    
             $excerpt='';

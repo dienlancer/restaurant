@@ -19,7 +19,7 @@ $product_number=$zendvn_sp_settings["product_number"];
 /* end load config contact */
 $keyword=$zController->getParams('q');
 $args=array( 's'=> $keyword,'post_type'=>'zaproduct' );
-$query=new WP_Query($args);
+$the_query=new WP_Query($args);
 // begin phân trang
 $totalItemsPerPage=0;
 $pageRange=10;
@@ -30,11 +30,11 @@ if(!empty($zendvn_sp_settings["product_number"])){
 if(!empty(@$_POST["filter_page"]))          {
     $currentPage=@$_POST["filter_page"];  
 }
-$productModel->setWpQuery($query);   
+$productModel->setWpQuery($the_query);   
 $productModel->setPerpage($totalItemsPerPage);        
 $productModel->prepare_items();               
 $totalItems= $productModel->getTotalItems();   
-$query=$productModel->getItems();                
+$the_query=$productModel->getItems();                
 $arrPagination=array(
   "totalItems"=>$totalItems,
   "totalItemsPerPage"=>$totalItemsPerPage,
@@ -62,11 +62,11 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
         </h3>        
         <div class="margin-top-15">
             <?php 
-       if($query->have_posts()){  
+       if($the_query->have_posts()){  
         $k=1  ;                             
-        while ($query->have_posts()) {
-            $query->the_post();     
-            $post_id=$query->post->ID;                          
+        while ($the_query->have_posts()) {
+            $the_query->the_post();     
+            $post_id=$the_query->post->ID;                          
             $permalink=get_the_permalink($post_id);
             $title=get_the_title($post_id);
             $excerpt=get_post_meta($post_id,$meta_key."intro",true);
@@ -111,7 +111,7 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
                 </div>
             </div>            
             <?php
-            if($k%3 ==0 || $k==$query->post_count){
+            if($k%3 ==0 || $k==$the_query->post_count){
                 echo '<div class="clr"></div>';
             }
             $k++;
