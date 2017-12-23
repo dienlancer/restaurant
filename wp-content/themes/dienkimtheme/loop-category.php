@@ -52,7 +52,7 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
             </div>
         </div>       
     </div> 
-    <div class="hexa padding-top-15 padding-bottom-45">
+    <div class="hexa padding-top-5 padding-bottom-15">
         <div class="container">
             <div class="row">                
                 <div>
@@ -69,7 +69,7 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
                             $content=get_the_content($post_id);
                             $featureImg=get_the_post_thumbnail_url($post_id, 'full');                           
                             ?>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 no-padding-left">
                                 <div class="main-blog-box margin-top-30">
                                     <div class="blog-box-img">
                                         <center>
@@ -96,7 +96,11 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
                         wp_reset_postdata();                        
                     }
                     ?>
-                </div>
+                </div>                
+            </div>
+            <div class="row">
+                    <?php echo $pagination->showPagination();            ?>
+                    <div class="clr"></div>
             </div>
         </div>
     </div>
