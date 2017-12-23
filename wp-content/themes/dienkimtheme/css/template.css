@@ -815,6 +815,25 @@ div.tma{
     opacity: 0.5;
     padding: 35px 110px;
 }
+.contact-input {
+    width: 100%;
+    padding-left: 10px;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+.send{
+    padding: 5px 20px;
+    text-transform: uppercase;
+    background: #FFA41F;
+    border: 1px solid #FFA41F;
+    color: #fff;
+}
+.send:hover{
+    background: #D85D22;
+    color: #ffffff
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;
