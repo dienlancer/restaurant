@@ -116,12 +116,7 @@
 
                 </tr>
             </tfoot>
-        </table>
-        <?php   
-        if(!empty($msg)){
-            echo "<br/>" . $msg; 
-        }
-        ?>
+        </table>       
         <div>
             <div class="col-md-8">
 
