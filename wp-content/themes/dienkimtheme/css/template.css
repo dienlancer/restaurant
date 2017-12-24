@@ -885,7 +885,9 @@ ul.categoryproductmenu li a{
     padding: 5px 0px;
     font-style: italic;
 }
-
+ul.categoryproductmenu li a i{
+    margin-right: 10px
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;

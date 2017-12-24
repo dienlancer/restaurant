@@ -29,7 +29,7 @@
     </div> 
     <div class="container margin-top-15">
     	<div class="row">
-    		<div class="col-lg-3">
+    		<div class="col-lg-3 no-padding-left">
     			
     			<div class="ducati">
     				<h3>Danh mục sản phẩm</h3>
@@ -46,7 +46,7 @@
     						'fallback_cb'       => 'wp_page_menu', 
     						'before'            => '', 
     						'after'             => '', 
-    						'link_before'       => '', 
+    						'link_before'       => '<i class="fa fa-star-o" aria-hidden="true"></i>', 
     						'link_after'        => '', 
     						'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s</ul>',  
     						'depth'             => 3, 
@@ -60,7 +60,7 @@
     			</div>
 
     		</div>
-    		<div class="col-lg-9"></div>
+    		<div class="col-lg-9 no-padding-left"><?php require_once PLUGIN_PATH . DS . "templates" . DS . "frontend". DS . "loop-za-category.php"; ?></div>
     	</div>
     </div>
     <?php get_footer(); ?>
