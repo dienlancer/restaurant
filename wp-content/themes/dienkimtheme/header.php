@@ -131,6 +131,7 @@ if(count($arrCart) > 0){
                 <li><a href="javascript:void(0);"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Email : <?php echo $email_to; ?></a></li>
                 <li><a href="javascript:void(0);"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Phone : <?php echo $telephone; ?></a></li>
                 <li><a href="<?php echo $cart_link; ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Cart</a></li>
+                <li><a href="javascript:void(0);">Giỏ hàng&nbsp;(<span class="cart-total"><?php echo $quantity; ?></span>)</a></li>
               </ul>
             </div>
             <div class="runoutright">

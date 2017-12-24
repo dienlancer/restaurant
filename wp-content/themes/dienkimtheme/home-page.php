@@ -34,10 +34,14 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     </div>    
     <center><hr class="search-food-hr" />   </center>
     <div class="container kip">    	
-    	<form name="frm-search" action="#" method="POST">
+        <?php 
+        $page_id_search = $zController->getHelper('GetPageId')->get('_wp_page_template','search.php');       
+        $search_link = get_permalink($page_id_search);  
+        ?>
+    	<form name="frm-search" action="<?php echo $search_link; ?>" method="POST">
     		<div class="search-food-form margin-top-45">
     			<div><input type="text" name="q" placeholder="Tìm theo từ khoá"></div>
-    			<div><center><a href="javascript:void(0);"><i class="fa fa-search" aria-hidden="true"></i>Tìm</a></center></div>
+    			<div><center><a href="javascript:void(0);" onclick="document.forms['frm-search'].submit();"><i class="fa fa-search" aria-hidden="true"></i>Tìm</a></center></div>
     		</div>
     	</form>	
     	<div class="margin-top-45">
