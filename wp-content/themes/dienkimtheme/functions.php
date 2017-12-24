@@ -19,6 +19,7 @@ function zendvn_theme_register_menus(){
 			'mobile-menu' 			=> __('MobileMenu'),					
 			'myaccount-menu' 			=> __('MyAccountMenu'),			
 			'information-menu' 			=> __('InformationMenu'),			
+			'category-product-menu' 			=> __('CategoryProductMenu'),			
 		)
 	);
 }

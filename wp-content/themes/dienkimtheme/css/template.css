@@ -859,6 +859,33 @@ div.article-home-excerpt {
     text-align: justify;
     z-index: 9999;
 }
+div.ducati > h3{
+    background: #FFA41F;
+    color: #ffffff;
+    padding: 15px 0px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+ul.categoryproductmenu{
+    list-style: none;
+}
+div.ducati > div:nth-child(2){
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+        padding: 0px 15px;
+}
+ul.categoryproductmenu li{
+    margin-left: 0;
+}
+ul.categoryproductmenu li a{
+    display: block;
+    padding: 5px 0px;
+    font-style: italic;
+}
+
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;

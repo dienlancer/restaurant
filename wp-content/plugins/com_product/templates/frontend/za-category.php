@@ -29,11 +29,11 @@
     </div> 
     <div class="container margin-top-15">
     	<div class="row">
-    		<div class="col-lg-4">
+    		<div class="col-lg-3">
     			
     			<div class="ducati">
-    				<h3>My account</h3>
-    				<div class="margin-top-15">
+    				<h3>Danh mục sản phẩm</h3>
+    				<div>
     					<?php     
     					$args = array( 
     						'menu'              => '', 
@@ -60,7 +60,7 @@
     			</div>
 
     		</div>
-    		<div class="col-lg-8"></div>
+    		<div class="col-lg-9"></div>
     	</div>
     </div>
     <?php get_footer(); ?>

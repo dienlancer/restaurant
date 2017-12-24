@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2017 at 11:35 AM
+-- Generation Time: Dec 24, 2017 at 11:56 AM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -345,7 +345,7 @@ INSERT INTO `mp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (109, 'theme_mods_twentyseventeen', 'a:2:{s:18:\"custom_css_post_id\";i:-1;s:16:\"sidebars_widgets\";a:2:{s:4:\"time\";i:1508926514;s:4:\"data\";a:4:{s:19:\"wp_inactive_widgets\";a:0:{}s:9:\"sidebar-1\";a:6:{i:0;s:8:\"search-2\";i:1;s:14:\"recent-posts-2\";i:2;s:17:\"recent-comments-2\";i:3;s:10:\"archives-2\";i:4;s:12:\"categories-2\";i:5;s:6:\"meta-2\";}s:9:\"sidebar-2\";a:0:{}s:9:\"sidebar-3\";a:0:{}}}}', 'yes'),
 (122, 'can_compress_scripts', '1', 'no'),
 (140, 'current_theme', 'dienkimtheme', 'yes'),
-(141, 'theme_mods_dienkimtheme', 'a:4:{i:0;b:0;s:18:\"custom_css_post_id\";i:-1;s:20:\"zendvn_theme_general\";a:1:{s:9:\"site-logo\";s:60:\"http://demo.dienkim/restaurant/wp-content/uploads/logo-1.png\";}s:18:\"nav_menu_locations\";a:18:{s:13:\"dropdown-menu\";i:0;s:13:\"rau-sach-menu\";i:0;s:12:\"support-menu\";i:0;s:21:\"category-article-menu\";i:0;s:21:\"category-product-menu\";i:0;s:11:\"mobile-menu\";i:38;s:11:\"bottom-menu\";i:0;s:14:\"direction-menu\";i:0;s:11:\"policy-menu\";i:0;s:17:\"thit-hai-san-menu\";i:0;s:18:\"thuc-pham-kho-menu\";i:0;s:13:\"about-us-menu\";i:0;s:8:\"top-menu\";i:0;s:9:\"main-menu\";i:69;s:9:\"huong-dan\";i:0;s:11:\"footer-menu\";i:0;s:14:\"myaccount-menu\";i:101;s:16:\"information-menu\";i:102;}}', 'yes'),
+(141, 'theme_mods_dienkimtheme', 'a:4:{i:0;b:0;s:18:\"custom_css_post_id\";i:-1;s:20:\"zendvn_theme_general\";a:1:{s:9:\"site-logo\";s:60:\"http://demo.dienkim/restaurant/wp-content/uploads/logo-1.png\";}s:18:\"nav_menu_locations\";a:18:{s:13:\"dropdown-menu\";i:0;s:13:\"rau-sach-menu\";i:0;s:12:\"support-menu\";i:0;s:21:\"category-article-menu\";i:0;s:11:\"mobile-menu\";i:38;s:11:\"bottom-menu\";i:0;s:14:\"direction-menu\";i:0;s:11:\"policy-menu\";i:0;s:17:\"thit-hai-san-menu\";i:0;s:18:\"thuc-pham-kho-menu\";i:0;s:13:\"about-us-menu\";i:0;s:8:\"top-menu\";i:0;s:9:\"main-menu\";i:69;s:9:\"huong-dan\";i:0;s:11:\"footer-menu\";i:0;s:14:\"myaccount-menu\";i:101;s:16:\"information-menu\";i:102;s:21:\"category-product-menu\";i:103;}}', 'yes'),
 (142, 'theme_switched', '', 'yes'),
 (145, 'recently_activated', 'a:2:{s:23:\"slider-wd/slider-wd.php\";i:1513926162;s:23:\"ml-slider/ml-slider.php\";i:1513926150;}', 'yes'),
 (150, 'widget_module-common', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
@@ -1838,7 +1838,47 @@ INSERT INTO `mp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (8033, 1387, '_menu_item_target', ''),
 (8034, 1387, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (8035, 1387, '_menu_item_xfn', ''),
-(8036, 1387, '_menu_item_url', '');
+(8036, 1387, '_menu_item_url', ''),
+(8038, 1388, '_menu_item_type', 'taxonomy'),
+(8039, 1388, '_menu_item_menu_item_parent', '0'),
+(8040, 1388, '_menu_item_object_id', '93'),
+(8041, 1388, '_menu_item_object', 'za_category'),
+(8042, 1388, '_menu_item_target', ''),
+(8043, 1388, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(8044, 1388, '_menu_item_xfn', ''),
+(8045, 1388, '_menu_item_url', ''),
+(8047, 1389, '_menu_item_type', 'taxonomy'),
+(8048, 1389, '_menu_item_menu_item_parent', '0'),
+(8049, 1389, '_menu_item_object_id', '94'),
+(8050, 1389, '_menu_item_object', 'za_category'),
+(8051, 1389, '_menu_item_target', ''),
+(8052, 1389, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(8053, 1389, '_menu_item_xfn', ''),
+(8054, 1389, '_menu_item_url', ''),
+(8056, 1390, '_menu_item_type', 'taxonomy'),
+(8057, 1390, '_menu_item_menu_item_parent', '0'),
+(8058, 1390, '_menu_item_object_id', '95'),
+(8059, 1390, '_menu_item_object', 'za_category'),
+(8060, 1390, '_menu_item_target', ''),
+(8061, 1390, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(8062, 1390, '_menu_item_xfn', ''),
+(8063, 1390, '_menu_item_url', ''),
+(8065, 1391, '_menu_item_type', 'taxonomy'),
+(8066, 1391, '_menu_item_menu_item_parent', '0'),
+(8067, 1391, '_menu_item_object_id', '96'),
+(8068, 1391, '_menu_item_object', 'za_category'),
+(8069, 1391, '_menu_item_target', ''),
+(8070, 1391, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(8071, 1391, '_menu_item_xfn', ''),
+(8072, 1391, '_menu_item_url', ''),
+(8074, 1392, '_menu_item_type', 'taxonomy'),
+(8075, 1392, '_menu_item_menu_item_parent', '0'),
+(8076, 1392, '_menu_item_object_id', '97'),
+(8077, 1392, '_menu_item_object', 'za_category'),
+(8078, 1392, '_menu_item_target', ''),
+(8079, 1392, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(8080, 1392, '_menu_item_xfn', ''),
+(8081, 1392, '_menu_item_url', '');
 
 -- --------------------------------------------------------
 
@@ -1905,7 +1945,7 @@ INSERT INTO `mp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (891, 1, '2017-12-04 16:07:16', '2017-12-04 16:07:16', ' ', '', '', 'publish', 'closed', 'closed', '', '891', '', '', '2017-12-20 08:01:48', '2017-12-20 08:01:48', '', 0, 'http://demo.dienkim/restaurant/?p=891', 2, 'nav_menu_item', '', 0),
 (892, 1, '2017-12-05 01:57:46', '2017-12-05 01:57:46', '', 'logo', '', 'inherit', 'open', 'closed', '', 'logo', '', '', '2017-12-05 01:57:46', '2017-12-05 01:57:46', '', 0, 'http://demo.dienkim/restaurant/wp-content/uploads/logo.png', 0, 'attachment', 'image/png', 0),
 (893, 1, '2017-12-05 01:57:58', '2017-12-05 01:57:58', '{\n    \"dienkimtheme::zendvn_theme_general[site-logo]\": {\n        \"value\": \"http://demo.dienkim/restaurant/wp-content/uploads/logo.png\",\n        \"type\": \"theme_mod\",\n        \"user_id\": 1,\n        \"date_modified_gmt\": \"2017-12-05 01:57:58\"\n    }\n}', '', '', 'trash', 'closed', 'closed', '', '6fd87413-17bf-4e9a-966d-ff72be0cdc9d', '', '', '2017-12-05 01:57:58', '2017-12-05 01:57:58', '', 0, 'http://demo.dienkim/restaurant/6fd87413-17bf-4e9a-966d-ff72be0cdc9d.html', 0, 'customize_changeset', '', 0),
-(894, 1, '2017-12-05 02:00:56', '2017-12-05 02:00:56', ' ', '', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2017-12-24 09:17:51', '2017-12-24 09:17:51', '', 0, 'http://demo.dienkim/restaurant/?p=894', 1, 'nav_menu_item', '', 0),
+(894, 1, '2017-12-05 02:00:56', '2017-12-05 02:00:56', ' ', '', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2017-12-24 10:38:17', '2017-12-24 10:38:17', '', 0, 'http://demo.dienkim/restaurant/?p=894', 1, 'nav_menu_item', '', 0),
 (902, 1, '2017-12-05 03:03:28', '2017-12-05 03:03:28', '', '1', '', 'inherit', 'open', 'closed', '', '1', '', '', '2017-12-05 03:03:28', '2017-12-05 03:03:28', '', 0, 'http://demo.dienkim/restaurant/wp-content/uploads/1.jpg', 0, 'attachment', 'image/jpeg', 0),
 (903, 1, '2017-12-05 03:03:28', '2017-12-05 03:03:28', '', '2', '', 'inherit', 'open', 'closed', '', '2', '', '', '2017-12-05 03:03:28', '2017-12-05 03:03:28', '', 0, 'http://demo.dienkim/restaurant/wp-content/uploads/2.jpg', 0, 'attachment', 'image/jpeg', 0),
 (912, 1, '2017-12-05 03:23:09', '2017-12-05 03:23:09', '', 'massage-theraphy-1', '', 'inherit', 'open', 'closed', '', 'massage-theraphy-1', '', '', '2017-12-05 03:23:09', '2017-12-05 03:23:09', '', 0, 'http://demo.dienkim/restaurant/wp-content/uploads/massage-theraphy-1.jpg', 0, 'attachment', 'image/jpeg', 0),
@@ -1960,7 +2000,7 @@ INSERT INTO `mp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (1072, 1, '2017-12-07 07:38:51', '2017-12-07 07:38:51', '', 'instagram-6', '', 'inherit', 'open', 'closed', '', 'instagram-6', '', '', '2017-12-07 07:38:51', '2017-12-07 07:38:51', '', 0, 'http://demo.dienkim/restaurant/wp-content/uploads/instagram-6.jpg', 0, 'attachment', 'image/jpeg', 0),
 (1093, 1, '2017-12-08 06:58:53', '2017-12-08 06:58:53', '', 'Lịch sử giao dịch', '', 'publish', 'closed', 'closed', '', 'lich-su-giao-dich', '', '', '2017-12-08 06:58:53', '2017-12-08 06:58:53', '', 0, 'http://demo.dienkim/restaurant/?page_id=1093', 0, 'page', '', 0),
 (1094, 1, '2017-12-08 06:58:53', '2017-12-08 06:58:53', '', 'Lịch sử giao dịch', '', 'inherit', 'closed', 'closed', '', '1093-revision-v1', '', '', '2017-12-08 06:58:53', '2017-12-08 06:58:53', '', 1093, 'http://demo.dienkim/restaurant/1093-revision-v1.html', 0, 'revision', '', 0),
-(1099, 1, '2017-12-08 07:10:31', '2017-12-08 07:10:31', ' ', '', '', 'publish', 'closed', 'closed', '', '1099', '', '', '2017-12-24 09:17:51', '2017-12-24 09:17:51', '', 0, 'http://demo.dienkim/restaurant/?p=1099', 6, 'nav_menu_item', '', 0),
+(1099, 1, '2017-12-08 07:10:31', '2017-12-08 07:10:31', ' ', '', '', 'publish', 'closed', 'closed', '', '1099', '', '', '2017-12-24 10:38:17', '2017-12-24 10:38:17', '', 0, 'http://demo.dienkim/restaurant/?p=1099', 6, 'nav_menu_item', '', 0),
 (1114, 1, '2017-12-08 15:46:09', '2017-12-08 15:46:09', '', '480x340-1p9vh8ecrxodqity', '', 'inherit', 'open', 'closed', '', '480x340-1p9vh8ecrxodqity', '', '', '2017-12-08 15:46:09', '2017-12-08 15:46:09', '', 0, 'http://demo.dienkim/restaurant/wp-content/uploads/480x340-1p9vh8ecrxodqity.jpg', 0, 'attachment', 'image/jpeg', 0),
 (1117, 1, '2017-12-08 15:46:47', '2017-12-08 15:46:47', '', '480x340-afn4lpv8wbc319yt', '', 'inherit', 'open', 'closed', '', '480x340-afn4lpv8wbc319yt', '', '', '2017-12-08 15:46:47', '2017-12-08 15:46:47', '', 0, 'http://demo.dienkim/restaurant/wp-content/uploads/480x340-afn4lpv8wbc319yt.png', 0, 'attachment', 'image/png', 0),
 (1120, 1, '2017-12-08 15:47:06', '2017-12-08 15:47:06', '', '480x340-evdkqsym2xjw63t1', '', 'inherit', 'open', 'closed', '', '480x340-evdkqsym2xjw63t1', '', '', '2017-12-08 15:47:06', '2017-12-08 15:47:06', '', 0, 'http://demo.dienkim/restaurant/wp-content/uploads/480x340-evdkqsym2xjw63t1.jpg', 0, 'attachment', 'image/jpeg', 0),
@@ -2143,15 +2183,20 @@ INSERT INTO `mp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (1376, 1, '2017-12-22 14:45:01', '2017-12-22 14:45:01', 'Copyright © Restaurant Food &amp; Drinks 2017. All Rights Reserved.', 'Copyright', '', 'inherit', 'closed', 'closed', '', '1375-revision-v1', '', '', '2017-12-22 14:45:01', '2017-12-22 14:45:01', '', 1375, 'http://demo.dienkim/restaurant/1375-revision-v1.html', 0, 'revision', '', 0),
 (1377, 1, '2017-12-22 14:56:22', '2017-12-22 14:56:22', 'Copyright &#9400; Restaurant Food &amp; Drinks 2017. All Rights Reserved.', 'Copyright', '', 'inherit', 'closed', 'closed', '', '1375-revision-v1', '', '', '2017-12-22 14:56:22', '2017-12-22 14:56:22', '', 1375, 'http://demo.dienkim/restaurant/1375-revision-v1.html', 0, 'revision', '', 0),
 (1378, 1, '2017-12-22 14:58:24', '2017-12-22 14:58:24', 'Copyright Ⓒ Restaurant Food &amp; Drinks 2017. All Rights Reserved.', 'Copyright', '', 'inherit', 'closed', 'closed', '', '1375-revision-v1', '', '', '2017-12-22 14:58:24', '2017-12-22 14:58:24', '', 1375, 'http://demo.dienkim/restaurant/1375-revision-v1.html', 0, 'revision', '', 0),
-(1379, 1, '2017-12-22 17:17:17', '2017-12-22 17:17:17', '', 'Về chúng tôi', '', 'publish', 'closed', 'closed', '', 've-chung-toi-2', '', '', '2017-12-24 09:17:51', '2017-12-24 09:17:51', '', 0, 'http://demo.dienkim/restaurant/?p=1379', 2, 'nav_menu_item', '', 0),
+(1379, 1, '2017-12-22 17:17:17', '2017-12-22 17:17:17', '', 'Về chúng tôi', '', 'publish', 'closed', 'closed', '', 've-chung-toi-2', '', '', '2017-12-24 10:38:17', '2017-12-24 10:38:17', '', 0, 'http://demo.dienkim/restaurant/?p=1379', 2, 'nav_menu_item', '', 0),
 (1380, 1, '2017-12-22 17:56:14', '2017-12-22 17:56:14', '', 'banner-top', '', 'inherit', 'open', 'closed', '', 'banner-top', '', '', '2017-12-22 17:56:14', '2017-12-22 17:56:14', '', 0, 'http://demo.dienkim/restaurant/wp-content/uploads/banner-top.jpg', 0, 'attachment', 'image/jpeg', 0),
-(1381, 1, '2017-12-23 04:21:44', '2017-12-23 04:21:44', ' ', '', '', 'publish', 'closed', 'closed', '', '1381', '', '', '2017-12-24 09:17:51', '2017-12-24 09:17:51', '', 0, 'http://demo.dienkim/restaurant/?p=1381', 4, 'nav_menu_item', '', 0),
+(1381, 1, '2017-12-23 04:21:44', '2017-12-23 04:21:44', ' ', '', '', 'publish', 'closed', 'closed', '', '1381', '', '', '2017-12-24 10:38:17', '2017-12-24 10:38:17', '', 0, 'http://demo.dienkim/restaurant/?p=1381', 4, 'nav_menu_item', '', 0),
 (1382, 1, '2017-12-23 15:34:47', '2017-12-23 15:34:47', '', 'Đặt bàn', '', 'publish', 'closed', 'closed', '', 'dat-ban', '', '', '2017-12-23 16:05:19', '2017-12-23 16:05:19', '', 0, 'http://demo.dienkim/restaurant/?page_id=1382', 0, 'page', '', 0),
 (1383, 1, '2017-12-23 15:34:47', '2017-12-23 15:34:47', '', 'Reservation', '', 'inherit', 'closed', 'closed', '', '1382-revision-v1', '', '', '2017-12-23 15:34:47', '2017-12-23 15:34:47', '', 1382, 'http://demo.dienkim/restaurant/1382-revision-v1.html', 0, 'revision', '', 0),
 (1384, 1, '2017-12-23 15:36:15', '2017-12-23 15:36:15', '', 'Đặt bàn', '', 'inherit', 'closed', 'closed', '', '1382-revision-v1', '', '', '2017-12-23 15:36:15', '2017-12-23 15:36:15', '', 1382, 'http://demo.dienkim/restaurant/1382-revision-v1.html', 0, 'revision', '', 0),
-(1385, 1, '2017-12-23 15:36:37', '2017-12-23 15:36:37', ' ', '', '', 'publish', 'closed', 'closed', '', '1385', '', '', '2017-12-24 09:17:51', '2017-12-24 09:17:51', '', 0, 'http://demo.dienkim/restaurant/?p=1385', 3, 'nav_menu_item', '', 0),
+(1385, 1, '2017-12-23 15:36:37', '2017-12-23 15:36:37', ' ', '', '', 'publish', 'closed', 'closed', '', '1385', '', '', '2017-12-24 10:38:17', '2017-12-24 10:38:17', '', 0, 'http://demo.dienkim/restaurant/?p=1385', 3, 'nav_menu_item', '', 0),
 (1386, 1, '2017-12-23 16:04:44', '2017-12-23 16:04:44', '', 'dat-ban', '', 'inherit', 'open', 'closed', '', 'dat-ban-2', '', '', '2017-12-23 16:04:44', '2017-12-23 16:04:44', '', 0, 'http://demo.dienkim/restaurant/wp-content/uploads/dat-ban.jpg', 0, 'attachment', 'image/jpeg', 0),
-(1387, 1, '2017-12-24 09:17:46', '2017-12-24 09:17:46', ' ', '', '', 'publish', 'closed', 'closed', '', '1387', '', '', '2017-12-24 09:17:51', '2017-12-24 09:17:51', '', 0, 'http://demo.dienkim/restaurant/?p=1387', 5, 'nav_menu_item', '', 0);
+(1387, 1, '2017-12-24 09:17:46', '2017-12-24 09:17:46', ' ', '', '', 'publish', 'closed', 'closed', '', '1387', '', '', '2017-12-24 10:38:17', '2017-12-24 10:38:17', '', 0, 'http://demo.dienkim/restaurant/?p=1387', 5, 'nav_menu_item', '', 0),
+(1388, 1, '2017-12-24 10:38:46', '2017-12-24 10:38:46', 'Praesent sit amet faucibus quam, ultricies fringilla ante. Mauris ut lobortis felis, euismod hendrerit ipsum. Nullam faucibus est non vestibulum fermentum. Vestibulum est nunc, ultrices sit amet finibus non, posuere eu massa. Nam et nibh eget ipsum rhoncus porta eu eu tellus. Aenean vel nibh ullamcorper, accumsan nulla ac, interdum metus. Curabitur tincidunt tempor maximus. Maecenas lobortis ligula fermentum elit sagittis, in congue nisl hendrerit. Aliquam quis volutpat dolor. Donec neque turpis, interdum id ipsum nec, maximus ultrices diam. Morbi ac maximus magna. Vestibulum sed ante quis tortor condimentum tincidunt. Maecenas viverra est sed ipsum luctus lacinia. Pellentesque sit amet felis non eros vulputate semper ac in orci.', '', '', 'publish', 'closed', 'closed', '', '1388', '', '', '2017-12-24 10:39:15', '2017-12-24 10:39:15', '', 0, 'http://demo.dienkim/restaurant/?p=1388', 1, 'nav_menu_item', '', 0),
+(1389, 1, '2017-12-24 10:38:46', '2017-12-24 10:38:46', 'Praesent sit amet faucibus quam, ultricies fringilla ante. Mauris ut lobortis felis, euismod hendrerit ipsum. Nullam faucibus est non vestibulum fermentum. Vestibulum est nunc, ultrices sit amet finibus non, posuere eu massa. Nam et nibh eget ipsum rhoncus porta eu eu tellus. Aenean vel nibh ullamcorper, accumsan nulla ac, interdum metus. Curabitur tincidunt tempor maximus. Maecenas lobortis ligula fermentum elit sagittis, in congue nisl hendrerit. Aliquam quis volutpat dolor. Donec neque turpis, interdum id ipsum nec, maximus ultrices diam. Morbi ac maximus magna. Vestibulum sed ante quis tortor condimentum tincidunt. Maecenas viverra est sed ipsum luctus lacinia. Pellentesque sit amet felis non eros vulputate semper ac in orci.', '', '', 'publish', 'closed', 'closed', '', '1389', '', '', '2017-12-24 10:39:15', '2017-12-24 10:39:15', '', 0, 'http://demo.dienkim/restaurant/?p=1389', 2, 'nav_menu_item', '', 0),
+(1390, 1, '2017-12-24 10:38:46', '2017-12-24 10:38:46', 'Praesent sit amet faucibus quam, ultricies fringilla ante. Mauris ut lobortis felis, euismod hendrerit ipsum. Nullam faucibus est non vestibulum fermentum. Vestibulum est nunc, ultrices sit amet finibus non, posuere eu massa. Nam et nibh eget ipsum rhoncus porta eu eu tellus. Aenean vel nibh ullamcorper, accumsan nulla ac, interdum metus. Curabitur tincidunt tempor maximus. Maecenas lobortis ligula fermentum elit sagittis, in congue nisl hendrerit. Aliquam quis volutpat dolor. Donec neque turpis, interdum id ipsum nec, maximus ultrices diam. Morbi ac maximus magna. Vestibulum sed ante quis tortor condimentum tincidunt. Maecenas viverra est sed ipsum luctus lacinia. Pellentesque sit amet felis non eros vulputate semper ac in orci.', '', '', 'publish', 'closed', 'closed', '', '1390', '', '', '2017-12-24 10:39:15', '2017-12-24 10:39:15', '', 0, 'http://demo.dienkim/restaurant/?p=1390', 3, 'nav_menu_item', '', 0),
+(1391, 1, '2017-12-24 10:38:47', '2017-12-24 10:38:47', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '', '', 'publish', 'closed', 'closed', '', '1391', '', '', '2017-12-24 10:39:15', '2017-12-24 10:39:15', '', 0, 'http://demo.dienkim/restaurant/?p=1391', 4, 'nav_menu_item', '', 0),
+(1392, 1, '2017-12-24 10:38:47', '2017-12-24 10:38:47', 'Praesent sit amet faucibus quam, ultricies fringilla ante. Mauris ut lobortis felis, euismod hendrerit ipsum. Nullam faucibus est non vestibulum fermentum. Vestibulum est nunc, ultrices sit amet finibus non, posuere eu massa. Nam et nibh eget ipsum rhoncus porta eu eu tellus. Aenean vel nibh ullamcorper, accumsan nulla ac, interdum metus. Curabitur tincidunt tempor maximus. Maecenas lobortis ligula fermentum elit sagittis, in congue nisl hendrerit. Aliquam quis volutpat dolor. Donec neque turpis, interdum id ipsum nec, maximus ultrices diam. Morbi ac maximus magna. Vestibulum sed ante quis tortor condimentum tincidunt. Maecenas viverra est sed ipsum luctus lacinia. Pellentesque sit amet felis non eros vulputate semper ac in orci.', '', '', 'publish', 'closed', 'closed', '', '1392', '', '', '2017-12-24 10:39:15', '2017-12-24 10:39:15', '', 0, 'http://demo.dienkim/restaurant/?p=1392', 5, 'nav_menu_item', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2330,7 +2375,8 @@ INSERT INTO `mp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 (99, 'Gallery', 'gallery', 0),
 (100, 'Tin tức', 'tin-tuc', 0),
 (101, 'MyAccount', 'myaccount', 0),
-(102, 'InformationMenu', 'informationmenu', 0);
+(102, 'InformationMenu', 'informationmenu', 0),
+(103, 'CategoryProductMenu', 'categoryproductmenu', 0);
 
 -- --------------------------------------------------------
 
@@ -2434,7 +2480,12 @@ INSERT INTO `mp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 (1379, 69, 0),
 (1381, 69, 0),
 (1385, 69, 0),
-(1387, 69, 0);
+(1387, 69, 0),
+(1388, 103, 0),
+(1389, 103, 0),
+(1390, 103, 0),
+(1391, 103, 0),
+(1392, 103, 0);
 
 -- --------------------------------------------------------
 
@@ -2471,7 +2522,8 @@ INSERT INTO `mp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (99, 99, 'category_banner', '', 0, 6),
 (100, 100, 'category', '', 0, 6),
 (101, 101, 'nav_menu', '', 0, 5),
-(102, 102, 'nav_menu', '', 0, 5);
+(102, 102, 'nav_menu', '', 0, 5),
+(103, 103, 'nav_menu', '', 0, 5);
 
 -- --------------------------------------------------------
 
@@ -2513,7 +2565,7 @@ INSERT INTO `mp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (20, 1, 'session_tokens', 'a:9:{s:64:\"4dd3e8985b08660ca3ebade1e4f9abaaeeaa8ca744791f6beb2d9e1911888da0\";a:4:{s:10:\"expiration\";i:1514193345;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36\";s:5:\"login\";i:1512983745;}s:64:\"3870942b2b5b2b48f178048cd4f0db8a03e418c14a5555fe27fef56ad5eb9bbe\";a:4:{s:10:\"expiration\";i:1514217386;s:2:\"ip\";s:11:\"1.52.37.223\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36\";s:5:\"login\";i:1513007786;}s:64:\"ec7dfd33d5db72dfae1a662cebf44af1321d719be579b379db663288bd2298d9\";a:4:{s:10:\"expiration\";i:1514217486;s:2:\"ip\";s:11:\"1.52.37.223\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36\";s:5:\"login\";i:1513007886;}s:64:\"52127906383bd2c76def547150d93974352229c1f6ae7ab4d7eb2d2f51e543b3\";a:4:{s:10:\"expiration\";i:1514217603;s:2:\"ip\";s:11:\"1.52.37.223\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36\";s:5:\"login\";i:1513008003;}s:64:\"a22f2ad3b2ab712a38fb5c7f0d832075e1f4b14bb06978dee59823a9f60e6e2e\";a:4:{s:10:\"expiration\";i:1514341401;s:2:\"ip\";s:11:\"1.53.85.168\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36\";s:5:\"login\";i:1513131801;}s:64:\"d8ebf60c760aa696d512c648b705f4a877973d3df640ed8f06219c8967de5e28\";a:4:{s:10:\"expiration\";i:1514393002;s:2:\"ip\";s:12:\"183.81.10.51\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36\";s:5:\"login\";i:1513183402;}s:64:\"2bdc213561b3f9f4f351bdacef90e72a970b04a4045ba7c91916c7307e99c5d0\";a:4:{s:10:\"expiration\";i:1514737924;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36\";s:5:\"login\";i:1513528324;}s:64:\"409c431444ab3a73f37b53122e5c553663346d18548c3e60db9e1b9a7562e2c1\";a:4:{s:10:\"expiration\";i:1514963173;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36\";s:5:\"login\";i:1513753573;}s:64:\"80fb109ac29fdbeb59fee45a22eb809c960482e5fb45805dc1e2de20fd3fc37b\";a:4:{s:10:\"expiration\";i:1514963312;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36\";s:5:\"login\";i:1513753712;}}'),
 (21, 1, 'managenav-menuscolumnshidden', 'a:5:{i:0;s:11:\"link-target\";i:1;s:11:\"css-classes\";i:2;s:3:\"xfn\";i:3;s:11:\"description\";i:4;s:15:\"title-attribute\";}'),
 (22, 1, 'metaboxhidden_nav-menus', 'a:2:{i:0;s:12:\"add-post_tag\";i:1;s:15:\"add-post_format\";}'),
-(23, 1, 'nav_menu_recently_edited', '69'),
+(23, 1, 'nav_menu_recently_edited', '103'),
 (24, 1, 'closedpostboxes_nav-menus', 'a:0:{}'),
 (25, 1, 'mp_media_library_mode', 'list'),
 (26, 1, 'closedpostboxes_post', 'a:0:{}'),
@@ -3028,12 +3080,12 @@ ALTER TABLE `mp_options`
 -- AUTO_INCREMENT for table `mp_postmeta`
 --
 ALTER TABLE `mp_postmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8038;
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8083;
 --
 -- AUTO_INCREMENT for table `mp_posts`
 --
 ALTER TABLE `mp_posts`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1388;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1393;
 --
 -- AUTO_INCREMENT for table `mp_shk_banner`
 --
@@ -3068,12 +3120,12 @@ ALTER TABLE `mp_termmeta`
 -- AUTO_INCREMENT for table `mp_terms`
 --
 ALTER TABLE `mp_terms`
-  MODIFY `term_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `term_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 --
 -- AUTO_INCREMENT for table `mp_term_taxonomy`
 --
 ALTER TABLE `mp_term_taxonomy`
-  MODIFY `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 --
 -- AUTO_INCREMENT for table `mp_usermeta`
 --
