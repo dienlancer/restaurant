@@ -4,12 +4,12 @@
 <div class="container margin-top-15">  
     <?php 
     if(have_posts()){
-    while (have_posts()) {
-        the_post();
-        echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
+        while (have_posts()) {
+            the_post();
+            echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
+        }
+        wp_reset_postdata();
     }
-    wp_reset_postdata();
-}
     global $zController,$zendvn_sp_settings;
     $vHtml=new HtmlControl();    
     $pageIDLoginCheckout = $zController->getHelper('GetPageId')->get('_wp_page_template','login-checkout.php'); 
@@ -23,51 +23,65 @@
     $arrUser = @$ssUser->get($ssValueUser)["userInfo"]; 
     $arrCart = $ssCart->get($ssValueCart)["cart"];     
     if(count($arrUser) == 0){
-       wp_redirect($permarlinkLoginCheckout);    
+        wp_redirect($permarlinkLoginCheckout);    
     }
     if(count($arrCart) == 0){
         wp_redirect($permarlinkZCart);
     }    
-$id=$arrUser["id"];
-$userModel=$zController->getModel("/frontend","UserModel"); 
-$paymentMethodModel=$zController->getModel("/frontend","PaymentMethodModel"); 
-$info=$userModel->getUserById($id);
-$lstPaymentMethod=$paymentMethodModel->getDDLPaymentMethod();
-$detail=$info[0];   
-
-$msg = "";
-$data=array();        
-$error=$zController->_data["error"];  
-$success=$zController->_data["success"];      
-if(!empty($error)){
-    $msg .= '<ul class="comproduct33">';        
-    foreach ($error as $key => $val){
-        $msg .= '<li>' . $val . '</li>';
+    $id=$arrUser["id"];
+    $userModel=$zController->getModel("/frontend","UserModel"); 
+    $paymentMethodModel=$zController->getModel("/frontend","PaymentMethodModel"); 
+    $info=$userModel->getUserById($id);
+    $lstPaymentMethod=$paymentMethodModel->getDDLPaymentMethod();
+    $detail=$info[0];   
+    $totalPrice=0;
+    $totalQuantity=0;
+    $data=array();   
+    $error=$zController->_data["error"];
+    $success=$zController->_data["success"];                           
+    if(count($zController->_data["data"]) > 0){
+        $data=$zController->_data["data"];                  
+    }else{
+        $data=$detail;
     }
-    $msg .= '</ul>';
-}
-else{
-    if(!empty($success)){
-        $msg .= '<ul class="comproduct35">';        
-        foreach ($success as $key => $val){
-            $msg .= '<li>' . $val . '</li>';
-        }
-        $msg .= '</ul>';
-    }
-}
-if(!empty($msg)){
-    echo $msg; 
-}
-if(count($zController->_data["data"])==0){
-    $data=$detail;
-}
-else{
-    $data=$zController->_data["data"];
-}
-$totalPrice=0;
-$totalQuantity=0;
 ?>
 <div class="margin-top-15">
+    <?php                                           
+    if(count($error) > 0 || count($success) > 0){
+        ?>
+        <div class="form-group alert">
+            <?php                                           
+            if(count($error) > 0){
+                ?>
+                <ul class="comproduct33">
+                    <?php 
+                    foreach ($error as $key => $value) {
+                        ?>
+                        <li><?php echo $value; ?></li>
+                        <?php
+                    }
+                    ?>                              
+                </ul>
+                <?php
+            }
+            if(count($success) > 0){
+                ?>
+                <ul class="comproduct50">
+                    <?php 
+                    foreach ($success as $key => $value) {
+                        ?>
+                        <li><?php echo $value; ?></li>
+                        <?php
+                    }
+                    ?>                              
+                </ul>
+                <?php
+            }
+            ?>                                              
+        </div>              
+        <?php
+    }
+    ?>                
     <table id="com_product16" class="com_product16" cellpadding="0" cellspacing="0" width="100%">
         <thead>
             <tr>    

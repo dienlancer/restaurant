@@ -24,42 +24,56 @@
     $id=$arrUser["id"];
     $userModel=$zController->getModel("/frontend","UserModel"); 
     $info=$userModel->getUserById($id);
-    $detail=$info[0];       
-    $msg = "";
-    $data=array();        
-    $error=$zController->_data["error"];  
-    $success=$zController->_data["success"];      
-    if(!empty($error)){
-        $msg .= '<ul class="comproduct33">';        
-        foreach ($error as $key => $val){
-            $msg .= '<li>' . $val . '</li>';
-        }
-        $msg .= '</ul>';
-        
-    }
-    else{
-        if(!empty($success)){
-            $msg .= '<ul class="comproduct35">';        
-            foreach ($success as $key => $val){
-                $msg .= '<li>' . $val . '</li>';
-            }
-            $msg .= '</ul>';
-        }
-    }    
-    if(!empty($msg)) {
-        echo $msg;          
-    }
-    if(count($zController->_data["data"])==0){
-        $data=$detail;
-    }
-    else{
-        $data=$zController->_data["data"];
-    }        
+    $detail=$info[0];           
     ?>
     <form  method="post"  class="frm margin-top-15" name="frm">        
         <input type="hidden" name="id" value="<?php echo $detail["id"]; ?>" />
         <input type="hidden" name="action" value="change-info" />                    
-        <?php wp_nonce_field("change-info",'security_code',true);?>         
+        <?php wp_nonce_field("change-info",'security_code',true);?>       
+        <?php 
+        $data=array();   
+        $error=$zController->_data["error"];
+        $success=$zController->_data["success"];                           
+        if(count($zController->_data["data"]) > 0){
+            $data=$zController->_data["data"];                  
+        }else{
+            $data=$detail;
+        }
+        if(count($error) > 0 || count($success) > 0){
+            ?>
+            <div class="form-group alert">
+                <?php                                           
+                if(count($error) > 0){
+                    ?>
+                    <ul class="comproduct33">
+                        <?php 
+                        foreach ($error as $key => $value) {
+                            ?>
+                            <li><?php echo $value; ?></li>
+                            <?php
+                        }
+                        ?>                              
+                    </ul>
+                    <?php
+                }
+                if(count($success) > 0){
+                    ?>
+                    <ul class="comproduct50">
+                        <?php 
+                        foreach ($success as $key => $value) {
+                            ?>
+                            <li><?php echo $value; ?></li>
+                            <?php
+                        }
+                        ?>                              
+                    </ul>
+                    <?php
+                }
+                ?>                                              
+            </div>              
+            <?php
+        }
+        ?>
         <table id="com_product30" class="com_product30" border="0" width="90%" cellpadding="0" cellspacing="0">        
             <tbody>        
                 <tr>
@@ -91,12 +105,12 @@
                     <td><input type="text" name="fax" value="<?php echo @$data["fax"]; ?>" /></td>            
                 </tr>  
                 <tr>           
-                <td></td>
-                <td class="com_product31" align="right">
-                    <input name="btnChangeInfo" type="submit" class="com_product32" value="Cập nhật" />
-                                                 
-                </td>                      
-            </tr>              
+                    <td></td>
+                    <td class="com_product31" align="right">
+                        <input name="btnChangeInfo" type="submit" class="com_product32" value="Cập nhật" />
+                        
+                    </td>                      
+                </tr>              
             </tbody>    
         </table>
     </form>          

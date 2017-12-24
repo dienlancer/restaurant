@@ -12,24 +12,52 @@
     }
     $meta_key="_zendvn_sp_zaproduct_";
     $vHtml=new HtmlControl();    
-    $msg = "";
-    $data=array();        
+    $data=array();   
+    $error=$zController->_data["error"];
+    $success=$zController->_data["success"];                           
     if(count($zController->_data["data"]) > 0){
-        $data=$zController->_data["data"];
+        $data=$zController->_data["data"];                  
     }
-    $error=$zController->_data["error"];        
-    if(count($error) > 0){
-        $msg .= '<ul class="comproduct33">';        
-        foreach ($error as $key => $val){
-            $msg .= '<li>' . $val . '</li>';
-        }
-        $msg .= '</ul>';
-        echo $msg;
-    }        
 ?>   
 <form method="post" name="frm" class="margin-top-15">    
     <input type="hidden" name="action" value="register-member" />                      
-                        <?php wp_nonce_field("register-member",'security_code',true);?>                      
+    <?php wp_nonce_field("register-member",'security_code',true);?>    
+    <?php 
+    if(count($error) > 0 || count($success) > 0){
+        ?>
+        <div class="form-group alert">
+            <?php                                           
+            if(count($error) > 0){
+                ?>
+                <ul class="comproduct33">
+                    <?php 
+                    foreach ($error as $key => $value) {
+                        ?>
+                        <li><?php echo $value; ?></li>
+                        <?php
+                    }
+                    ?>                              
+                </ul>
+                <?php
+            }
+            if(count($success) > 0){
+                ?>
+                <ul class="comproduct50">
+                    <?php 
+                    foreach ($success as $key => $value) {
+                        ?>
+                        <li><?php echo $value; ?></li>
+                        <?php
+                    }
+                    ?>                              
+                </ul>
+                <?php
+            }
+            ?>                                              
+        </div>              
+        <?php
+    }
+    ?>                                
     <table id="com_product30" class="com_product30" border="0" width="90%" cellpadding="0" cellspacing="0">                   
         <tbody>        
             <tr>

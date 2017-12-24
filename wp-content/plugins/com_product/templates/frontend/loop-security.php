@@ -21,45 +21,66 @@
     if(count($arrUser) == 0){
         wp_redirect($permarlinkLogin);
     }
-    
-    $msg = "";
-        $data=$zController->_data["data"];
-        $error=$zController->_data["error"];  
-        $success=$zController->_data["success"];      
-        if(!empty($error)){
-            $msg .= '<ul class="comproduct33">';        
-            foreach ($error as $key => $val){
-                $msg .= '<li>' . $val . '</li>';
-            }
-            $msg .= '</ul>';
-        }
-        else{
-            if(!empty($success)){
-                $msg .= '<ul class="comproduct35">';        
-                foreach ($success as $key => $val){
-                    $msg .= '<li>' . $val . '</li>';
-                }
-                $msg .= '</ul>';
-            }
-        }
-        if(!empty($msg)){
-            echo $msg; 
-        }
-        $id=$arrUser["id"];
-        $userModel=$zController->getModel("/frontend","UserModel"); 
-        $info=$userModel->getUserById($id);
-        $detail=$info[0];
+
+    $id=$arrUser["id"];
+    $userModel=$zController->getModel("/frontend","UserModel"); 
+    $info=$userModel->getUserById($id);
+    $detail=$info[0];
+    $data=array();   
+    $error=$zController->_data["error"];
+    $success=$zController->_data["success"];                           
+    if(count($zController->_data["data"]) > 0){
+        $data=$zController->_data["data"];                  
+    }else{
+        $data=$detail;
+    }
         ?>
         <form method="post" name="frm" class="margin-top-15"> 
         <input type="hidden" name="id" value="<?php echo $id; ?>" />
                             <input type="hidden" name="username" value="<?php echo $detail["username"]; ?>" />
                             <input type="hidden" name="action" value="change-password" />                    
-                            <?php wp_nonce_field("change-password",'security_code',true);?>             
+                            <?php wp_nonce_field("change-password",'security_code',true);?> 
+            <?php 
+            if(count($error) > 0 || count($success) > 0){
+                ?>
+                <div class="form-group alert">
+                    <?php                                           
+                    if(count($error) > 0){
+                        ?>
+                        <ul class="comproduct33">
+                            <?php 
+                            foreach ($error as $key => $value) {
+                                ?>
+                                <li><?php echo $value; ?></li>
+                                <?php
+                            }
+                            ?>                              
+                        </ul>
+                        <?php
+                    }
+                    if(count($success) > 0){
+                        ?>
+                        <ul class="comproduct50">
+                            <?php 
+                            foreach ($success as $key => $value) {
+                                ?>
+                                <li><?php echo $value; ?></li>
+                                <?php
+                            }
+                            ?>                              
+                        </ul>
+                        <?php
+                    }
+                    ?>                                              
+                </div>              
+                <?php
+            }
+            ?>                        
             <table id="com_product30" class="com_product30" border="0" width="90%" cellpadding="0" cellspacing="0">                   
                 <tbody>        
                     <tr>
                         <td align="right">Tài khoản</td>
-                        <td><?php echo $detail["username"]; ?></td>        
+                        <td><?php echo $data["username"]; ?></td>        
                     </tr>                           
                     <tr>
                         <td align="right">Mật khẩu</td>

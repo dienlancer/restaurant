@@ -11,42 +11,61 @@
         wp_reset_postdata();
     }
     $vHtml=new HtmlControl();     
-    $msg = "";
-    $data=$zController->_data["data"];
-    $error=$zController->_data["error"];  
-    $success=$zController->_data["success"];      
-    if(!empty($error)){
-        $msg .= '<ul class="comproduct33">';        
-        foreach ($error as $key => $val){
-            $msg .= '<li>' . $val . '</li>';
+    $data=array();   
+    $error=$zController->_data["error"];
+    $success=$zController->_data["success"];                           
+    if(count($zController->_data["data"]) > 0){
+        $data=$zController->_data["data"];                  
+    }
+    ?>
+    <form method="post" name="frmLogin" class="margin-top-15">
+        <input type="hidden" name="action" value="login" />
+        <?php wp_nonce_field("login",'security_code',true);?>     
+        <?php 
+        if(count($error) > 0 || count($success) > 0){
+            ?>
+            <div class="form-group alert">
+                <?php                                           
+                if(count($error) > 0){
+                    ?>
+                    <ul class="comproduct33">
+                        <?php 
+                        foreach ($error as $key => $value) {
+                            ?>
+                            <li><?php echo $value; ?></li>
+                            <?php
+                        }
+                        ?>                              
+                    </ul>
+                    <?php
+                }
+                if(count($success) > 0){
+                    ?>
+                    <ul class="comproduct50">
+                        <?php 
+                        foreach ($success as $key => $value) {
+                            ?>
+                            <li><?php echo $value; ?></li>
+                            <?php
+                        }
+                        ?>                              
+                    </ul>
+                    <?php
+                }
+                ?>                                              
+            </div>              
+            <?php
         }
-        $msg .= '</ul>';
-    }
-    else{
-        if(!empty($success)){
-            $msg .= '<ul class="comproduct35">';        
-            foreach ($success as $key => $val){
-                $msg .= '<li>' . $val . '</li>';
-            }
-            $msg .= '</ul>';
-        }
-    }
-    if(!empty($msg)){
-        echo $msg;     
-    }
-?>
-<form method="post" name="frmLogin" class="margin-top-15">
-    <input type="hidden" name="action" value="login" />
-                        <?php wp_nonce_field("login",'security_code',true);?>              
+        ?>                    
         <table id="com_product30" class="com_product30" border="0" width="90%" cellpadding="0" cellspacing="0">            
             <tbody>                
                 <tr>
                     <td>Username</td>
-                    <td><input type="text" name="username" value=""></td>
+                    <td><input type="text" name="username" value="<?php echo @$data["username"]; ?>"></td>
                 </tr>
                 <tr>
                     <td>Mật khẩu</td>
-                    <td><input type="password" name="password" value=""></td>
+                    <td><input type="password" name="password" value="<?php echo @$data["password"]; ?>"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -57,7 +76,7 @@
                     </td>
                 </tr>               
             </tbody>    
-                        
-                        </table>    
-</form>
+
+        </table>    
+    </form>
 </div>
