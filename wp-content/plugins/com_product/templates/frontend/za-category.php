@@ -3,7 +3,7 @@
         <div class="oppo">
             <div class="relative">
                 <div class="nina">
-                    <?php single_cat_title(); ?>
+                    SẢN PHẨM
                 </div>
                 <div class="tma"></div>
             </div>            

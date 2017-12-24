@@ -36,7 +36,8 @@ $arrPagination=array(
 $pagination=$zController->getPagination("Pagination",$arrPagination);
 ?>
 <form  method="post"  class="frm" name="frm">
-    <input type="hidden" name="filter_page" value="1" />     
+    <input type="hidden" name="filter_page" value="1" />
+    <h3 class="mamboitaliano"><i class="icofont icofont-spoon-and-fork"></i><span><?php single_cat_title(); ?></span></h3>     
     <div>
         <?php
         if($the_query->have_posts()){
@@ -54,25 +55,41 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
                 $sale_price=get_post_meta($post_id,$product_meta_key."sale_price",true);            
                 $html_price='';                     
                 if((int)@$sale_price > 0){              
-                    $price_html ='<span class="price-regular">'.$vHtml->fnPrice($price).'</span>';
-                    $sale_price_html='<span class="price-sale">'.$vHtml->fnPrice($sale_price).'</span>' ;                   
-                    $html_price='<div >'.$price_html.'</div><div >'.$sale_price_html.'</div>' ;             
+                    $price_html ='<span class="price-regular tutu">'.$vHtml->fnPrice($price).'</span>';
+                    $sale_price_html='<span class="price-sale-nanim">'.$vHtml->fnPrice($sale_price).'</span>' ;                 
+                    $html_price='<div class="col-xs-6"><center>'.$price_html.'</center></div><div class="col-xs-6"><center>'.$sale_price_html.'</center></div><div class="clr"></div>' ;              
                 }else{
-                    $html_price='<span>'.$vHtml->fnPrice($price).'</span>' ;                    
-                }    
+                    $html_price='<center><span class="tutu">'.$vHtml->fnPrice($price).'</span></center>' ;                  
+                }   
                 ?>
-                <div class="col-lg-3">
-                    <div>
-                        <img src="<?php echo $smallImg; ?>" />
+                <div class="col-lg-4 no-padding-left">
+                    <div class="margin-top-10 box-product">
+                        <div class="box-product-img"><figure><a href="<?php echo $permalink; ?>"><img src="<?php echo $smallImg; ?>" /></a></figure></div>                    
+                        <div class="box-product-title"><center><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></center></div>    
+                        <div class="box-product-star">                              
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>                               
+                                    </div>
+                        <div class="box-product-price margin-top-5">
+                            <?php echo $html_price; ?>
+                        </div>
+                        <div class="margin-top-5 box-product-cart"><center><a href="javascript:void(0);">Đặt hàng</a></center></div>
                     </div>
                 </div>
                 <?php
-                if($k%4==0 || $k==$the_query->post_count){
+                if($k%3==0 || $k==$the_query->post_count){
                     echo '<div class="clr"></div>';
                 }   
                 $k++;
             }            
         }
         ?>
+    </div>
+    <div>
+        <?php echo $pagination->showPagination();            ?>
+        <div class="clr"></div>
     </div>
 </form>

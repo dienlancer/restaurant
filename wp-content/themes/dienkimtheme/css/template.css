@@ -875,7 +875,7 @@ div.ducati > div:nth-child(2){
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
-        padding: 0px 15px;
+        padding: 0px 10px;
 }
 ul.categoryproductmenu li{
     margin-left: 0;
@@ -888,6 +888,50 @@ ul.categoryproductmenu li a{
 ul.categoryproductmenu li a i{
     margin-right: 10px
 }
+h3.mamboitaliano{
+        background: linear-gradient( to bottom, #EFEFEF,#f6f6f6);
+    padding: 15px 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+h3.mamboitaliano span{
+    margin-left: 15px;
+}
+h3.mamboitaliano i{
+    color: #FFA41F;
+}
+div.box-product{
+    padding-bottom: 15px;
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+div.box-product-img{
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.box-product-title a{
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+div.box-product-star {
+    color: rgb(255, 190, 0);
+    text-align: center;
+}
+div.box-product-cart a{
+    display: inline-block;
+    background: #FFA41F;
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border:1px solid #ff9700;
+}
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{
     width: 100%;
@@ -898,7 +942,6 @@ ul.categoryproductmenu li a i{
    div.mobilemenu{
     margin-top: 30px
    }
-
 }
 
 

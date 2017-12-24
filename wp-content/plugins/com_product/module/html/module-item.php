@@ -236,14 +236,14 @@ if(!empty($instance['item_id'])){
 									$term_link_2=get_term_link($term[0],'za_category');		
 									$price=get_post_meta($post_id,$product_meta_key."price",true);
 									$sale_price=get_post_meta($post_id,$product_meta_key."sale_price",true);			
-									$html_price='';						
-									if((int)@$sale_price > 0){				
-										$price_html ='<span class="price-regular tutu">'.$vHtml->fnPrice($price).'</span>';
-										$sale_price_html='<span class="price-sale-nanim">'.$vHtml->fnPrice($sale_price).'</span>' ;					
-										$html_price='<div class="col-lg-6">'.$price_html.'</div><div class="col-lg-6">'.$sale_price_html.'</div><div class="clr"></div>' ;				
-									}else{
-										$html_price='<center><span class="tutu">'.$vHtml->fnPrice($price).'</span></center>' ;					
-									}	
+									$html_price='';                     
+                                    if((int)@$sale_price > 0){              
+                                        $price_html ='<span class="price-regular tutu">'.$vHtml->fnPrice($price).'</span>';
+                                        $sale_price_html='<span class="price-sale-nanim">'.$vHtml->fnPrice($sale_price).'</span>' ;                 
+                                        $html_price='<div class="col-xs-6"><center>'.$price_html.'</center></div><div class="col-xs-6"><center>'.$sale_price_html.'</center></div><div class="clr"></div>' ;              
+                                    }else{
+                                        $html_price='<center><span class="tutu">'.$vHtml->fnPrice($price).'</span></center>' ;                  
+                                    }  
 									?>
 									<div class="popular-product-box">
 										<div class="popular-product-box-img">
