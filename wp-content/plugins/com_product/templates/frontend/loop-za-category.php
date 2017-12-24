@@ -66,17 +66,21 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
                     <div class="margin-top-10 box-product">
                         <div class="box-product-img"><figure><a href="<?php echo $permalink; ?>"><img src="<?php echo $smallImg; ?>" /></a></figure></div>                    
                         <div class="box-product-title"><center><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></center></div>    
-                        <div class="box-product-star">                              
+                        <div class="box-product-star margin-top-15">                              
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>                               
                                     </div>
-                        <div class="box-product-price margin-top-5">
+                        <div class="box-product-price margin-top-10">
                             <?php echo $html_price; ?>
                         </div>
-                        <div class="margin-top-5 box-product-cart"><center><a href="javascript:void(0);">Đặt hàng</a></center></div>
+                        <div class="margin-top-10 box-product-cart">
+                            <center>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-alert-add-cart" onclick="addToCart(<?php echo $post_id; ?>,1);" >Add to cart</a>
+                            </center>
+                        </div>
                     </div>
                 </div>
                 <?php

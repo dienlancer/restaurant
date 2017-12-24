@@ -241,6 +241,15 @@ function zendvn_theme_widgets_init(){
 		'after_title'   => '',
 		'after_widget'  => ''				
 	));
+	register_sidebar(array(
+		'name'          => __( 'BannerCategoryProduct', $themeName ),
+		'id'            => 'banner-catgory-product',		
+		'class'         => '',
+		'before_widget' => '<div class="margin-top-15">',
+		'before_title'  => '',
+		'after_title'   => '',
+		'after_widget'  => '</div>'				
+	));
 }
 add_action("wp_enqueue_scripts",function(){
 	wp_deregister_script("jquery");

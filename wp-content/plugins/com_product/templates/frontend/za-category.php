@@ -27,10 +27,9 @@
             </div>
         </div>       
     </div> 
-    <div class="container margin-top-15">
+    <div class="container margin-top-15 margin-bottom-15">
     	<div class="row">
-    		<div class="col-lg-3 no-padding-left">
-    			
+    		<div class="col-lg-3 no-padding-left">    			
     			<div class="ducati">
     				<h3>Danh mục sản phẩm</h3>
     				<div>
@@ -59,6 +58,10 @@
     				</div>
     			</div>
 
+                    <?php if(is_active_sidebar('banner-catgory-product')):?>
+                        <?php dynamic_sidebar('banner-catgory-product')?>
+                    <?php endif; ?>   
+                
     		</div>
     		<div class="col-lg-9 no-padding-left"><?php require_once PLUGIN_PATH . DS . "templates" . DS . "frontend". DS . "loop-za-category.php"; ?></div>
     	</div>
