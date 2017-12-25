@@ -1110,5 +1110,12 @@ div.riot{
    }
 
 }
-
+@media (max-width: 543px){
+    div.riot{
+        flex-direction: column;
+    }
+    div.rikimaru{
+        display: none;
+    }
+}
 
