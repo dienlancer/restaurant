@@ -25,5 +25,5 @@
         $ssCart->reset();   
     }   
     ?>
-    <div class="comproduct35 margin-top-15">Thanh toán thành công</div>
+    <div class="comproduct35">Thanh toán thành công</div>
 </div>

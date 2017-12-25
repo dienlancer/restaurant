@@ -1,7 +1,4 @@
-<div class="our-member relative">
-    <div class="opacity-absolute"></div>    
-</div>
-<div class="container margin-top-15">  
+<div>  
     <?php
     if(have_posts()){
         while (have_posts()) {

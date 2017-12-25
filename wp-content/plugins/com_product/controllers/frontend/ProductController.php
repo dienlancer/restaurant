@@ -467,7 +467,8 @@ class ProductController{
 					$user["userInfo"]=array("username" => $username,"id"=>$id);
 					$ssUser->set($ssValue,$user);
 					$pageID = $zController->getHelper('GetPageId')->get('_wp_page_template','checkout.php');	
-					$permarlink = get_permalink($pageID);									
+					$permarlink = get_permalink($pageID);	
+					wp_redirect($permarlink);												
 				}else{					
 					$arrError["exception_error"]='Đăng nhập không thành công'; 			
 				}	
