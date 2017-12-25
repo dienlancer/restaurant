@@ -445,6 +445,7 @@ div.tab button{
     transform: skew(0deg); 
     margin: 0 15px;
     border-radius: 5px;
+    color: #000000
 }
 div.tab button.active{
     background: #FFA41F
@@ -1101,9 +1102,13 @@ div.riot{
    div.notredam{
     display: block;
    }
+   div.motocycle form.es_widget_form,div.search-food-form{
+        flex-direction: column;
+   }
    div.newsletter{
     text-align: center;
    }
+
 }
 
 
