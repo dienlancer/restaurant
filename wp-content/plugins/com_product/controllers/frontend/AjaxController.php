@@ -103,9 +103,26 @@ class AjaxController{
 	}
 	public function load_payment_method_info(){
 		global $zController;
-		$payment_method_id=(int)$zController->getParams("payment_method_id");	
-		$payment_method_model=$zController->getModel("/frontend","PaymentMethodModel");
-		$data=$payment_method_model->getPaymentMethodDetail($payment_method_id);		
+		$payment_method_id=(int)@$zController->getParams("payment_method_id");	
+		$data=array();
+		$args=array(
+			"p"=>$payment_method_id,
+			"post_type"=>"payment_method"
+		);
+		$the_query = new WP_Query( $args );
+	    if($the_query->have_posts()){
+	        while ($the_query->have_posts()) {
+	            $the_query->the_post();
+	            $post_id=$the_query->post->ID;
+	            $title=get_the_title($post_id);
+	            $content=get_the_content($post_id);	            
+	            $data["id"]=$post_id;
+	            $data["title"]=$title;
+	            $data["content"]=$content;	            
+	        }
+	    }
+		/*$payment_method_model=$zController->getModel("/frontend","PaymentMethodModel");
+		$data=$payment_method_model->getPaymentMethodDetail($payment_method_id);		*/
 		echo json_encode($data);
 		die();
 	}

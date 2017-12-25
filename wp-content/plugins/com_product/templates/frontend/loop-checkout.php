@@ -20,10 +20,39 @@ if(count($arrCart) == 0){
 
 $id=$arrUser["id"];
 $userModel=$zController->getModel("/frontend","UserModel"); 
-$paymentMethodModel=$zController->getModel("/frontend","PaymentMethodModel"); 
 $info=$userModel->getUserById($id);
-$lstPaymentMethod=$paymentMethodModel->getDDLPaymentMethod();
 $detail=$info[0];   
+
+$payment=array(
+    "thanh-toan-qua-ngan-hang",
+    "thanh-toan-bang-tien-mat"
+);
+$lstPaymentMethod=array();
+$lstPaymentMethod[]=array("id"=>0,"title"=>"","content"=>"");
+foreach ($payment as $key => $value) {
+    $args=array(
+        "name"=>$value,
+        "post_type"=>"payment_method"
+    );
+    $the_query = new WP_Query( $args );
+    if($the_query->have_posts()){
+        while ($the_query->have_posts()) {
+            $the_query->the_post();
+            $post_id=$the_query->post->ID;
+            $title=get_the_title($post_id);
+            $content=get_the_content($post_id);
+            $item=array();
+            $item["id"]=$post_id;
+            $item["title"]=$title;
+            $item["content"]=$content;
+            $lstPaymentMethod[]=$item;
+        }
+    }
+}
+
+/*$paymentMethodModel=$zController->getModel("/frontend","PaymentMethodModel"); 
+$lstPaymentMethod=$paymentMethodModel->getDDLPaymentMethod();*/
+
 
  
 $totalPrice=0;
@@ -48,7 +77,7 @@ if(count($zController->_data["data"]) > 0){
     }                     
     if(count($error) > 0 || count($success) > 0){
         ?>
-        <div class="form-group alert">
+        <div class="alert">
             <?php                                           
             if(count($error) > 0){
                 ?>
@@ -105,7 +134,7 @@ if(count($zController->_data["data"]) > 0){
                 <tr>
                     <td class="com_product20"><a href="<?php echo $product_link ?>"><?php echo $product_name; ?></a></td>
                     <td align="right" class="com_product21"><?php echo $vHtml->fnPrice($product_price) ; ?></td>
-                    <td align="center" class="com_product22"><?php echo $vHtml->fnPrice($product_quantity) ; ?></td>
+                    <td align="center" class="com_product22"><?php echo ($product_quantity) ; ?></td>
                     <td align="right" class="com_product23"><?php echo $vHtml->fnPrice($product_total_price) ; ?></td>            
                 </tr>
                 <?php
@@ -117,7 +146,7 @@ if(count($zController->_data["data"]) > 0){
                 <td colspan="2">
                     Tổng cộng
                 </td>
-                <td align="center"><?php echo $vHtml->fnPrice($totalQuantity) ; ?></td>
+                <td align="center"><?php echo ($totalQuantity) ; ?></td>
                 <td align="right"><?php echo $vHtml->fnPrice($totalPrice) ; ?></td>
 
             </tr>

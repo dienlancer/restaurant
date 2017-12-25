@@ -10,10 +10,9 @@ class Backend{
 		if(isset($_GET['page'])) $this->_page = $_GET['page'];		
 		add_action('admin_menu', array($this,'menus'));
 		if(
-			$this->_page == 'zendvn-sp-manager-payment-method' 	|| 
-			$this->_page == 'zendvn-sp-manager-invoice'			|| 
-			$this->_page == 'zendvn-sp-manager-setting' 		|| 
 			
+			$this->_page == 'zendvn-sp-manager-invoice'			|| 
+			$this->_page == 'zendvn-sp-manager-setting' 		|| 			
 			$this->_page == 'zendvn-sp-manager-user'
 		){
 			add_action('admin_init', array($this,'do_output_buffer'));
@@ -39,11 +38,7 @@ class Backend{
 		wp_enqueue_media();
 		wp_register_script("single-media-button",PLUGIN_URL . "public/backend/js/single-media-button.js" ,array('jquery'),'1.0',true);
 		wp_enqueue_script("single-media-button");	
-		wp_enqueue_script('media-upload');
-		wp_register_script("ckeditor_payment_method",PLUGIN_URL . "public/backend/ckeditor/ckeditor.js" ,array('jquery'),'1.0',false);
-		wp_enqueue_script("ckeditor_payment_method");
-		wp_register_script("ckfinder_payment_method",PLUGIN_URL . "public/backend/ckfinder/ckfinder.js" ,array('jquery'),'1.0',false);
-		wp_enqueue_script("ckfinder_payment_method");
+		wp_enqueue_script('media-upload');		
 	}
 	public function menus(){
 		add_menu_page('Shopping', 'Shopping', 'manage_options', $this->_menuSlug,
@@ -62,12 +57,7 @@ class Backend{
 						$this->_menuSlug . '-invoice',array($this,'dispatch_function'));
 
 		add_submenu_page($this->_menuSlug, 'Setting', 'Setting', 'manage_options',
-						$this->_menuSlug . '-setting',array($this,'dispatch_function'));
-
-		add_submenu_page($this->_menuSlug, 'Payment method', 'Payment method', 'manage_options',
-						$this->_menuSlug . '-payment-method',array($this,'dispatch_function'));	
-
-		
+						$this->_menuSlug . '-setting',array($this,'dispatch_function'));		
 
 		add_submenu_page($this->_menuSlug, 'User', 'User', 'manage_options',
 						$this->_menuSlug . '-user',array($this,'dispatch_function'));	
@@ -81,11 +71,7 @@ class Backend{
 				break;		
 			case 'zendvn-sp-manager-invoice':
 				$zController->getController('/backend','AdminInvoiceController');
-			break;
-			case 'zendvn-sp-manager-payment-method':
-				$zController->getController('/backend','AdminPaymentMethodController');
-			break;		
-			
+			break;						
 			case 'zendvn-sp-manager-user':
 				$zController->getController('/backend','AdminUserController');
 			break;

@@ -40,7 +40,7 @@
             <?php 
             if(count($error) > 0 || count($success) > 0){
                 ?>
-                <div class="form-group alert">
+                <div class="alert">
                     <?php                                           
                     if(count($error) > 0){
                         ?>

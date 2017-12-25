@@ -193,9 +193,9 @@ class AdminInvoiceModel extends WP_List_Table{
 		$id = absint($arrData['id']);			
 		$sql = "SELECT 
 					i.*
-					,p.title as payment_method_title
+					
 				FROM `".$tbl_invoice."` i
-					 inner join `".$tbl_payment_method."` p on i.payment_method_id = p.id					 
+					  
 				WHERE i.id =".$id;		
 		$result = $wpdb->get_row($sql, ARRAY_A);	
 		return $result;

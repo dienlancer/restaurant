@@ -32,6 +32,26 @@
 	// lấy danh sách chi tiết đơn hàng
 	$invoiceDetailModel=$zController->getModel("/backend","AdminInvoiceModel");
 	$arrInvoiceDetail=$invoiceDetailModel->getInvoiceDetail();		
+
+	$payment_method_id=(int)@$zController->_data["payment_method_id"];	
+		$payment_method_data=array();
+		$args=array(
+			"p"=>$payment_method_id,
+			"post_type"=>"payment_method"
+		);
+		$the_query = new WP_Query( $args );
+	    if($the_query->have_posts()){
+	        while ($the_query->have_posts()) {
+	            $the_query->the_post();
+	            $post_id=$the_query->post->ID;
+	            $title=get_the_title($post_id);
+	            $content=get_the_content($post_id);	            
+	            $payment_method_data["id"]=$post_id;
+	            $payment_method_data["title"]=$title;
+	            $payment_method_data["content"]=$content;	            
+	        }
+	    }
+
 ?>
 <div class="wrap">
 	<h1><?php echo $lbl;?></h1>
@@ -43,13 +63,13 @@
 		<table class="content-form">
 				<tr>
 					<td scope="row" align="right">
-						<label><i><b>Code :</b></i></label>
+						<label><i><b>Mã đơn hàng :</b></i></label>
 					</td>
 					<td><?php echo $lblCode;?></td>
 				</tr>	
 				<tr>
 					<td scope="row" align="right">
-						<label><i><b>Created date :</b></i></label>
+						<label><i><b>Ngày tạo :</b></i></label>
 					</td>
 					<td><?php echo $lblCreatedDate;?></td>
 				</tr>	
@@ -67,13 +87,13 @@
 				</tr>
 				<tr>
 					<td scope="row" align="right">
-						<label><i></i><b>Fullname :</b></label>
+						<label><i></i><b>Họ tên :</b></label>
 					</td>
 					<td><?php echo $inputFullname;?></td>
 				</tr>
 				<tr>
 					<td scope="row" align="right">
-						<label><i><b>Address :</b></i></label>
+						<label><i><b>Địa chỉ :</b></i></label>
 					</td>
 					<td><?php echo $inputAddress;?></td>
 				</tr>
@@ -97,25 +117,31 @@
 				</tr>
 				<tr>
 					<td scope="row" align="right">
-						<label><i><b>Payment method :</b></i></label>
+						<label><i><b>Phương thức thanh toán :</b></i></label>
 					</td>
-					<td><?php echo $lblPaymentMethodTitle;?></td>
+					<td><?php echo $payment_method_data["title"];?></td>
 				</tr>
 				<tr>
 					<td scope="row" align="right">
-						<label><i><b>Quantity :</b></i></label>
+						<label><i><b>Nội dung thanh toán :</b></i></label>
+					</td>
+					<td><?php echo $payment_method_data["content"];?></td>
+				</tr>
+				<tr>
+					<td scope="row" align="right">
+						<label><i><b>Số lượng :</b></i></label>
 					</td>
 					<td><?php echo $lblQuantity;?></td>
 				</tr>	
 				<tr>
 					<td scope="row" align="right">
-						<label><i><b>Total price :</b></i></label>
+						<label><i><b>Thành tiền :</b></i></label>
 					</td>
 					<td><?php echo $lblTotalPrice;?></td>
 				</tr>											
 				<tr>
 					<td scope="row" align="right">
-						<label><i><b>Status :</b></i></label>
+						<label><i><b>Trạng thái :</b></i></label>
 					</td>
 					<td><?php echo $ddlStatus;?></td>
 				</tr>							
@@ -128,12 +154,12 @@
 		<table width="100%" id="com_product16" class="com_product16">
 			<thead>
 				<tr>
-					<th>Code</th>
-					<th>Name</th>
-					<th>Image</th>
-					<th>Price</th>
-					<th>Quantity</th>
-					<th>Total price</th>
+					<th>Mã</th>
+					<th>Tên sp</th>
+					<th>Hình</th>
+					<th>Giá</th>
+					<th>Số lượng</th>
+					<th>Thành tiền</th>
 				</tr>
 			</thead>
 			<tbody>
