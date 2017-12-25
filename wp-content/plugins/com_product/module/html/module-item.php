@@ -171,7 +171,7 @@ if(!empty($instance['item_id'])){
 										<div class="about-us-content margin-top-45"><?php echo $content; ?></div>
 										<div class="about-us-readmore margin-top-45"><a href="<?php echo $permalink; ?>">Xem thêm<i class="icofont icofont-curved-double-right"></i></a></div>
 									</div>
-									<div class="col-lg-4"><img src="<?php echo $featureImg; ?>" /></div>
+									<div class="col-lg-4"><center><img src="<?php echo $featureImg; ?>" /></center></div>
 									<div class="clr"></div>
 								</div>
 							</div>

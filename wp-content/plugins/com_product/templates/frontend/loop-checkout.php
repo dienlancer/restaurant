@@ -17,31 +17,15 @@ if(count($arrUser) == 0){
 if(count($arrCart) == 0){
     wp_redirect($permarlinkZCart);
 }    
+
 $id=$arrUser["id"];
-
-$payment=array("thanh-toan-bang-the-tin-dung","thanh-toan-bang-tien-mat");
-$data_payment_method=array();
-$data_payment_method[]=array("id"=>0,"title"=>"Chọn 1 phương thức thanh toán","content"=>"");
-foreach ($payment as $key => $value) {
-    $args=array('name'=>$value,'post_type'=>'payment_method');    
-    $the_query = new WP_Query( $args );        
-    if($the_query->have_posts()){
-        while ($the_query->have_posts()) {
-            $the_query->the_post();     
-            $post_id=$the_query->post->ID;           
-            $title=get_the_title($post_id);
-            $content=get_the_content($post_id);
-            $item=array();
-            $item["id"]=$post_id;
-            $item["title"]=$title;
-            $item["content"]=$content;
-            $data_payment_method[]=$item;              
-        }
-        wp_reset_postdata();      
-    }   
-}
-
+$userModel=$zController->getModel("/frontend","UserModel"); 
+$paymentMethodModel=$zController->getModel("/frontend","PaymentMethodModel"); 
+$info=$userModel->getUserById($id);
+$lstPaymentMethod=$paymentMethodModel->getDDLPaymentMethod();
 $detail=$info[0];   
+
+ 
 $totalPrice=0;
 $totalQuantity=0;
 $data=array();   
@@ -192,7 +176,7 @@ if(count($zController->_data["data"]) > 0){
                         <td>
                             <select class="form-control" name="payment_method" onchange="changePaymentMethod(this.value);">
                                 <?php 
-                                foreach ($data_payment_method as $key => $value) {
+                                foreach ($lstPaymentMethod as $key => $value) {
                                     $id=$value["id"];
                                     $title=$value["title"];
                                     if((int)@$data["payment_method"] == (int)@$id)
@@ -219,6 +203,26 @@ if(count($zController->_data["data"]) > 0){
         <div class="clr"></div>   
     </form>
 </div>
-
+<script type="text/javascript">
+    function changePaymentMethod(payment_method_id) {
+        var dataObj = {
+            "action"    : "load_payment_method_info",
+            "payment_method_id"     : payment_method_id,                    
+            "security"  : security_code
+        };
+        jQuery.ajax({
+            url         : ajaxurl,
+            type        : "POST",
+            data        : dataObj,
+            dataType    : "json",
+            success     : function(data, status, jsXHR){
+                jQuery("span.payment_method_content").empty();                
+                if(data != null){
+                    jQuery("span.payment_method_content").append(data.content);
+                }               
+            }
+        });
+    }
+</script>
 
 
