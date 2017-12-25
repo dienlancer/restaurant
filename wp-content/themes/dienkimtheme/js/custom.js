@@ -45,8 +45,8 @@ function changePaymentMethod(payment_method_id)	{
 			data		: dataObj,
 			dataType	: "json",
 			success		: function(data, status, jsXHR){
-							jQuery("#payment_method_content").empty();
-							jQuery("#payment_method_content").append(data.content);
+							jQuery("span.payment_method_content").empty();
+							jQuery("span.payment_method_content").append(data.content);
 						}
 		});
 }

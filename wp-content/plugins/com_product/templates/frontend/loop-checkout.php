@@ -18,10 +18,29 @@ if(count($arrCart) == 0){
     wp_redirect($permarlinkZCart);
 }    
 $id=$arrUser["id"];
-$userModel=$zController->getModel("/frontend","UserModel"); 
-$paymentMethodModel=$zController->getModel("/frontend","PaymentMethodModel"); 
-$info=$userModel->getUserById($id);
-$lstPaymentMethod=$paymentMethodModel->getDDLPaymentMethod();
+
+$payment=array("thanh-toan-bang-the-tin-dung","thanh-toan-bang-tien-mat");
+$data_payment_method=array();
+$data_payment_method[]=array("id"=>0,"title"=>"Chọn 1 phương thức thanh toán","content"=>"");
+foreach ($payment as $key => $value) {
+    $args=array('name'=>$value,'post_type'=>'payment_method');    
+    $the_query = new WP_Query( $args );        
+    if($the_query->have_posts()){
+        while ($the_query->have_posts()) {
+            $the_query->the_post();     
+            $post_id=$the_query->post->ID;           
+            $title=get_the_title($post_id);
+            $content=get_the_content($post_id);
+            $item=array();
+            $item["id"]=$post_id;
+            $item["title"]=$title;
+            $item["content"]=$content;
+            $data_payment_method[]=$item;              
+        }
+        wp_reset_postdata();      
+    }   
+}
+
 $detail=$info[0];   
 $totalPrice=0;
 $totalQuantity=0;
@@ -171,22 +190,22 @@ if(count($zController->_data["data"]) > 0){
                     </tr>                                               
                     <tr>
                         <td>
-                            <select id="payment_method" name="payment_method" onchange="changePaymentMethod(this.value);">
+                            <select class="form-control" name="payment_method" onchange="changePaymentMethod(this.value);">
                                 <?php 
-                                for($i=0;$i<count($lstPaymentMethod);$i++){
-                                    $id=$lstPaymentMethod[$i]["id"];
-                                    $title=$lstPaymentMethod[$i]["title"];
-                                    if((int)@$data["payment_method"] == (int)$id)
+                                foreach ($data_payment_method as $key => $value) {
+                                    $id=$value["id"];
+                                    $title=$value["title"];
+                                    if((int)@$data["payment_method"] == (int)@$id)
                                         echo '<option selected value="'.$id.'">'.$title.'</option>';                               
                                     else
                                         echo '<option          value="'.$id.'">'.$title.'</option>';                               
-                                }
+                                }                            
                                 ?>                                                    
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td><span id="payment_method_content"></span></td>
+                        <td><span class="payment_method_content"></span></td>
                     </tr>
                     <tr>                               
                         <td class="com_product31" align="right">
