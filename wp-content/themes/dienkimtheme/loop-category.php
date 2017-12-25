@@ -77,9 +77,10 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
                                                 <a href="<?php echo $permalink; ?>"><img src="<?php echo $featureImg; ?>" /></a>
                                             </figure>
                                         </center>
-                                    </div>
+                                    </div>                                    
                                     <div class="blog-box padding-left-15 padding-right-15 padding-top-15 padding-bottom-15">
-                                        <h3 class="blog-title"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                                        <div class="blog-ngang"></div>
+                                        <h3 class="blog-title margin-top-15"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                                         <div class="margin-top-15 blog-excerpt"><?php echo $excerpt; ?></div>
                                         <div class="about-us-readmore-2 margin-top-15">                                         
                                             <a href="<?php echo $permalink; ?>">Xem thêm<i class="icofont icofont-curved-double-right"></i></a>

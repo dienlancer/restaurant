@@ -648,16 +648,18 @@ div.blog-excerpt{
 div.main-blog-box{
     
     background: #ffffff;
-    
-}
-div.blog-box{
     border-left: 1px solid #ddd;
     border-right:  1px solid #ddd;
     border-bottom:   1px solid #ddd;
+    border-top: 1px solid #ddd;
 }
-div.blog-box-img img{
- border-radius: 5px 5px 0px 0px;   
+div.blog-ngang{
+    border-top: 1px solid #ddd;
 }
+div.blog-box-img{
+    padding: 5px;
+}
+
 div.blog-title a{
     color: #333;
 }
@@ -908,7 +910,7 @@ div.box-product{
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
 }
 div.box-product-img{
-    padding: 15px;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -931,6 +933,128 @@ div.box-product-cart a{
     text-transform: uppercase;
     font-weight: bold;
     border:1px solid #ff9700;
+}
+h3.bellesa-product-detail-title{
+        font-family: 'Parisienne';
+    color: #222;
+    font-size:30px;
+    position: relative;
+    padding-bottom: 15px;
+    text-transform: capitalize;
+}
+h3.bellesa-product-detail-title::before{
+        position: absolute;
+    left: 0;
+    height: 1px;
+    width: 100px;
+    background: #222;
+    content: "";
+    bottom: 0;
+}
+h3.bellesa-product-detail-title::after{
+        position: absolute;
+        left: 15px;
+    bottom: -2px;
+    height: 1px;
+    width: 100px;
+    background: #222;
+    content: "";
+    
+}
+h3.ecommerce{
+    
+    color: #222;
+    font-size:30px;
+    position: relative;
+    padding-bottom: 15px;
+    text-transform: capitalize;
+}
+h3.ecommerce::before{
+        position: absolute;
+    left: 0;
+    height: 1px;
+    width: 100px;
+    background: #222;
+    content: "";
+    bottom: 0;
+}
+h3.ecommerce::after{
+        position: absolute;
+        left: 15px;
+    bottom: -2px;
+    height: 1px;
+    width: 100px;
+    background: #222;
+    content: "";
+    
+}
+div.bellesa-zaproduct > ul{
+    list-style: none;
+}
+div.bellesa-zaproduct > ul > li{
+    display: inline-block;
+}
+div.bellesa-zaproduct > ul > li:first-child{
+    margin-left: 0;
+}
+div.bellesa-zaproduct > ul > li > a{
+    color: #FFA41F
+}
+div.bellesa-zaproduct{
+    margin-top: 25px;
+}
+div.bellesa-price{
+    color: #222;
+    font-size: 30px;
+    margin-top: 5px;
+    font-weight: bold;
+    text-decoration: line-through;
+}
+div.bellesa-sale-price{
+    color: #ff0000;
+    font-size: 40px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+div.bellesa-hr{
+    border-top: 1px solid #dddddd;
+
+}
+div.bellesa-detail{
+    text-align: justify;
+}
+div.bellesa-cart a{
+        padding: 8px 10px;
+    text-transform: uppercase;
+    background:#FFA41F;
+    border: 1px solid #FFA41F;
+    color: #fff;
+}
+input.quantity{
+    text-align: center;
+    width: 50px;
+    padding: 5px 0px;
+}
+div.bellesa-cart > ul > li:first-child,ul.social > li:first-child{
+    margin-left: 0;
+}
+div.share-product{
+    margin-top: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+ul.social > li > a{
+        display: block;
+    background: #ffffff;
+    padding: 4px 10px;
+    border: 1px solid #efefef;
+}
+ul.social > li{
+    margin-left: 5px;
+}
+ul.social > li > a:hover{
+    border:1px solid #FFA41F;
 }
 @media (max-width: 767px){
    div.logo,div.menu,div.user-top{

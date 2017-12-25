@@ -7,18 +7,13 @@ $ssName="vmart";
 $ssValue="zcart";
 $ssCart     = $zController->getSession('SessionHelper',$ssName,$ssValue);
 $arrCart = @$ssCart->get($ssValue)["cart"]; 
-?>
-<div class="our-member relative">
-    <div class="opacity-absolute"></div>    
-</div>
-<div class="container margin-top-15">
-<?php      
+
 if(count($arrCart)>0){
 	?>
-	<form name="frm" method="post" class="margin-top-15">
+	<form name="frm" method="post">
 		<input type="hidden" name="action" value="update-cart" />
 		<?php wp_nonce_field("update-cart",'security_code',true);?>
-		<h3 class="ecommerce">Giỏ hàng</h3>
+		<h3 class="mamboitaliano">Giỏ hàng</h3>
 		<div class="margin-top-15">
 			<table id="com_product16" class="com_product16" cellpadding="0" cellspacing="0" width="100%">
 				<thead>
@@ -86,6 +81,6 @@ if(count($arrCart)>0){
 	<?php
 }
 ?>	
-</div>
+
 
 
