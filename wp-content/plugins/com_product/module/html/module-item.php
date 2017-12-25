@@ -283,7 +283,7 @@ if(!empty($instance['item_id'])){
 								$link_web=get_post_meta($post_id,"banner_url",true);
 								$featureImg=get_the_post_thumbnail_url($post_id, 'full');
 								?>
-								<div class="col-lg-4">
+								<div class="col-xs-4">
 									<div class="relative liverpool margin-top-30">
 										<div><center><img src="<?php echo $featureImg; ?>"></center></div>			
 										<div class="youtube"></div>		

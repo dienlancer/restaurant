@@ -1069,7 +1069,11 @@ div.riot{
     flex-direction: row;
     align-items: center;
 }
-
+div.talaba{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media (max-width: 767px){   
    div.mobilemenu{    
     position: absolute;
@@ -1102,13 +1106,25 @@ div.riot{
    div.notredam{
     display: block;
    }
-   div.motocycle form.es_widget_form,div.search-food-form{
+   div.motocycle form.es_widget_form{
         flex-direction: column;
    }
    div.newsletter{
     text-align: center;
    }
+   div.tab button{
+    margin: 0px 5px;
+    padding:5px 10px; 
+   }
+   div.nina{
 
+   }
+   div.oppo{
+        bottom: 0px;
+   }
+   div.cybertang{
+    margin-top: 15px;
+   }
 }
 @media (max-width: 543px){
     div.riot{
@@ -1117,5 +1133,14 @@ div.riot{
     div.rikimaru{
         display: none;
     }
+    div.search-food-form{
+        flex-direction: column;
+   }
+   div.remotherer{
+    margin-top: 60px;
+   }
+   div.mobilemenu{
+    top: 128px;
+   }
 }
 

@@ -47,7 +47,7 @@ $vHtml=new HtmlControl();
 </div>
 <div class="container padding-bottom-45 padding-top-15">
 	<div class="row">
-		<div class="col-lg-5 no-padding-left">
+		<div class="col-lg-5">
 			<?php 
 				if(have_posts()){                                   
 					while (have_posts()) {
@@ -55,14 +55,14 @@ $vHtml=new HtmlControl();
 						$post_id= get_the_id();
 						$featureImg=get_the_post_thumbnail_url($post_id, 'full');       
 						?>
-						<img src="<?php echo $featureImg; ?>" >
+						<center><img src="<?php echo $featureImg; ?>" ></center>
 						<?php
 					}
 					wp_reset_postdata();                                
 				}
 				?>    
 		</div>
-		<div class="col-lg-7 no-padding-left">
+		<div class="col-lg-7">
 			<script type="text/javascript" language="javascript">
 				jQuery(document).ready(function(){
 					jQuery( "input[name='datebooking']" ).datepicker({

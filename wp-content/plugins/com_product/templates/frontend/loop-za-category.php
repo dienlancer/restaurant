@@ -62,7 +62,7 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
                     $html_price='<center><span class="tutu">'.$vHtml->fnPrice($price).'</span></center>' ;                  
                 }   
                 ?>
-                <div class="col-lg-4 no-padding-left">
+                <div class="col-sm-4 no-padding-left">
                     <div class="margin-top-10 box-product">
                         <div class="box-product-img"><figure><a href="<?php echo $permalink; ?>"><img src="<?php echo $smallImg; ?>" /></a></figure></div>                    
                         <div class="box-product-title"><center><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></center></div>    

@@ -69,7 +69,7 @@ $pagination=$zController->getPagination("Pagination",$arrPagination);
                             $content=get_the_content($post_id);
                             $featureImg=get_the_post_thumbnail_url($post_id, 'full');                           
                             ?>
-                            <div class="col-lg-4 no-padding-left">
+                            <div class="col-sm-4 no-padding-left">
                                 <div class="main-blog-box margin-top-30">
                                     <div class="blog-box-img">
                                         <center>

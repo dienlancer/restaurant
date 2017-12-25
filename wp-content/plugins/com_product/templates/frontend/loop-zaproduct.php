@@ -51,12 +51,12 @@ if($the_query->have_posts()){
             <form  method="post"  class="frm" name="frm">                
                 <h3 class="mamboitaliano"><?php echo $term_name; ?></h3>
                 <div class="margin-top-15">
-                    <div class="col-sm-4 no-padding-left">
+                    <div class="col-sm-4">
                         <div>
                             <center><img class="zoom" src="<?php echo $small_img; ?>" data-zoom-image="<?php echo $featureImg; ?>" /></center>
                         </div>
                     </div>
-                    <div class="col-sm-8 no-padding-left">
+                    <div class="col-sm-8">
                         <div>
                             <h3 class="bellesa-product-detail-title"><?php echo $title; ?></h3>
                             <div class="bellesa-zaproduct">                                    

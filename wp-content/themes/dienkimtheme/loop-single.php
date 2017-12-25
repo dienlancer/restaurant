@@ -33,13 +33,15 @@ if(have_posts()){
         ?>
         <div class="hexa padding-top-45 padding-bottom-45">
             <div class="container">
-                <div>
-                    <h3 class="hexa-title">
-                        <?php echo $title; ?>
-                    </h3>
-                    <div class="about-us-excerpt"><?php echo $excerpt; ?></div>
-                    <hr class="about-us-hr" />
-                    <div class="about-us-content margin-top-30"><?php echo $content; ?></div>    
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="hexa-title">
+                            <?php echo $title; ?>
+                        </h3>
+                        <div class="about-us-excerpt"><?php echo $excerpt; ?></div>
+                        <hr class="about-us-hr" />
+                        <div class="about-us-content margin-top-30"><?php echo $content; ?></div>    
+                    </div>                    
                 </div>            
             </div>  
         </div>            

@@ -245,7 +245,7 @@ function zendvn_theme_widgets_init(){
 		'name'          => __( 'BannerCategoryProduct', $themeName ),
 		'id'            => 'banner-catgory-product',		
 		'class'         => '',
-		'before_widget' => '<div class="margin-top-15">',
+		'before_widget' => '<div class="margin-top-15 talaba">',
 		'before_title'  => '',
 		'after_title'   => '',
 		'after_widget'  => '</div>'				
