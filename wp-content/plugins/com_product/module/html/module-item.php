@@ -200,7 +200,7 @@ if(!empty($instance['item_id'])){
 									items:1
 								},
 								600:{
-									items:5
+									items:1
 								},
 								1000:{
 									items:5

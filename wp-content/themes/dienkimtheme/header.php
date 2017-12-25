@@ -164,8 +164,8 @@ if(count($arrCart) > 0){
       </div>
       <hr class="gach-ngang">
       <div class="container">
-        <div class="row flex-center-middle">
-          <div class="col-lg-2 no-padding">
+        <div class="row riot">
+          <div class="viba-logo">
             <div class="logo">
               <center>
                 <a href="<?php echo home_url(); ?>">                
@@ -174,9 +174,7 @@ if(count($arrCart) > 0){
               </center> 
             </div>
           </div>
-          <div class="col-lg-10 no-padding ">
-            <div class="menu flex-center-middle">
-              <div class="col-lg-9 no-padding"><div id="smoothmainmenu" class="ddsmoothmenu">
+          <div id="smoothmainmenu" class="ddsmoothmenu">
                 <?php     
                 $args = array( 
                   'menu'              => '', 
@@ -197,23 +195,59 @@ if(count($arrCart) > 0){
                   'theme_location'    => 'main-menu' 
                 );
                 wp_nav_menu($args);
-                ?>   
-                <div class="clr"></div>
+                ?>                   
               </div>             
-            </div>
-              <div class="col-lg-3 no-padding ">
-                <?php 
+          <?php 
                 $page_id_reservation = $zController->getHelper('GetPageId')->get('_wp_page_template','reservation.php');  
                 $reservation_link = get_permalink($page_id_reservation);
                 ?>
                 <div class="book-your-table"><a href="<?php echo $reservation_link; ?>">Book your table</a></div>
-              </div>                    
-            </div>        
-          </div>
         </div>
       </div>
-    </div>        
+    </div>    
+    <div class="mobilemenu">
+        <div class="container">
+            <div>
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>                   
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <?php     
+                            $args = array( 
+                                'menu'              => '', 
+                                'container'         => '', 
+                                'container_class'   => '', 
+                                'container_id'      => '', 
+                                'menu_class'        => 'nav navbar-nav', 
+                                'menu_id'           => 'mobile-menu', 
+                                'echo'              => true, 
+                                'fallback_cb'       => 'wp_page_menu', 
+                                'before'            => '', 
+                                'after'             => '', 
+                                'link_before'       => '', 
+                                'link_after'        => '', 
+                                'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s</ul>',  
+                                'depth'             => 3, 
+                                'walker'            => '', 
+                                'theme_location'    => 'mobile-menu' 
+                            );
+                            wp_nav_menu($args);
+                            ?>             
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>    
   </div>
+
 </header>
 
 

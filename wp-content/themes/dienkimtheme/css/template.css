@@ -121,10 +121,10 @@ div.mobile-search{
     }
 }
 .navbar-default {
-        background-color: #f97a3d;
-    border-top:1px solid #ff5300;
-    border-left:1px solid #ff5300;
-    border-right:1px solid #ff5300;
+        background-color:#FFA41F;
+    border-top:1px solid #ffa016;
+    border-left:1px solid #ffa016;
+    border-right:1px solid #ffa016;
 }
 .navbar-default .navbar-toggle {
     border-color: #ffffff;
@@ -133,14 +133,14 @@ div.mobile-search{
     background-color: #ffffff;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: #ff5300;
+    background-color: #FFA41F;
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-top:1px solid #ff5300;
+    border-top:1px solid #ff9700;
 }
 .navbar-default .navbar-nav > li > a {
     color: #ffffff;
-    border-bottom:1px solid #ff5300;
+    border-bottom:1px solid #ff9700;
     padding-left:15px;
     padding-right: 15px;
         font-size: 16px;
@@ -186,13 +186,17 @@ ul.inline-block > li{
 ul.list-style-none{
     list-style: none;
 }
-div.flex-center-middle{
+/* end standard */
+div.tiato{
     display: flex;
     align-items: center;    
     justify-content: center;
 }
-
-/* end standard */
+div.notredam{
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+}
 div.kip{
         display: flex;
     flex-direction: column;
@@ -229,6 +233,8 @@ hr.gach-ngang{
 }
 .ddsmoothmenu{
     background: transparent;
+    width: 55%;
+    margin-left:130px;
 }
 .ddsmoothmenu ul li a:hover{
     background: transparent;
@@ -244,13 +250,13 @@ div.menu{
 div.book-your-table a{
     background: #FFA41F;
     color: #ffffff;
-    padding: 12px 0px;
+    padding: 12px 15px;
     display: block;
     border: 1px solid #FFA41F;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 div.logo-banner{
     position: absolute;
@@ -1056,9 +1062,19 @@ ul.social > li{
 ul.social > li > a:hover{
     border:1px solid #FFA41F;
 }
+
+div.riot{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 @media (max-width: 767px){   
-   div.mobilemenu{
-    margin-top: 30px
+   div.mobilemenu{    
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    top: 136px;
    }
    div.runoutleft,div.runoutright{
     width: 100%;    
@@ -1069,6 +1085,24 @@ ul.social > li > a:hover{
    }
    div.menu{
     width: 100%;
+   }
+   div.logo,div.menu,div.user-top{
+    width: 100%;
+   }
+   div.logo-banner{
+    display: none;
+   }
+   div.riot{
+    justify-content: center;
+   }
+   div.book-your-table{
+    margin-left: 15px
+   }
+   div.notredam{
+    display: block;
+   }
+   div.newsletter{
+    text-align: center;
    }
 }
 

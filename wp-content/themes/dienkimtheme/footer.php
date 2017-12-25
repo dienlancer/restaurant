@@ -12,11 +12,11 @@ $youtube_url=$zendvn_sp_settings['youtube_url'];
 $instagram_url=$zendvn_sp_settings['instagram_url'];
 $pinterest_url=$zendvn_sp_settings['pinterest_url'];  
 ?>
-<footer class="padding-top-45 padding-bottom-45">
+<footer class="padding-top-15 padding-bottom-45">
 	<div class="container">
     <div class="row">
-      <div class="col-lg-3 no-padding-left">
-       <div class="myaccountbox">
+      <div class="col-lg-3">
+       <div class="myaccountbox margin-top-15">
         <h3>My account</h3>
         <div class="margin-top-15">
          <?php     
@@ -44,8 +44,8 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
        </div>
      </div>
    </div> 
-   <div class="col-lg-3 no-padding-left">
-     <div class="myaccountbox">
+   <div class="col-lg-3">
+     <div class="myaccountbox margin-top-15">
       <h3>Information</h3>
       <div class="margin-top-15">
        <?php     
@@ -73,15 +73,15 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
      </div>
    </div>
  </div> 
- <div class="col-lg-3 no-padding-left">
-   <div class="myaccountbox">
+ <div class="col-lg-3">
+   <div class="myaccountbox margin-top-15">
     <?php if(is_active_sidebar('working-time')):?>
           <?php dynamic_sidebar('working-time')?>
         <?php endif; ?>  
   </div>
 </div> 
-<div class="col-lg-3 no-padding-left">
- <div class="myaccountbox">
+<div class="col-lg-3">
+ <div class="myaccountbox margin-top-15">
   <h3>Address</h3>
   <div class="margin-top-15">
     <ul class="address">
@@ -95,12 +95,12 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
 <div class="clr"></div>
 </div>   
 <hr class="ximaxa" />
-<div class="row flex-center-middle padding-top-45">
-  <div class="col-lg-3 no-padding-left">
-
-      <a href="<?php echo home_url(); ?>">                
+<div class="row padding-top-45">
+  <div class="col-lg-3">
+<center><a href="<?php echo home_url(); ?>">                
         <img src="<?php echo $customizerGlobal->general_section('site-logo');?>" />
-      </a>
+      </a></center>
+      
     
   </div>
   <div class="col-lg-6 no-padding-left">
@@ -110,7 +110,7 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
     <?php endif; ?>  
     </div>    
   </div>
-  <div class="col-lg-3 no-padding-left">
+  <div class="col-lg-3">
     <div>
       <center>
         <ul class="inline-block list-style-none top-email">                

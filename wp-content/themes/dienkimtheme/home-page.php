@@ -93,7 +93,7 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
                 jQuery("div.tab > button.tablinks:first-child").addClass('active');
             });
         </script>      
-        <div class="flex-center-middle">
+        <div class="tiato">
             <div class="tab">
                 <button class="tablinks h-title" onclick="openMenu(event, 'all-menu')">All</button>
                 <button class="tablinks h-title" onclick="openMenu(event, 'breakfast-menu')">Breakfast</button>
@@ -211,27 +211,27 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
         <form name="frm-reservation" method="POST" >
             <input type="hidden" name="action" value="booking" />                      
             <?php wp_nonce_field("booking",'security_code',true);?>                                  
-            <div class="container margin-top-15 reservation-runz padding-bottom-45">
+            <div class="container reservation-runz padding-bottom-45">
                 <div class="row">
-                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-user"></i><input name="fullname" value="Họ và tên"  class="form-control" type="text"></div></div>
-                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-ui-message"></i><input name="email" value="Email"  class="form-control" type="text"></div></div>
-                    <div class="col-lg-4"><div class="relative"><i class="icofont icofont-phone"></i><input name="mobile" value="Số điện thoại"  class="form-control" type="text"></div></div>
+                    <div class="col-lg-4"><div class="relative margin-top-5"><i class="icofont icofont-ui-user"></i><input name="fullname" value="Họ và tên"  class="form-control" type="text"></div></div>
+                    <div class="col-lg-4"><div class="relative margin-top-5"><i class="icofont icofont-ui-message"></i><input name="email" value="Email"  class="form-control" type="text"></div></div>
+                    <div class="col-lg-4"><div class="relative margin-top-5"><i class="icofont icofont-phone"></i><input name="mobile" value="Số điện thoại"  class="form-control" type="text"></div></div>
                     <div class="clr"></div>
                 </div>
-                <div class="row margin-top-15">
+                <div class="row margin-top-5">
                     <div class="col-lg-4">
-                        <div class="relative">
+                        <div class="relative margin-top-5">
                             <i class="icofont icofont-ui-calendar"></i><input  name="datebooking"    class="form-control" type="text">
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="relative">
+                        <div class="relative margin-top-5">
                             <i class="icofont icofont-clock-time"></i>
                             <input name="timebooking"  class="form-control" type="text">
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="relative">
+                        <div class="relative margin-top-5">
                             <select name="number_person" class="form-control">
                                 <option value="0">Số người</option>
                                 <option value="1">1</option>
@@ -274,7 +274,7 @@ $pinterest_url=$zendvn_sp_settings['pinterest_url'];
         <?php endif; ?>
     </div>
     <div class="email-subscribe padding-bottom-15 padding-top-15">
-        <div class="container notredam flex-center-middle">
+        <div class="container notredam">
             <div class="col-lg-4 no-padding-left">
                 <div class="newsletter">Newsletter</div>
             </div>
