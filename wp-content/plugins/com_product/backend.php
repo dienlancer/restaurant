@@ -42,6 +42,8 @@ class Backend{
 		wp_enqueue_script('media-upload');
 		wp_register_script("ckeditor_payment_method",PLUGIN_URL . "public/backend/ckeditor/ckeditor.js" ,array('jquery'),'1.0',false);
 		wp_enqueue_script("ckeditor_payment_method");
+		wp_register_script("ckfinder_payment_method",PLUGIN_URL . "public/backend/ckfinder/ckfinder.js" ,array('jquery'),'1.0',false);
+		wp_enqueue_script("ckfinder_payment_method");
 	}
 	public function menus(){
 		add_menu_page('Shopping', 'Shopping', 'manage_options', $this->_menuSlug,
