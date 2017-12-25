@@ -1,52 +1,48 @@
-<div class="our-member relative">
-    <div class="opacity-absolute"></div>    
-</div>
-<div class="container margin-top-15">  
-    <?php 
+<?php     
+global $zController,$zendvn_sp_settings;
+$vHtml=new HtmlControl();    
+$pageIDLoginCheckout = $zController->getHelper('GetPageId')->get('_wp_page_template','login-checkout.php'); 
+$pageIDzcart = $zController->getHelper('GetPageId')->get('_wp_page_template','zcart.php');    
+$permarlinkLoginCheckout = get_permalink($pageIDLoginCheckout);            
+$permarlinkZCart = get_permalink($pageIDzcart);
+$ssValueUser="userlogin";
+$ssValueCart="zcart";
+$ssUser       = $zController->getSession('SessionHelper',"vmuser",$ssValueUser);
+$ssCart        = $zController->getSession('SessionHelper',"vmart",$ssValueCart);    
+$arrUser = @$ssUser->get($ssValueUser)["userInfo"]; 
+$arrCart = $ssCart->get($ssValueCart)["cart"];     
+if(count($arrUser) == 0){
+    wp_redirect($permarlinkLoginCheckout);    
+}
+if(count($arrCart) == 0){
+    wp_redirect($permarlinkZCart);
+}    
+$id=$arrUser["id"];
+$userModel=$zController->getModel("/frontend","UserModel"); 
+$paymentMethodModel=$zController->getModel("/frontend","PaymentMethodModel"); 
+$info=$userModel->getUserById($id);
+$lstPaymentMethod=$paymentMethodModel->getDDLPaymentMethod();
+$detail=$info[0];   
+$totalPrice=0;
+$totalQuantity=0;
+$data=array();   
+$error=$zController->_data["error"];
+$success=$zController->_data["success"];                           
+if(count($zController->_data["data"]) > 0){
+    $data=$zController->_data["data"];                  
+}else{
+    $data=$detail;
+}
+?>
+<div>
+    <?php                      
     if(have_posts()){
         while (have_posts()) {
             the_post();
-            echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
+            echo '<h3 class="mamboitaliano">'.get_the_title().'</h3>';
         }
         wp_reset_postdata();
-    }
-    global $zController,$zendvn_sp_settings;
-    $vHtml=new HtmlControl();    
-    $pageIDLoginCheckout = $zController->getHelper('GetPageId')->get('_wp_page_template','login-checkout.php'); 
-    $pageIDzcart = $zController->getHelper('GetPageId')->get('_wp_page_template','zcart.php');    
-    $permarlinkLoginCheckout = get_permalink($pageIDLoginCheckout);            
-    $permarlinkZCart = get_permalink($pageIDzcart);
-    $ssValueUser="userlogin";
-    $ssValueCart="zcart";
-    $ssUser       = $zController->getSession('SessionHelper',"vmuser",$ssValueUser);
-    $ssCart        = $zController->getSession('SessionHelper',"vmart",$ssValueCart);    
-    $arrUser = @$ssUser->get($ssValueUser)["userInfo"]; 
-    $arrCart = $ssCart->get($ssValueCart)["cart"];     
-    if(count($arrUser) == 0){
-        wp_redirect($permarlinkLoginCheckout);    
-    }
-    if(count($arrCart) == 0){
-        wp_redirect($permarlinkZCart);
-    }    
-    $id=$arrUser["id"];
-    $userModel=$zController->getModel("/frontend","UserModel"); 
-    $paymentMethodModel=$zController->getModel("/frontend","PaymentMethodModel"); 
-    $info=$userModel->getUserById($id);
-    $lstPaymentMethod=$paymentMethodModel->getDDLPaymentMethod();
-    $detail=$info[0];   
-    $totalPrice=0;
-    $totalQuantity=0;
-    $data=array();   
-    $error=$zController->_data["error"];
-    $success=$zController->_data["success"];                           
-    if(count($zController->_data["data"]) > 0){
-        $data=$zController->_data["data"];                  
-    }else{
-        $data=$detail;
-    }
-?>
-<div class="margin-top-15">
-    <?php                                           
+    }                     
     if(count($error) > 0 || count($success) > 0){
         ?>
         <div class="form-group alert">
@@ -204,6 +200,6 @@
         <div class="clr"></div>   
     </form>
 </div>
-</div>
+
 
 

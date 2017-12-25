@@ -136,7 +136,21 @@ if(count($arrCart) > 0){
             </div>
             <div class="runoutright">
               <ul class="inline-block list-style-none top-email">
-                <li><a href="<?php echo $account_link; ?>"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;My account</a></li>
+                <?php                                                              
+                    if(empty($arrUser)){
+                        ?>
+                        <li><a href="<?php echo $register_member_link; ?>" ><i class="fa fa-unlock" aria-hidden="true"></i>&nbsp;Đăng ký</a></li>
+                        <li><a href="<?php echo $account_link; ?>" ><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Đăng nhập</a></li>
+                        <?php
+                    }else{                                     
+                        ?>
+                        <li><a  href="<?php echo $account_link; ?>"><?php echo $arrUser["username"]; ?></a></li>
+                        <li><a  href="<?php echo $security_link; ?>">Đổi mật khẩu</a></li>                                
+                        <li><a  href="<?php echo $history_link; ?>">Invoice</a></li>
+                        <li><a  href="<?php echo site_url() . "/index.php?action=logout"; ?>">Logout</a></li>
+                        <?php                                     
+                    }
+                    ?>   
                 <li><a href="<?php echo $facebook_url; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a href="<?php echo $twitter_url; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                 <li><a href="<?php echo $google_plus; ?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>

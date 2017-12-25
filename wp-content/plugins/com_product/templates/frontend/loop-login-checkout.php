@@ -1,15 +1,12 @@
-<div class="our-member relative">
-    <div class="opacity-absolute"></div>    
-</div>
-<div class="container margin-top-15">    
+<div>    
     <?php
     if(have_posts()){
-        while (have_posts()) {
-            the_post();
-            echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
-        }
-        wp_reset_postdata();
-    } 
+            while (have_posts()) {
+                the_post();
+                echo '<h3 class="mamboitaliano">'.get_the_title().'</h3>';
+            }
+            wp_reset_postdata();
+        } 
     global $zController,$zendvn_sp_settings;    
     $vHtml=new HtmlControl();        
     $pageIDLoginCheckout = $zController->getHelper('GetPageId')->get('_wp_page_template','login-checkout.php'); 
@@ -37,8 +34,8 @@
     $register_member_link = get_permalink($page_id_register_member);
 
     ?>
-    <div class="margin-top-15">
-        <?php 
+    <div>
+        <?php         
         if(count($error) > 0 || count($success) > 0){
             ?>
             <div class="form-group alert">

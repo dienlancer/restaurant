@@ -308,7 +308,7 @@ class ProductController{
 		else{
 			$pageID = $zController->getHelper('GetPageId')->get('_wp_page_template','checkout.php');	
 		}
-		$permarlink = get_permalink($pageID);	
+		$permarlink = get_permalink($pageID);			
 		wp_redirect($permarlink);				
 	}
 	public function confirmCheckout(){
@@ -445,7 +445,7 @@ class ProductController{
 		$zController->_data["error"] = $arrError;			
 		$zController->_data["success"] = $arrSuccess;			
 	}
-	public function loginCheckout(){	
+	public function loginCheckout(){			
 		global $zController;	
 		$flag=1;
 		$arrError=array();

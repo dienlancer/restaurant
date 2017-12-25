@@ -1,15 +1,5 @@
-<div class="our-member relative">
-    <div class="opacity-absolute"></div>    
-</div>
-<div class="container margin-top-15">  
-    <?php 
-    if(have_posts()){
-        while (have_posts()) {
-            the_post();
-            echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
-        }
-        wp_reset_postdata();
-    }
+<div>  
+    <?php     
     global $zController;
     $vHtml=new HtmlControl();    
     $pageIDLogin = $zController->getHelper('GetPageId')->get('_wp_page_template','login.php');   
@@ -26,9 +16,18 @@
     $info=$userModel->getUserById($id);
     $detail=$info[0];           
     ?>
-    <form  method="post"  class="frm margin-top-15" name="frm">        
+    <form  method="post"  class="frm" name="frm">        
         <input type="hidden" name="id" value="<?php echo $detail["id"]; ?>" />
-        <input type="hidden" name="action" value="change-info" />                    
+        <input type="hidden" name="action" value="change-info" />        
+        <?php 
+        if(have_posts()){
+            while (have_posts()) {
+                the_post();
+                echo '<h3 class="mamboitaliano">'.get_the_title().'</h3>';
+            }
+            wp_reset_postdata();
+        }
+        ?>            
         <?php wp_nonce_field("change-info",'security_code',true);?>       
         <?php 
         $data=array();   

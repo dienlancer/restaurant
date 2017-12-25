@@ -1,13 +1,6 @@
 <?php get_header();     ?>
     <div class="tina relative">    
-        <div class="oppo">
-            <div class="relative">
-                <div class="nina">
-                    SẢN PHẨM
-                </div>
-                <div class="tma"></div>
-            </div>            
-        </div>    
+          
         <div>
             <script type="text/javascript" language="javascript">        
                 jQuery(document).ready(function(){

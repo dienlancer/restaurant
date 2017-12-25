@@ -1,15 +1,5 @@
-<div class="our-member relative">
-    <div class="opacity-absolute"></div>    
-</div>
-<div class="container margin-top-15">  
-	<?php 
-	if(have_posts()){
-        while (have_posts()) {
-            the_post();
-            echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
-        }
-        wp_reset_postdata();
-    }	
+<div>  
+	<?php 	
     $vHtml=new HtmlControl();
     $width=$zendvn_sp_settings["product_width"];
     $height=$zendvn_sp_settings["product_height"];
@@ -26,7 +16,16 @@
 	$data = $zController->getHelper('DataConverter')->convertInvoiceToArrayData($arr_invoice);
 		
  ?>
- <div class="margin-top-15">
+ <div>
+ 	<?php 
+ 	if(have_posts()){
+        while (have_posts()) {
+            the_post();
+            echo '<h3 class="mamboitaliano">'.get_the_title().'</h3>';
+        }
+        wp_reset_postdata();
+    }	
+ 	?>
  	<table id="com_product16" class="com_product16" cellpadding="0" cellspacing="0" width="100%">
 	<thead>
 	<tr>	

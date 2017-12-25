@@ -1,15 +1,5 @@
-<div class="our-member relative">
-    <div class="opacity-absolute"></div>    
-</div>
-<div class="container margin-top-15">  
-    <?php  
-    if(have_posts()){
-        while (have_posts()) {
-            the_post();
-            echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
-        }
-        wp_reset_postdata();
-    }
+<div>  
+    <?php      
     $vHtml=new HtmlControl();     
     $data=array();   
     $error=$zController->_data["error"];
@@ -18,8 +8,17 @@
         $data=$zController->_data["data"];                  
     }
     ?>
-    <form method="post" name="frmLogin" class="margin-top-15">
+    <form method="post" name="frmLogin">
         <input type="hidden" name="action" value="login" />
+        <?php 
+        if(have_posts()){
+            while (have_posts()) {
+                the_post();
+                echo '<h3 class="mamboitaliano">'.get_the_title().'</h3>';
+            }
+            wp_reset_postdata();
+        }
+        ?>
         <?php wp_nonce_field("login",'security_code',true);?>     
         <?php 
         if(count($error) > 0 || count($success) > 0){
@@ -71,12 +70,10 @@
                     <td></td>
                     <td>
                         <button type="submit" name="btnCheckLogin" value="Login" class="com_product32">Đăng nhập</button>&nbsp;&nbsp;
-                        <a href="<?php echo $register_member_link; ?>" class="com_product32">Đăng ký</a>
-                        
+                        <a href="<?php echo $register_member_link; ?>" class="com_product32">Đăng ký</a>                        
                     </td>
                 </tr>               
             </tbody>    
-
         </table>    
     </form>
 </div>

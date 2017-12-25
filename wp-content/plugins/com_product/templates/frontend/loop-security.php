@@ -6,7 +6,7 @@
     if(have_posts()){
         while (have_posts()) {
             the_post();
-            echo '<h3 class="ecommerce">'.get_the_title().'</h3>';
+            echo '<h3 class="mamboitaliano">'.get_the_title().'</h3>';
         }
         wp_reset_postdata();
     }

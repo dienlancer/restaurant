@@ -1,7 +1,4 @@
-<div class="our-member relative">
-    <div class="opacity-absolute"></div>    
-</div>
-<div class="container margin-top-15">  
+<div>  
     <?php   
     $pageIDLoginCheckout = $zController->getHelper('GetPageId')->get('_wp_page_template','login-checkout.php'); 
     $pageIDzcart = $zController->getHelper('GetPageId')->get('_wp_page_template','zcart.php');    
