@@ -434,8 +434,9 @@ font-family: "JosefinSlab-BoldItalic";
         color: #0093b2;
     }
     .comproduct50{
-        border: 1px solid #007ad0;
-        background: #00dafa;
+        border: 1px solid #85c571;
+        background: #c8eabd;
+        color: #2bab02;
     }
     .comproduct50 > li{
        margin: 5px 0px 5px 25px;
