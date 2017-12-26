@@ -561,7 +561,7 @@ class ProductController{
 					$html_content .='<p>Ngày đặt : <b>'.$datebooking.'</b></p>'; 
 					$html_content .='<p>Vào lúc : <b>'.$timebooking.'</b></p>'; 
 					$html_content .='<p>Số lượng : <b>'.$number_person.'</b></p>'; 					
-					$mail->Body=$html_content;
+					$mail->msgHTML($html_content);
 					if ($mail->send()) {               	
 						$arrSuccess['success']='Đặt bàn hoàn tất'; 
 						echo '<script language="javascript" type="text/javascript">alert("Đặt bàn hoàn tất");</script>'; 
@@ -664,7 +664,7 @@ class ProductController{
 					$html_content .='<p>Vào lúc : <b>'.$timebooking.'</b></p>'; 
 					$html_content .='<p>Số lượng : <b>'.$number_person.'</b></p>'; 
 					$html_content .='<p>Message : '.$message.'</p>'; 
-					$mail->Body=$html_content;
+					$mail->msgHTML($html_content);
 					if ($mail->send()) {               	
 						$arrSuccess['success']='Đặt bàn hoàn tất'; 
 					}
