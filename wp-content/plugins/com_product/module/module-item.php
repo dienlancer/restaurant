@@ -23,8 +23,7 @@ class ModuleItem extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {			 
 		$instance = $old_instance;		
 		$instance['title'] 		= strip_tags($new_instance['title']);				
-		$instance['item_id'] 	= $new_instance['item_id'];			
-		$instance['description'] 	= $new_instance['description'];					
+		$instance['item_id'] 	= $new_instance['item_id'];					
 		$instance['position'] 	= $new_instance['position'];		
 		return $instance;
 	}
@@ -38,8 +37,7 @@ class ModuleItem extends WP_Widget {
 		$class = array("widefat");
 		$html		= $vHtml->label('Title',array('for'=>$inputID))
 					. $vHtml->cmsTextbox($inputID,$inputName,"widefat",$inputValue);
-		echo $vHtml->pTag($html);	
-		
+		echo $vHtml->pTag($html);			
 			
 		$inputID 	= $this->get_field_id('item_id');
 		$inputName 	= $this->get_field_name('item_id');
@@ -47,14 +45,6 @@ class ModuleItem extends WP_Widget {
 		$class = array("widefat");
 		$html		= $vHtml->label('ItemID',array('for'=>$inputID))
 					. $vHtml->cmsTextbox($inputID,$inputName,"widefat",$inputValue);
-		echo $vHtml->pTag($html);	
-
-		$inputID 	= $this->get_field_id('description');
-		$inputName 	= $this->get_field_name('description');
-		$inputValue = @$instance['description'];
-		$class = array("widefat");
-		$html		= $vHtml->label('Description',array('for'=>$inputID))
-					. '<br/><textarea id="'.$inputID.'" cols="50" rows="10" name="'.$inputName.'">'.$inputValue.'</textarea>';
 		echo $vHtml->pTag($html);	
 
 		$inputID 	= $this->get_field_id('position');

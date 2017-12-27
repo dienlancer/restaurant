@@ -1,12 +1,12 @@
 <?php
-class ModuleCategory extends WP_Widget {
+class ModuleBanner extends WP_Widget {
 
 	public function __construct() {		
-		$id_base = 'module-category';
-		$name	= 'ModuleCategory';
+		$id_base = 'module-banner';
+		$name	= 'ModuleBanner';
 		$widget_options = array(
-					'classname' => 'module-category',
-					'description' => 'ModuleCategory'
+					'classname' => 'module-banner',
+					'description' => 'ModuleBanner'
 				);
 		$control_options = array('width'=>'350px');
 		parent::__construct($id_base, $name,$widget_options, $control_options);	
@@ -16,7 +16,7 @@ class ModuleCategory extends WP_Widget {
 		$title = apply_filters('widget_title', $instance['title']);			
 		echo $before_widget;
 		echo $before_title . $title . $after_title;				 
-		require PLUGIN_PATH . DS . 'module'. DS .'html'. DS .'module-category.php';		
+		require PLUGIN_PATH . DS . 'module'. DS .'html'. DS .'module-banner.php';		
 		echo $after_widget;						
 	}
 	
@@ -24,8 +24,8 @@ class ModuleCategory extends WP_Widget {
 		$instance = $old_instance;		
 		$instance['title'] 				= strip_tags($new_instance['title']);		
 		$instance['category_id'] 		= strip_tags($new_instance['category_id']);		
-		$instance['items_per_page'] 	= $new_instance['items_per_page'];			
-		$instance['description'] 	= $new_instance['description'];				
+		$instance['items_per_page'] 	= $new_instance['items_per_page'];		
+		$instance['description'] 		= $new_instance['description'];					
 		$instance['position'] 			= $new_instance['position'];		
 		return $instance;
 	}
@@ -40,7 +40,7 @@ class ModuleCategory extends WP_Widget {
 		$class = array("widefat");
 		$html		= $vHtml->label('Title',array('for'=>$inputID))
 					. $vHtml->cmsTextbox($inputID,$inputName,"widefat",$inputValue);
-		echo $vHtml->pTag($html);	
+		echo $vHtml->pTag($html);			
 			
 		$inputID 	= $this->get_field_id('category_id');
 		$inputName 	= $this->get_field_name('category_id');
@@ -62,7 +62,7 @@ class ModuleCategory extends WP_Widget {
 				'class'              => 'widefat',
 				'depth'              => 0,
 				'tab_index'          => 0,
-				'taxonomy'           => 'za_category',
+				'taxonomy'           => 'category_banner',
 				'hide_if_empty'      => false,
 		);				
 		$html		= $vHtml->label(translate('Categories'),array('for'=>$inputID))
