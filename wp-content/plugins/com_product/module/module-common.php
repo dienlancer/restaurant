@@ -1,13 +1,13 @@
 <?php
-class ModuleItem extends WP_Widget {
+class ModuleCommon extends WP_Widget {
 
 	public function __construct() {		
-		$id_base = 'module-item';
-		$name	= 'ModuleItem';
+		$id_base = 'module-common';
+		$name	= 'ModuleCommon';
 		$widget_options = array(
-					'classname' => 'module-item',
-					'description' => 'ModuleItem'
-				);
+					'classname' => 'module-common',
+					'description' => 'ModuleCommon'
+				);		
 		$control_options = array('width'=>'350px');
 		parent::__construct($id_base, $name,$widget_options, $control_options);	
 	}	
@@ -16,15 +16,14 @@ class ModuleItem extends WP_Widget {
 		$title = apply_filters('widget_title', $instance['title']);			
 		echo $before_widget;
 		echo $before_title . $title . $after_title;				 
-		require PLUGIN_PATH . DS . 'module'. DS .'html'. DS .'module-item.php';		
+		require PLUGIN_PATH . DS . 'module'. DS .'html'. DS .'module-common.php';		
 		echo $after_widget;						
 	}
 	
 	public function update( $new_instance, $old_instance ) {			 
 		$instance = $old_instance;		
-		$instance['title'] 		= strip_tags($new_instance['title']);				
-		$instance['item_id'] 	= $new_instance['item_id'];			
-		$instance['description'] 	= $new_instance['description'];					
+		$instance['title'] 		= strip_tags($new_instance['title']);
+		$instance['description'] 	= $new_instance['description'];								
 		$instance['position'] 	= $new_instance['position'];		
 		return $instance;
 	}
@@ -38,16 +37,7 @@ class ModuleItem extends WP_Widget {
 		$class = array("widefat");
 		$html		= $vHtml->label('Title',array('for'=>$inputID))
 					. $vHtml->cmsTextbox($inputID,$inputName,"widefat",$inputValue);
-		echo $vHtml->pTag($html);	
-		
-			
-		$inputID 	= $this->get_field_id('item_id');
-		$inputName 	= $this->get_field_name('item_id');
-		$inputValue = @$instance['item_id'];
-		$class = array("widefat");
-		$html		= $vHtml->label('ItemID',array('for'=>$inputID))
-					. $vHtml->cmsTextbox($inputID,$inputName,"widefat",$inputValue);
-		echo $vHtml->pTag($html);	
+		echo $vHtml->pTag($html);		
 
 		$inputID 	= $this->get_field_id('description');
 		$inputName 	= $this->get_field_name('description');

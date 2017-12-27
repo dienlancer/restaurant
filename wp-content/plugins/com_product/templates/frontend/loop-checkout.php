@@ -50,10 +50,6 @@ foreach ($payment as $key => $value) {
     }
 }
 
-/*$paymentMethodModel=$zController->getModel("/frontend","PaymentMethodModel"); 
-$lstPaymentMethod=$paymentMethodModel->getDDLPaymentMethod();*/
-
-
  
 $totalPrice=0;
 $totalQuantity=0;

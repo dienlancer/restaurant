@@ -4,8 +4,9 @@ class Module{
 	public function __construct(){		
 		$this->_module_options = array(																				
 					"loadModuleCategory" 					=> true,	
-					"loadModuleItem" 				=> true,							
-				);
+					"loadModuleItem" 				=> true,				
+					"loadModuleCommon" 				=> true,							
+				);		
 		foreach ($this->_module_options as $key => $val){	
 			if($val == true){
 				add_action('widgets_init',array($this,$key));
@@ -19,5 +20,9 @@ class Module{
 	public function loadModuleItem(){
 		require_once PLUGIN_PATH . DS . 'module'. DS .'module-item.php';		
 		register_widget('ModuleItem');
+	}
+	public function loadModuleCommon(){
+		require_once PLUGIN_PATH . DS . 'module'. DS .'module-common.php';		
+		register_widget('ModuleCommon');
 	}
 }

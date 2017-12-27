@@ -18,7 +18,8 @@
     ?>
     <form  method="post"  class="frm" name="frm">        
         <input type="hidden" name="id" value="<?php echo $detail["id"]; ?>" />
-        <input type="hidden" name="action" value="change-info" />        
+        <input type="hidden" name="action" value="change-info" />      
+		<?php wp_nonce_field("change-info",'security_code',true);?>       		
         <?php 
         if(have_posts()){
             while (have_posts()) {
@@ -28,7 +29,7 @@
             wp_reset_postdata();
         }
         ?>            
-        <?php wp_nonce_field("change-info",'security_code',true);?>       
+        
         <?php 
         $data=array();   
         $error=$zController->_data["error"];
