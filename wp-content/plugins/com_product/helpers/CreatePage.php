@@ -39,6 +39,7 @@ class CreatePage{
 					'contact.php' => 'Liên hệ',
 					'search.php' => 'Tìm kiếm',					
 					'reservation.php' => 'Đặt bàn',
+					
 				);	
 	}
 	
