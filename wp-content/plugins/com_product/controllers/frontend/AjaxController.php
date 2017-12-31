@@ -120,9 +120,7 @@ class AjaxController{
 	            $data["title"]=$title;
 	            $data["content"]=$content;	            
 	        }
-	    }
-		/*$payment_method_model=$zController->getModel("/frontend","PaymentMethodModel");
-		$data=$payment_method_model->getPaymentMethodDetail($payment_method_id);		*/
+	    }		
 		echo json_encode($data);
 		die();
 	}
